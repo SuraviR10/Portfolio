@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details - Suravi R</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+  <div class="project-detail-container">
+    <!-- Header -->
+    <header class="project-header">
+      <a href="index.html#projects" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      <h1 class="project-title">MITM-Time Evolver</h1>
+      <p class="project-tagline">Intelligent Timetable Generation System with Constraint Handling</p>
+      <div class="tech-badges">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Algorithms</span>
+        <span class="tech-badge">Optimization</span>
+        <span class="tech-badge">Flask</span>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="project-section">
+      <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+      <div class="content-card">
+        <p><strong>What it does:</strong> MITM-Time Evolver is an automated timetable generation system designed specifically for MIT Mysore. It intelligently schedules classes while respecting multiple institutional constraints.</p>
+        <p><strong>Problem it solves:</strong> Manual timetable creation is time-consuming, error-prone, and often results in conflicts. This system automates the entire process, ensuring optimal resource utilization and conflict-free schedules.</p>
+        <p><strong>Why it was built:</strong> To address the real-world challenge faced by academic institutions in creating efficient timetables that satisfy faculty availability, room capacity, and student requirements.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="project-section">
+      <h2><i class="fas fa-star"></i> Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-brain"></i>
+          <h3>Intelligent Scheduling</h3>
+          <p>Uses advanced algorithms to generate optimal timetables</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Constraint Handling</h3>
+          <p>Respects faculty availability, room capacity, and time slots</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-sync-alt"></i>
+          <h3>Conflict Resolution</h3>
+          <p>Automatically detects and resolves scheduling conflicts</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Resource Optimization</h3>
+          <p>Maximizes utilization of classrooms and faculty time</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-file-export"></i>
+          <h3>Export Options</h3>
+          <p>Generate timetables in multiple formats (PDF, Excel)</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Responsive Design</h3>
+          <p>Works seamlessly on desktop, tablet, and mobile devices</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Diagram -->
+    <section class="project-section">
+      <h2><i class="fas fa-project-diagram"></i> System Workflow</h2>
+      <div class="content-card">
+        <div class="workflow-diagram">
+          <div class="workflow-step">
+            <div class="step-number">1</div>
+            <h4>Input Data</h4>
+            <p>Faculty, Subjects, Rooms, Time Slots</p>
+          </div>
+          <i class="fas fa-arrow-right workflow-arrow"></i>
+          <div class="workflow-step">
+            <div class="step-number">2</div>
+            <h4>Constraint Processing</h4>
+            <p>Validate and process constraints</p>
+          </div>
+          <i class="fas fa-arrow-right workflow-arrow"></i>
+          <div class="workflow-step">
+            <div class="step-number">3</div>
+            <h4>Algorithm Execution</h4>
+            <p>Generate optimal schedule</p>
+          </div>
+          <i class="fas fa-arrow-right workflow-arrow"></i>
+          <div class="workflow-step">
+            <div class="step-number">4</div>
+            <h4>Output</h4>
+            <p>Conflict-free timetable</p>
+          </div>
+        </div>
+        <p class="workflow-caption"><i class="fas fa-lightbulb"></i> The system uses a genetic algorithm approach combined with constraint satisfaction techniques to generate optimal timetables in minutes.</p>
+      </div>
+    </section>
+
+    <!-- Constraints -->
+    <section class="project-section">
+      <h2><i class="fas fa-exclamation-triangle"></i> Important Constraints & Assumptions</h2>
+      <div class="constraints-grid">
+        <div class="constraint-card">
+          <h4><i class="fas fa-clock"></i> Time Constraints</h4>
+          <ul>
+            <li>Maximum 6 hours per day per faculty</li>
+            <li>Minimum 1-hour break for lunch</li>
+            <li>No back-to-back theory classes for students</li>
+          </ul>
+        </div>
+        <div class="constraint-card">
+          <h4><i class="fas fa-door-open"></i> Room Constraints</h4>
+          <ul>
+            <li>Room capacity must match class size</li>
+            <li>Lab sessions require specific lab rooms</li>
+            <li>One room cannot host multiple classes simultaneously</li>
+          </ul>
+        </div>
+        <div class="constraint-card">
+          <h4><i class="fas fa-user-tie"></i> Faculty Constraints</h4>
+          <ul>
+            <li>Faculty availability windows respected</li>
+            <li>No faculty can teach two classes at once</li>
+            <li>Subject-faculty mapping is predefined</li>
+          </ul>
+        </div>
+        <div class="constraint-card">
+          <h4><i class="fas fa-database"></i> System Limitations</h4>
+          <ul>
+            <li>Maximum 500 students per batch</li>
+            <li>Up to 50 faculty members supported</li>
+            <li>Generation time: 2-5 minutes for complex schedules</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-section">
+      <h2><i class="fas fa-layer-group"></i> Technology Stack</h2>
+      <div class="tech-stack-grid">
+        <div class="tech-category">
+          <h3>Languages</h3>
+          <div class="tech-items">
+            <span><i class="fab fa-python"></i> Python 3.9</span>
+            <span><i class="fab fa-js"></i> JavaScript</span>
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+          </div>
+        </div>
+        <div class="tech-category">
+          <h3>Frameworks</h3>
+          <div class="tech-items">
+            <span><i class="fas fa-flask"></i> Flask</span>
+            <span><i class="fas fa-database"></i> SQLite</span>
+          </div>
+        </div>
+        <div class="tech-category">
+          <h3>Tools</h3>
+          <div class="tech-items">
+            <span><i class="fab fa-git-alt"></i> Git</span>
+            <span><i class="fab fa-github"></i> GitHub</span>
+            <span><i class="fas fa-file-pdf"></i> ReportLab</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation -->
+    <section class="project-section">
+      <h2><i class="fas fa-cogs"></i> How It Works</h2>
+      <div class="content-card">
+        <div class="implementation-steps">
+          <div class="impl-step">
+            <div class="impl-number">Step 1</div>
+            <h4>Data Collection</h4>
+            <p>Admin inputs faculty details, subject list, room information, and time slot preferences through a web interface.</p>
+          </div>
+          <div class="impl-step">
+            <div class="impl-number">Step 2</div>
+            <h4>Constraint Validation</h4>
+            <p>System validates all inputs and checks for constraint violations before proceeding to generation phase.</p>
+          </div>
+          <div class="impl-step">
+            <div class="impl-number">Step 3</div>
+            <h4>Algorithm Execution</h4>
+            <p>Genetic algorithm creates multiple timetable candidates, evaluates fitness based on constraints, and evolves towards optimal solution.</p>
+          </div>
+          <div class="impl-step">
+            <div class="impl-number">Step 4</div>
+            <h4>Conflict Detection</h4>
+            <p>System performs final validation to ensure zero conflicts in faculty schedules, room allocations, and student timetables.</p>
+          </div>
+          <div class="impl-step">
+            <div class="impl-number">Step 5</div>
+            <h4>Output Generation</h4>
+            <p>Final timetable is displayed on dashboard and can be exported as PDF or Excel for distribution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="project-section">
+      <h2><i class="fas fa-images"></i> Screenshots & Demo</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-placeholder">
+          <i class="fas fa-desktop"></i>
+          <p>Dashboard View</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <i class="fas fa-table"></i>
+          <p>Generated Timetable</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <i class="fas fa-cog"></i>
+          <p>Configuration Panel</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <i class="fas fa-chart-bar"></i>
+          <p>Analytics Dashboard</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="project-section">
+      <h2><i class="fas fa-link"></i> Project Links</h2>
+      <div class="project-links">
+        <a href="#" class="project-link-btn github">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+        <a href="#" class="project-link-btn demo">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+      <a href="index.html#projects" class="footer-back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+      <div class="footer-contact">
+        <p>Interested in this project? Let's connect!</p>
+        <div class="footer-social">
+          <a href="mailto:suravimys@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/suravir/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/TechSphere10" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="project-detail.js"></script>
+</body>
+</html>

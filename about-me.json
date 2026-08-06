@@ -1,0 +1,138 @@
+{
+  "basic_info": {
+    "name": "Suravi R",
+    "role": "Information Science and Engineering Student",
+    "description": "I am a problem solver, fast learner, and adaptable engineering student focused on building intelligent software systems using AI, backend engineering, and modern development practices.",
+    "location": "Karnataka, India"
+  },
+
+  "education": {
+    "sslc": {
+      "percentage": "93.92%",
+      "description": "Strong academic foundation with consistent performance."
+    },
+    "puc": {
+      "stream": "PCMC",
+      "percentage": "90.18%",
+      "description": "Focused on Physics, Chemistry, Mathematics, and Computer Science."
+    },
+    "engineering": {
+      "degree": "Bachelor of Engineering",
+      "branch": "Information Science and Engineering",
+      "college": "Maharaja Institute of Technology Mysore",
+      "duration": "2023 – 2027",
+      "cgpa": "9.16 / 10",
+      "key_subjects": [
+        "Data Structures & Algorithms",
+        "Database Management Systems",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering",
+        "Java Programming"
+      ]
+    }
+  },
+
+  "career_interests": [ 
+    "AI Engineer", 
+    "Generative AI Engineer", 
+    "Backend Engineer", 
+    "DevOps Engineer", 
+    "Scalable Software Engineer", 
+    "Software Development Engineer (SDE)" 
+  ], 
+ 
+  "career_goals": "My long-term goal is to become a Software Engineer specializing in AI-powered applications and intelligent systems. I enjoy solving practical problems through software engineering rather than building projects only for demonstration purposes. I aim to build impactful software solutions and work at top technology companies like Google, Microsoft, Atlassian, and SAP, continuously improving my development, problem-solving, and engineering skills.",
+
+  "skills": {
+    "programming_languages": ["Java", "Python", "C", "SQL", "JavaScript", "TypeScript"],
+    "web_technologies": ["HTML", "CSS", "JavaScript"],
+    "frameworks": ["Flask", "FastAPI (learning)", "Django (basics)"],
+    "databases": ["MySQL", "PostgreSQL", "Supabase"],
+    "tools": ["Git", "GitHub", "VS Code", "Docker (learning)"],
+    "core": ["DSA", "Object Oriented Programming (OOP)", "Operating System (OS)", "DBMS", "CN"],
+    "strengths": [
+      "Problem solving",
+      "Fast learning",
+      "Adaptability",
+      "Strong fundamentals"
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "Smart Automated Timetable Generator",
+      "description": "An intelligent scheduling system using Genetic Algorithm to generate conflict-free timetables with real-world constraints, optimizing resource allocation and reducing administrative overhead.",
+      "tech_stack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+      "status": "Completed"
+    },
+    {
+      "name": "HerbAura – Virtual Ayurvedic Knowledge Platform",
+      "description": "A 3D interactive virtual garden built using Three.js to educate users about Ayurvedic medicinal plants, featuring AI-powered herbal combination scoring and gamified learning experiences.",
+      "tech_stack": ["HTML", "CSS", "JavaScript", "Three.js"],
+      "status": "Improving"
+    },
+    {
+      "name": "Stepping Stone Academy Website",
+      "description": "A responsive, real-world website built and deployed for a Montessori school, focusing on clean UI, mobile-first design, and clear visual storytelling to enhance parental trust.",
+      "tech_stack": ["HTML", "CSS", "JavaScript"],
+      "status": "Completed"
+    },
+    {
+      "name": "AI Powered Lab Programming Assistant",
+      "description": "An interactive AI-driven educational system that guides students through logic building, code understanding, and viva preparation using intelligent Socratic questioning and beginner-friendly error explanations.",
+      "tech_stack": ["Python", "Flask", "AI"],
+      "status": "In Development"
+    },
+    {
+      "name": "DARTX – Smart Dependency Manager",
+      "description": "An intelligent VS Code extension that automatically detects dependency and environment issues in Python and Node.js projects, analyzes root causes, validates packages, and assists developers with secure, one-click dependency resolution, enhancing developer productivity.",
+      "tech_stack": ["TypeScript", "Node.js", "VS Code API"],
+      "status": "Published"
+    }
+  ],
+
+  "certifications": [
+    "Programming in Java – NPTEL (98%, Top 1% Nationwide, Gold Medal)",
+    "Front-End Software Engineering Job Simulation – Skyscanner (Forage)",
+    "Prompt Engineering Certification"
+  ],
+
+  "achievements": [
+    "Top 1% Nationwide in NPTEL Programming in Java",
+    "2nd Prize in College Project Expo for Automatic Timetable Generator"
+  ],
+
+  "goals": {
+    "short_term": "To secure internships and entry-level roles where I can apply my skills and learn from real-world projects.",
+    "long_term": "To become a Software Engineer specializing in AI-powered applications and intelligent systems, building scalable and impactful systems that solve meaningful real-world problems."
+  },
+
+  "personality": {
+    "tone": "Professional, confident, authentic, engineer-focused",
+    "communication_style": "Clear explanations without exaggeration"
+  },
+
+  "personality_strengths": [
+    "Fast learner",
+    "Curious about modern technologies",
+    "Strong problem-solving mindset",
+    "Passionate about building real-world applications",
+    "Self-motivated and continuously learning",
+    "Interested in innovation and AI-powered solutions",
+    "Focused on backend engineering and scalable software",
+    "Enjoys automation and developer productivity tools"
+  ],
+
+  "hobbies": [
+    "Singing",
+    "Drawing occasionally",
+    "Travelling"
+  ],
+
+  "contact": {
+    "email": "suravimys@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/suravir/",
+    "github": "https://github.com/SuraviR10"
+  }
+}
