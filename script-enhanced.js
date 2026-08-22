@@ -7,10 +7,16 @@ AOS.init({
 
 // Typing Effect
 new Typed('#typing-effect', {
-  strings: ['AI Engineer', 'Backend Engineer', 'Intelligent Systems Builder', 'DevOps Enthusiast', 'Problem Solver'],
-  typeSpeed: 80,
-  backSpeed: 40,
-  backDelay: 2000,
+  strings: [
+    'AI & Intelligent Systems',
+    'Scalable Backend Software',
+    'Developer Tools & VS Code Extensions',
+    '3D WebGL Experiences',
+    'Optimization Algorithms'
+  ],
+  typeSpeed: 70,
+  backSpeed: 35,
+  backDelay: 2200,
   loop: true
 });
 

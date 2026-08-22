@@ -452,16 +452,37 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .hero-subtitle {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
   margin-bottom: 1.2rem;
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 #typing-effect {
   color: var(--secondary-light);
   font-family: var(--font-code);
-  border-bottom: 2px solid var(--secondary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary-light);
+  padding-bottom: 2px;
+  text-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.typed-cursor {
+  color: var(--secondary-light) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  animation: blinkCursor 0.7s infinite alternate;
+}
+
+@keyframes blinkCursor {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .hero-description {
@@ -2161,6 +2182,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
   header {
     width: 96%;
     top: 10px;
@@ -2185,10 +2210,33 @@ footer {
     display: block;
   }
   .hero-content h1 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    justify-content: center;
+  }
+  #typing-effect {
+    font-size: 1.15rem;
+  }
+  .hero-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .hero-stats .stat {
+    min-width: 105px;
+    padding: 0.75rem 0.9rem;
+  }
+  .stat-number {
+    font-size: 1.4rem;
   }
   .profile-card {
-    width: 290px;
+    width: 280px;
+  }
+  .projects-grid, .about-grid, .certificates-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
   }
   .floating-resume-btn {
     bottom: 1.5rem;
@@ -2200,5 +2248,37 @@ footer {
     bottom: 1.5rem;
     right: 1.5rem;
     height: 45px;
+  }
+  .chatbot-widget {
+    width: 92vw;
+    right: 4vw;
+    bottom: 80px;
+    height: 75vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.95rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .project-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .project-btns .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
