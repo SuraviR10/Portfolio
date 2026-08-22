@@ -32,7 +32,19 @@ try {
   console.log('Lenis not available, using native scroll');
 }
 
-// Old cursor-light replaced by new custom cursor system (see end of file)
+// Universe Video Background Handling & Reduced Motion Support
+try {
+  const universeVideo = document.getElementById('universe-video');
+  if (universeVideo) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      universeVideo.pause();
+    } else {
+      universeVideo.play().catch(() => {
+        console.log('Video autoplay fallback active');
+      });
+    }
+  }
+} catch (e) {}
 
 
 // Mobile Menu Toggle
