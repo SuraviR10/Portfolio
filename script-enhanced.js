@@ -1026,44 +1026,98 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Custom cursor and tilt init skipped:', e.message);
   }
 
-  // --- 2. Section Heading Scroll Reveals ---
+  // --- 2. Enhanced Smooth Sliding Section Heading Reveals ---
   try {
-    document.querySelectorAll('section h2').forEach((heading) => {
-      gsap.fromTo(heading, 
-        { y: 40, opacity: 0 },
+    const headings = document.querySelectorAll('section h2');
+    headings.forEach((heading, index) => {
+      const startX = index % 2 === 0 ? -100 : 100;
+
+      gsap.fromTo(heading,
         {
+          x: startX,
+          y: 25,
+          opacity: 0,
+          scale: 0.85,
+          filter: 'blur(8px)',
+        },
+        {
+          x: 0,
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          scale: 1,
+          filter: 'blur(0px)',
+          duration: 1.15,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: heading,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
           },
         }
       );
     });
 
-    // Subsection titles
-    document.querySelectorAll('.subsection-title').forEach((title) => {
-      gsap.fromTo(title,
-        { y: 30, opacity: 0 },
+    // Section subtitles smooth slide-up reveal
+    document.querySelectorAll('.section-subtitle').forEach((sub) => {
+      gsap.fromTo(sub,
+        { y: 35, opacity: 0, scale: 0.92 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.7,
+          scale: 1,
+          duration: 0.95,
+          delay: 0.15,
           ease: 'power3.out',
           scrollTrigger: {
-            trigger: title,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            trigger: sub,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
           },
         }
       );
     });
+
+    // Subsection titles smooth slide in with icon rotation pop
+    document.querySelectorAll('.subsection-title').forEach((title) => {
+      const icon = title.querySelector('i');
+
+      gsap.fromTo(title,
+        { x: -80, opacity: 0, filter: 'blur(6px)' },
+        {
+          x: 0,
+          opacity: 1,
+          filter: 'blur(0px)',
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+
+      if (icon) {
+        gsap.fromTo(icon,
+          { rotation: -60, scale: 0.4, opacity: 0 },
+          {
+            rotation: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.85,
+            delay: 0.2,
+            ease: 'back.out(2)',
+            scrollTrigger: {
+              trigger: title,
+              start: 'top 88%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
+    });
   } catch (e) {
-    console.log('Heading reveal skipped:', e.message);
+    console.log('Heading slide reveals skipped:', e.message);
   }
 
   // --- 3. Scroll-triggered Card Staggers ---

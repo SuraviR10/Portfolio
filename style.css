@@ -190,24 +190,26 @@ section h2 {
   font-weight: 800;
   text-align: center;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #ffffff 30%, var(--primary-light) 70%, var(--secondary-light) 100%);
+  background: linear-gradient(135deg, #ffffff 20%, var(--primary-light) 65%, var(--secondary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
   display: inline-block;
   left: 50%;
   transform: translateX(-50%);
+  will-change: transform, opacity, filter;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.25));
 }
 
 section h2::after {
   content: '';
   display: block;
-  width: 70px;
+  width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
   border-radius: 4px;
   margin: 10px auto 0;
-  box-shadow: 0 0 12px var(--primary-glow);
+  box-shadow: 0 0 16px var(--primary-glow);
 }
 
 .section-subtitle {
