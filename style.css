@@ -357,7 +357,7 @@ nav ul li a:hover, nav ul li a.active {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  background: #03050d;
+  background: radial-gradient(circle at 50% 35%, #0d122b 0%, #03050d 85%);
 }
 
 .universe-bg-video {
