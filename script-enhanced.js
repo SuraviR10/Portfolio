@@ -615,126 +615,208 @@ const projectData = {
     title: "Smart Automated Timetable Generation System",
     slides: [
       { 
-        title: "The Problem", 
+        title: "01. Problem Brief", 
+        tag: "MANUAL SCHEDULING BOTTLENECK",
         items: [
-          "<b>Manual Effort:</b> Timetable creation consumes weeks of administrative work and is highly error-prone.",
-          "<b>Resource Conflicts:</b> Frequent clashes occur with faculty, rooms, and student group schedules.",
-          "<b>Inefficiency:</b> Sub-optimal resource utilization leads to wasted time and space."
+          "<b>Manual Effort:</b> Timetable creation consumes weeks of administrative work and is error-prone.",
+          "<b>Resource Conflicts:</b> Frequent clashes occur with faculty, room allocations, and student batches.",
+          "<b>Space Waste:</b> Sub-optimal lab and room utilization leads to schedule bottlenecks."
         ], 
         media: { type: 'image', src: 'images/Timetable/1.png' } 
       },
       { 
-        title: "The Solution", 
+        title: "02. Core Innovation", 
+        tag: "GENETIC ALGORITHM ENGINE",
         items: [
-          "<b>Genetic Algorithm:</b> An intelligent system that evolves schedules to find the best fit, inspired by natural selection.",
-          "<b>Constraint Handling:</b> Manages faculty availability, lab allocations, and workload balancing automatically.",
-          "<b>Rapid Generation:</b> Produces optimized, conflict-free timetables in minutes, not weeks."
+          "<b>Genetic Algorithm:</b> Evolves timetable schedules through iterative selection to find optimal fits.",
+          "<b>Constraint Engine:</b> Enforces faculty workload limits, room capacity, and lab availability.",
+          "<b>Rapid Execution:</b> Generates fully conflict-free timetables in under 2 minutes."
         ], 
         media: { type: 'image', src: 'images/Timetable/2.png' } 
       },
       { 
-        title: "Impact", 
+        title: "03. Impact & Recognition", 
+        tag: "EXPO AWARD WINNER",
         items: [
-          "<b>95% Time Reduction:</b> Reduces scheduling time from weeks to minutes, freeing up administrative resources.",
-          "<b>Zero Conflicts:</b> Guarantees clash-free schedules for all faculty, rooms, and student groups.",
-          "<b>Award-Winning Innovation:</b> Recognized with 2nd Prize at the Mini Project Expo for its practical impact."
+          "<b>95% Time Reduction:</b> Replaces weeks of manual scheduling with automated calculation.",
+          "<b>Zero Conflicts:</b> Guarantees clash-free timetables for faculty, rooms, and departments.",
+          "<b>Award Winner:</b> Recognized with 2nd Prize at the Mini Project Expo for real-world impact."
         ], 
         media: { type: 'image', src: 'images/Timetable/3.png' } 
       }
     ]
   },
   dependency: {
-    title: "DARTX (Dependency Analysis, Resolution, Tracking & eXecution)", // Changed title from Dependify to DARTX
+    title: "DARTX – Smart Dependency Manager",
     slides: [
-      { title: "The Problem", items: ["<b>Productivity Loss:</b> Errors like `ModuleNotFoundError` break development flow.", "<b>Context Switching:</b> Constantly moving to the terminal to fix dependency issues.", "<b>Wasted Time:</b> Manually debugging environment conflicts instead of coding."], media: { type: 'image', src: 'images/DARTX/DARTX_Problem.png' } },
-      { title: "The Solution", items: ["<b>Automated Detection:</b> An intelligent VS Code extension that silently monitors for dependency errors.", "<b>One-Click Resolution:</b> Provides instant, secure, and actionable notifications to fix issues.", "<b>Developer Focus:</b> Keeps developers in their editor, focused on building features."], media: { type: 'image', src: 'images/DARTX/DARTX1.png' } },
-      { title: "Core Features", items: ["<b>Intelligent Mapping:</b> Automatically resolves common aliases (e.g., 'cv2' to 'opencv-python').", "<b>Security First:</b> Validates packages against official registries to prevent typosquatting.", "<b>Published Tool:</b> Available on the VS Code Marketplace for any developer to use."], media: { type: 'image', src: 'images/DARTX/DARTX.png' } }
+      { 
+        title: "01. Problem Brief", 
+        tag: "DEVELOPMENT WORKFLOW FRICTION",
+        items: [
+          "<b>Runtime Crashes:</b> Cryptic `ModuleNotFoundError` tracebacks interrupt active coding.",
+          "<b>Context Switching:</b> Developers lose focus jumping between editor and command terminal.",
+          "<b>Wasted Hours:</b> Manual environment debugging burns developer time and energy."
+        ], 
+        media: { type: 'image', src: 'images/DARTX/DARTX_Problem.png' } 
+      },
+      { 
+        title: "02. Core Solution", 
+        tag: "INTELLIGENT VS CODE EXTENSION",
+        items: [
+          "<b>Silent Monitor:</b> Silently analyzes terminal logs to catch package error tracebacks.",
+          "<b>One-Click Resolution:</b> Recommends instant, secure package fixes right inside VS Code.",
+          "<b>Developer Focus:</b> Keeps developers in their editor code view without interruption."
+        ], 
+        media: { type: 'image', src: 'images/DARTX/DARTX1.png' } 
+      },
+      { 
+        title: "03. Core Features & Status", 
+        tag: "VS CODE MARKETPLACE PUBLISHED",
+        items: [
+          "<b>Smart Alias Mapping:</b> Resolves import aliases (e.g. `cv2` → `opencv-python`, `PIL` → `Pillow`).",
+          "<b>Security Protection:</b> Validates package names against registries to block typosquatting.",
+          "<b>Published Extension:</b> Available live on VS Code Marketplace for instant installation."
+        ], 
+        media: { type: 'image', src: 'images/DARTX/DARTX.png' } 
+      }
     ]
   },
   steppingStone: {
     title: "Stepping Stone Academy Website",
     slides: [
-      { title: "The Goal", items: ["<b>Establish Digital Presence:</b> Build a modern, responsive website for a real-world Montessori school.", "<b>Build Trust:</b> Provide clear information on admissions, curriculum, and faculty to build parental confidence.", "<b>Improve Accessibility:</b> Ensure the site is easy to navigate for parents on any device."], media: { type: 'image', src: 'images/stepping_stone_preview.png' } },
-      { title: "Features & Impact", items: ["<b>Mobile-First Design:</b> A clean, intuitive layout that works perfectly on phones, tablets, and desktops.", "<b>Clear Visual Storytelling:</b> Uses engaging animations and a clear visual hierarchy to guide users.", "<b>Live & Deployed:</b> The website is successfully deployed and actively used by the school."], media: { type: 'image', src: 'images/stepping_stone_live.png' } }
+      { 
+        title: "01. Client Objective", 
+        tag: "MONTESSORI SCHOOL DIGITAL PRESENCE",
+        items: [
+          "<b>Digital Gateway:</b> Build a modern, trustworthy web platform for a real Montessori school.",
+          "<b>Parent Confidence:</b> Showcase admissions info, facilities, and curriculum clearly.",
+          "<b>Cross-Device Access:</b> Provide seamless mobile navigation for parents on the move."
+        ], 
+        media: { type: 'image', src: 'images/stepping_stone_preview.png' } 
+      },
+      { 
+        title: "02. Design & Delivery", 
+        tag: "LIVE PRODUCTION NETLIFY DEPLOYMENT",
+        items: [
+          "<b>Mobile-First UX:</b> Clean layout optimized for instant browsing on mobile and desktop.",
+          "<b>Visual Storytelling:</b> Interactive galleries and engaging animations depicting school life.",
+          "<b>Live Deployment:</b> Successfully deployed on Netlify and actively serving school clients."
+        ], 
+        media: { type: 'image', src: 'images/stepping_stone_live.png' } 
+      }
     ]
   },
   virtualGarden: {
-    title: "HerbAura - Virtual Ayurvedic Garden",
+    title: "HerbAura – Virtual Ayurvedic Knowledge Platform",
     slides: [
-      { title: "The Vision", items: ["<b>Modernize Ancient Knowledge:</b> Transform static Ayurvedic texts into an engaging, interactive experience.", "<b>Gamified Learning:</b> Use 3D visuals and games to make learning about medicinal plants fun for all ages.", "<b>AI-Powered Guidance:</b> Provide intelligent suggestions for herbal combinations."], media: { type: 'video', src: 'images/Virtual_Garden/Screen_Recording.mp4' } },
-      { title: "Core Features", items: ["<b>Interactive 3D Garden:</b> A fully explorable world built with Three.js where users can inspect plant models.", "<b>AI Khashayam Maker:</b> An intelligent system that scores herbal combinations for wellness.", "<b>Engaging Quizzes:</b> A memory game and quiz module to reinforce learning."], media: { type: 'image', src: 'images/Hackathon/2nd_hackthon.jpg' } },
-      { title: "Hackathon Success", items: ["<b>Built in 24 Hours:</b> Developed as a full-stack application during the VEC Hackathon.", "<b>Praised for Innovation:</b> Received recognition for its unique concept and smooth 3D execution.", "<b>Demonstrated Rapid Prototyping:</b> Showcased the ability to integrate frontend, backend, and AI under pressure."], media: { type: 'image', src: 'images/Project.jpeg' } }
+      { 
+        title: "01. Vision & Concept", 
+        tag: "GAMIFIED AYURVEDIC EDUCATION",
+        items: [
+          "<b>Interactive Knowledge:</b> Replaces static botanical texts with an immersive 3D digital garden.",
+          "<b>Ayurvedic Awareness:</b> Educates users on medicinal plants, health benefits, and remedies.",
+          "<b>Gamified Learning:</b> Uses memory games and interactive quizzes to reinforce retention."
+        ], 
+        media: { type: 'video', src: 'images/Virtual_Garden/Screen_Recording.mp4' } 
+      },
+      { 
+        title: "02. Core Features", 
+        tag: "THREE.JS 3D & AI KASHAYAM ENGINE",
+        items: [
+          "<b>3D Plant Explorer:</b> Interactive 3D plant models rendered smoothly using Three.js.",
+          "<b>AI Khashayam Maker:</b> Intelligent recipe generator that scores herbal combinations.",
+          "<b>Engaging Quizzes:</b> Interactive memory game module to test Ayurvedic herbal knowledge."
+        ], 
+        media: { type: 'image', src: 'images/Hackathon/2nd_hackthon.jpg' } 
+      },
+      { 
+        title: "03. Hackathon Success", 
+        tag: "VEC HACKATHON RECOGNITION",
+        items: [
+          "<b>24-Hour Prototype:</b> Developed as a complete full-stack app during VEC Hackathon.",
+          "<b>Praised Innovation:</b> Recognized for unique 3D gamification and social health impact.",
+          "<b>Rapid Prototyping:</b> Proved rapid integration of WebGL frontend and AI backend."
+        ], 
+        media: { type: 'image', src: 'images/Project.jpeg' } 
+      }
     ]
   },
   labAssistant: {
     title: "AI Powered Lab Programming Assistant",
     slides: [
-      { title: "The Problem", items: ["<b>Rote Learning:</b> Students often copy lab code without understanding the underlying logic.", "<b>Skill Gap:</b> This leads to weak debugging skills, low confidence, and poor viva performance.", "<b>Lack of Guidance:</b> Instructors cannot provide personalized guidance to every student at once."], media: { type: 'image', src: 'images/lab_assistant_problem.png' } },
-      { title: "The Solution", items: ["<b>Socratic Questioning:</b> An AI assistant that guides students through logic-building with questions instead of giving away answers.", "<b>Intelligent Debugging:</b> Translates cryptic compiler errors into plain, beginner-friendly English.", "<b>Automated Parsing:</b> Automatically extracts objectives, concepts, and viva questions from lab manuals."], media: { type: 'image', src: 'images/lab_assistant_solution.png' } },
-      { title: "Educational Impact", items: ["<b>Fosters Understanding:</b> Transforms lab sessions from code-copying exercises into true logic-building experiences.", "<b>Builds Confidence:</b> Improves problem-solving skills, coding confidence, and viva readiness.", "<b>Scalable Learning:</b> Provides personalized, scalable guidance to every student in the lab."], media: { type: 'image', src: 'images/lab_assistant_impact.png' } }
+      { 
+        title: "01. Educational Gap", 
+        tag: "BEYOND COPY-PASTE CODING",
+        items: [
+          "<b>Rote Learning:</b> Students often copy lab code without understanding core logic.",
+          "<b>Viva Skill Gap:</b> Weak logic understanding leads to low viva confidence and exam stress.",
+          "<b>Instructor Overload:</b> Instructors cannot give 1-on-1 logic guidance to 60+ lab students at once."
+        ], 
+        media: { type: 'image', src: 'images/lab_assistant_problem.png' } 
+      },
+      { 
+        title: "02. Socratic AI Engine", 
+        tag: "LOGIC GUIDANCE WITHOUT SPOILERS",
+        items: [
+          "<b>Socratic Tutoring:</b> Guides students through logic with hints instead of raw code dumps.",
+          "<b>Plain-English Debugger:</b> Translates compiler errors into beginner-friendly explanations.",
+          "<b>Automated Viva Prep:</b> Automatically parses lab manuals to generate targeted viva questions."
+        ], 
+        media: { type: 'image', src: 'images/lab_assistant_solution.png' } 
+      },
+      { 
+        title: "03. Educational Impact", 
+        tag: "ONGOING MAJOR PROJECT",
+        items: [
+          "<b>Active Comprehension:</b> Shifts student mindset from code-copying to true logic building.",
+          "<b>Elevated Confidence:</b> Prepares students for lab viva sessions and technical interviews.",
+          "<b>Scalable Support:</b> Delivers personalized 24/7 AI lab assistance across programming courses."
+        ], 
+        media: { type: 'image', src: 'images/lab_assistant_impact.png' } 
+      }
     ]
   }
 };
 
 function openPPT(projectId) {
-  console.log('openPPT called with projectId:', projectId);
-  console.log('Available projects:', Object.keys(projectData));
-  
   const project = projectData[projectId];
-  if (!project) {
-    console.error('Project not found:', projectId);
-    return;
-  }
-
-  console.log('Project found:', project.title);
-  console.log('Number of slides:', project.slides.length);
+  if (!project) return;
 
   const titleElement = document.getElementById('ppt-title');
-  if (!titleElement) {
-    console.error('ppt-title element not found');
-    return;
+  if (titleElement) {
+    titleElement.innerText = project.title;
   }
 
-  titleElement.innerText = project.title;
   currentProjectSlides = project.slides;
   currentSlideIndex = 0;
   
-  console.log('Calling renderSlides...');
   renderSlides();
   
   const modal = document.getElementById('ppt-modal');
-  if (!modal) {
-    console.error('ppt-modal element not found');
-    return;
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
-  
-  console.log('Adding active class to modal');
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  console.log('Modal opened successfully');
 }
 
 function closePPT() {
-  document.getElementById('ppt-modal').classList.remove('active');
-  document.body.style.overflow = 'auto';
+  const modal = document.getElementById('ppt-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
 }
 
 function renderSlides() {
-  console.log('renderSlides called with', currentProjectSlides.length, 'slides');
-  
   const body = document.getElementById('ppt-body');
   const dotsContainer = document.getElementById('ppt-dots');
   
-  if (!body || !dotsContainer) {
-    console.error('ppt-body or ppt-dots not found');
-    return;
-  }
+  if (!body || !dotsContainer) return;
 
   body.innerHTML = '';
   dotsContainer.innerHTML = '';
 
   currentProjectSlides.forEach((slide, index) => {
-    // Create Slide
     const slideDiv = document.createElement('div');
     slideDiv.className = `ppt-slide ${index === currentSlideIndex ? 'active' : ''}`;
     
@@ -755,58 +837,45 @@ function renderSlides() {
       }
     }
 
-    let listItems = slide.items.map(item => `<li>${item.replace(/<b>(.*?)<\/b>/g, (match, p1) => `<b>${p1}</b>`)}</li>`).join('');
+    let listItems = slide.items.map(item => `<li>${item}</li>`).join('');
     
     slideDiv.innerHTML = `
       ${mediaMarkup}
       <div class="slide-panel">
+        <div class="slide-badge-row">
+          <span class="slide-step-badge">SLIDE 0${index + 1} OF 0${currentProjectSlides.length}</span>
+          ${slide.tag ? `<span class="slide-step-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary-light); border-color: rgba(6, 182, 212, 0.3);">${slide.tag}</span>` : ''}
+        </div>
         <h4>${slide.title}</h4>
         <ul>${listItems}</ul>
       </div>
     `;
     body.appendChild(slideDiv);
 
-    // Create Dot
     const dot = document.createElement('div');
     dot.className = `ppt-dot ${index === currentSlideIndex ? 'active' : ''}`;
     dot.onclick = () => goToSlide(index);
     dotsContainer.appendChild(dot);
   });
 
-  console.log('Slides rendered:', body.querySelectorAll('.ppt-slide').length);
-
-  // After DOM updated, handle videos and animate transitions
-  // Ensure videos play at 2x when present
   const videos = body.querySelectorAll('video');
-  console.log('Found', videos.length, 'videos');
   videos.forEach(v => {
     try {
-      v.playbackRate = 2.0;
+      v.playbackRate = 1.5;
       v.muted = true;
       v.loop = true;
       v.play().catch(() => {});
-    } catch (err) {
-      console.warn('Video error:', err);
-    }
+    } catch (err) {}
   });
 
-  // GSAP slide animation: rotate/slight 3D feel between active and inactive slides
   try {
     const slides = Array.from(body.querySelectorAll('.ppt-slide'));
     slides.forEach((s, i) => {
-      gsap.set(s, { transformOrigin: '50% 50% -200px', perspective: 1200 });
-    });
-
-    slides.forEach((s, i) => {
       if (i === currentSlideIndex) {
-        gsap.fromTo(s, { rotationY: -12, x: 60, opacity: 0, scale: 0.98 }, { rotationY: 0, x: 0, opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' });
-      } else {
-        gsap.to(s, { rotationY: 8, x: -40, opacity: 0, scale: 0.98, duration: 0.5, ease: 'power2.in' });
+        gsap.fromTo(s, { rotationY: -15, x: 50, opacity: 0, scale: 0.96 }, { rotationY: 0, x: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out' });
       }
     });
-  } catch (err) {
-    console.warn('GSAP animation error:', err);
-  }
+  } catch (err) {}
 }
 
 function nextSlide() {
