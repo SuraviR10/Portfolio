@@ -2198,14 +2198,7 @@ footer {
   }
   .chatbot-toggle {
     bottom: 1.5rem;
-    right: 5rem;
-    width: 48px;
-    height: 48px;
-  }
-  .back-to-top {
-    bottom: 1.5rem;
     right: 1.5rem;
-    width: 45px;
     height: 45px;
   }
 }

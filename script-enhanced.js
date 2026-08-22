@@ -46,6 +46,18 @@ try {
   }
 } catch (e) {}
 
+// Universal Email Click Handler — Opens native email app with suravimys@gmail.com
+document.addEventListener('click', (e) => {
+  const mailTarget = e.target.closest('.fa-envelope, a[href*="mailto"], .contact-email, .btn-cyber-mail');
+  if (mailTarget) {
+    const mailUrl = 'mailto:suravimys@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%94%20Suravi%20R';
+    if (mailTarget.tagName === 'A') {
+      mailTarget.setAttribute('href', mailUrl);
+    } else {
+      window.location.href = mailUrl;
+    }
+  }
+});
 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
