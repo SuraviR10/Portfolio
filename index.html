@@ -18,6 +18,12 @@
   </style>
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor">
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+  </div>
+
   <!-- Header -->
   <header>
     <div class="scroll-progress" id="scroll-progress"></div>
@@ -25,11 +31,13 @@
       <a href="#home" class="logo"><i class="fas fa-code"></i> Suravi R</a>
       <ul id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" style="color: #8b5cf6; font-weight: bold;"><i class="fas fa-file-pdf"></i> Resume</a></li>
+        <li><a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" style="color: var(--primary-light); font-weight: bold;"><i class="fas fa-file-pdf"></i> Resume</a></li>
       </ul>
       <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
@@ -47,7 +55,7 @@
   </button>
 
   <!-- Floating Resume Button -->
-  <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="floating-resume-btn" title="Download Resume" style="position: fixed; bottom: 30px; left: 30px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; padding: 12px 20px; border-radius: 30px; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); z-index: 99; text-decoration: none; transition: transform 0.3s ease;">
+  <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="floating-resume-btn" title="Download Resume">
     <i class="fas fa-download"></i> <span>Resume</span>
   </a>
 
@@ -118,6 +126,7 @@
   <!-- Hero Section -->
   <main>
     <section id="home" class="hero">
+      <canvas id="hero-canvas"></canvas>
       <div class="hero-content" data-aos="fade-right">
         <div class="hero-badge">👋 Welcome to my portfolio</div>
         <h1>Hi, I'm <span class="name-highlight">Suravi R</span></h1>
@@ -125,9 +134,9 @@
         <p class="hero-description">Information Science & Engineering student passionate about AI, DevOps, and building innovative solutions</p>
         
         <div class="hero-stats">
-          <div class="stat"><span class="stat-number">9.16</span><span class="stat-label">CGPA</span></div>
-          <div class="stat"><span class="stat-number">98%</span><span class="stat-label">NPTEL Score</span></div>
-          <div class="stat"><span class="stat-number">2 Projects</span><span class="stat-label">Award</span></div>
+          <div class="stat" data-tilt><span class="stat-number">9.16</span><span class="stat-label">CGPA</span></div>
+          <div class="stat" data-tilt><span class="stat-number">98%</span><span class="stat-label">NPTEL Score</span></div>
+          <div class="stat" data-tilt><span class="stat-number">2 Projects</span><span class="stat-label">Award</span></div>
         </div>
         
         <div class="hero-buttons">
@@ -137,9 +146,10 @@
       </div>
       
       <div class="hero-image" data-aos="fade-left">
-        <div class="profile-card">
+        <div class="profile-card" data-tilt>
           <img src="images/Self.jpg" alt="Suravi R" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400/1a243e/8b5cf6?text=Profile';">
-          <div class="profile-badges">            <span class="badge">🤖 Intelligent Systems</span>
+          <div class="profile-badges">
+            <span class="badge">🤖 Intelligent Systems</span>
             <span class="badge">⚙️ Backend & DevOps</span>
             <span class="badge">🏆 Awarded Innovator</span>
           </div>
@@ -152,13 +162,13 @@
       <h2 data-aos="fade-up">About Me</h2>
       <div class="about-container">
         <div class="about-grid">
-          <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="100">
             <div class="card-icon"><i class="fas fa-user-astronaut"></i></div>
             <h3>Who I Am</h3>
             <p>I am an Information Science & Engineering student focused on building intelligent software systems using AI, backend engineering, and modern development practices. I enjoy solving practical problems through software engineering.</p>
           </div>
           
-          <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="300">
             <div class="card-icon"><i class="fas fa-rocket"></i></div>
             <h3>Vision</h3>
             <p>To become a Software Engineer specializing in AI-powered applications and intelligent systems, building scalable and impactful solutions that solve meaningful real-world problems.</p>
@@ -172,17 +182,17 @@
       <h2 data-aos="fade-up">Experience & Internship</h2>
       <div class="about-container">
         <div class="about-grid">
-          <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="100">
             <div class="card-icon"><i class="fas fa-briefcase"></i></div>
             <h3>Future Interns</h3>
             <p><strong>Web Development Intern</strong> (Aug – Sep 2024)<br>Built responsive interfaces, improved JavaScript interactions, and enhanced user experience on production-ready web applications.</p>
           </div>
-          <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="200">
             <div class="card-icon"><i class="fas fa-rocket"></i></div>
             <h3>Ongoing Major Project</h3>
             <p><strong>AI Powered Lab Programming Assistant</strong><br>Building an interactive AI-driven EdTech system that guides students through logic building, code understanding, and viva preparation using intelligent AI-powered workflows.</p>
           </div>
-          <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="300">
             <div class="card-icon"><i class="fas fa-chart-line"></i></div>
             <h3>Impact Delivered</h3>
             <p>Focused on building intelligent software systems and backend solutions that solve meaningful real-world problems, rather than just showcasing technologies.</p>
@@ -198,19 +208,19 @@
       
       <!-- Quick Education Overview -->
       <div class="education-quick" data-aos="fade-up">
-        <div class="edu-card">
+        <div class="edu-card" data-tilt>
           <i class="fas fa-graduation-cap"></i>
           <h3>B.E. ISE</h3>
           <p>Maharaja Institute of Technology Mysore</p>
           <span>CGPA: 9.16</span>
         </div>
-        <div class="edu-card">
+        <div class="edu-card" data-tilt>
           <i class="fas fa-trophy"></i>
           <h3>NPTEL Java</h3>
           <p>Top 1% Nationwide</p>
           <span>98% Score (Gold Medal)</span>
         </div>
-        <div class="edu-card">
+        <div class="edu-card" data-tilt>
           <i class="fas fa-award"></i>
           <h3>Awards</h3>
           <p>2 Project Prizes</p>
@@ -227,7 +237,7 @@
             </div>
             <div class="stage-year">Pre-University</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-star"></i> Early Curiosity</h3>
             <p>Introduced to programming through C++ in 11th grade, sparking a lasting passion for computer science, logical problem-solving, and building intelligent systems.</p>
           </div>
@@ -241,7 +251,7 @@
             </div>
             <div class="stage-year">1st Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-globe"></i> Web Foundations</h3>
             <p>Mastered HTML and CSS fundamentals, discovering how design and functionality create engaging user experiences and practical web solutions.</p>
           </div>
@@ -255,7 +265,7 @@
             </div>
             <div class="stage-year">2nd Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-laptop-code"></i> Programming Fundamentals</h3>
             <p>Strengthened core programming skills with C and Python, focusing on algorithms, data structures, and robust software logic essential for backend engineering.</p>
           </div>
@@ -269,7 +279,7 @@
             </div>
             <div class="stage-year">3rd Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-brain"></i> Exploring Computer Science Depth</h3>
             <p>Delved into Data Structures, Algorithms, Operating Systems, DBMS, and Computer Networks, developing a deep fascination for system architecture and backend engineering.</p>
           </div>
@@ -283,7 +293,7 @@
             </div>
             <div class="stage-year">4th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-cloud-upload-alt"></i> Real World Development</h3>
             <p>Built and deployed a responsive website for Stepping Stone Academy using Netlify, gaining hands-on experience in practical web development and deployment.</p>
             <div class="stage-badge">🚀 First Deployment</div>
@@ -298,7 +308,7 @@
             </div>
             <div class="stage-year">4th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-store"></i> Building Practical Projects</h3>
             <p>Developed complex applications, including a full-stack e-commerce platform, mastering robust backend engineering and scalable frontend-backend integration.</p>
           </div>
@@ -312,7 +322,7 @@
             </div>
             <div class="stage-year">5th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-award"></i> Innovation & Recognition</h3>
             <p>Created the <strong>Smart Automated Timetable Generator</strong>, an intelligent system handling real college constraints. Won <strong>2nd Prize</strong> at the Mini Project Expo.</p>
             <div class="stage-badge">🏆 2nd Prize Winner</div>
@@ -330,7 +340,7 @@
             </div>
             <div class="stage-year">5th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-seedling"></i> Social Impact Projects</h3>
             <p>Built <strong>HerbAura – Virtual Ayurvedic Knowledge Platform</strong>, a 3D interactive garden using Three.js with AI-powered features to gamify and spread awareness about traditional Ayurvedic medicinal plants.</p>
             <div class="stage-badge">🌱 Social Impact</div>
@@ -345,7 +355,7 @@
             </div>
             <div class="stage-year">5th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-microchip"></i> AI & Intelligent Systems</h3>
             <p>Leveraged AI & ML to build a <strong>Waste Segregation System with voice assistance</strong>, earning the <strong>Best Project Award</strong>. This project showcased practical AI application for real-world problems.</p>
             <div class="stage-badge">🥇 Best Project Award</div>
@@ -363,7 +373,7 @@
             </div>
             <div class="stage-year">5th Semester</div>
           </div>
-          <div class="stage-card">
+          <div class="stage-card" data-tilt>
             <h3><i class="fas fa-trophy"></i> NPTEL Excellence - Top 1% Nationwide</h3>
             <p>Scored an exceptional <strong>98%</strong> in NPTEL's "Programming in Java", ranking in the <strong>Top 1% nationwide</strong> and earning a Gold Medal. This solidified my object-oriented design and algorithm expertise.</p>
             <div class="stage-badge">🏆 Top 1% Nationwide</div>
@@ -381,7 +391,7 @@
             </div>
             <div class="stage-year">6th Semester</div>
           </div>
-          <div class="stage-card future">
+          <div class="stage-card future" data-tilt>
             <h3><i class="fas fa-forward"></i> Continuous Growth</h3>
             <p>Currently undergoing industry training in Generative AI and preparing for placements. Continuously exploring advanced software development, intelligent systems, backend engineering, and scalable applications. The journey continues with new challenges and innovative solutions.</p>
             <div class="stage-badge">🚀 In Progress</div>
@@ -393,7 +403,7 @@
       <h3 class="subsection-title" data-aos="fade-up"><i class="fas fa-code"></i> Hackathons</h3>
       
       <div class="hackathons-grid">
-        <div class="hackathon-card" data-aos="fade-up">
+        <div class="hackathon-card" data-tilt data-aos="fade-up">
           <div class="hackathon-image">
             <img src="images/Hackathon/1st_hackathon.jpg" alt="MIT Mysore Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
           </div>
@@ -416,9 +426,9 @@
           </div>
         </div>
 
-        <div class="hackathon-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="hackathon-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <div class="hackathon-image">
-            <img src="images\Hackathon\2nd_hackthon.jpg" alt="VEC Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
+            <img src="images/Hackathon/2nd_hackthon.jpg" alt="VEC Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
           </div>
           <div class="hackathon-content">
             <div class="hackathon-header">
@@ -439,9 +449,9 @@
           </div>
         </div>
 
-        <div class="hackathon-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="hackathon-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <div class="hackathon-image">
-            <img src="images\Hackathon\3rd_hackthon.jpg" alt="Build for Mysuru Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
+            <img src="images/Hackathon/3rd_hackthon.jpg" alt="Build for Mysuru Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
           </div>
           <div class="hackathon-content">
             <div class="hackathon-header">
@@ -466,7 +476,7 @@
       <h3 class="subsection-title" data-aos="fade-up"><i class="fas fa-industry"></i> Industry Exposure</h3>
       
       <div class="visits-grid">
-        <div class="visit-card" data-aos="fade-up">
+        <div class="visit-card" data-tilt data-aos="fade-up">
           <div class="visit-image">
             <img src="images/Industry_Exposure/FANUC.jpeg" alt="FANUC India Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
           </div>
@@ -505,7 +515,7 @@
           </div>
         </div>
 
-        <div class="visit-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="visit-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <div class="visit-image">
             <img src="images/Industry_Exposure/SAP.jpeg" alt="SAP Labs Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
           </div>
@@ -544,7 +554,7 @@
           </div>
         </div>
 
-        <div class="visit-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="visit-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <div class="visit-image">
             <img src="images/Industry_Exposure/IBM.jpg" alt="IBM Meetup Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
           </div>
@@ -590,7 +600,7 @@
     <section id="projects">
       <h2 data-aos="fade-up">Featured Projects</h2>
       <div class="projects-grid">
-        <div class="project-card featured" data-aos="fade-up">
+        <div class="project-card featured" data-tilt data-aos="fade-up">
           <div class="project-header">
             <i class="fas fa-brain project-icon"></i>
             <span class="project-badge">🏆 Award Winner</span>
@@ -609,7 +619,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="25">
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="25">
           <div class="project-header">
             <i class="fas fa-graduation-cap project-icon"></i>
             <span class="project-badge">🚧 Ongoing</span>
@@ -628,7 +638,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="50">
           <div class="project-header">
             <i class="fas fa-tools project-icon"></i>
             <span class="project-badge">🛠️ VS Code Tool</span>
@@ -647,7 +657,7 @@
           </div>
         </div>
         
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <div class="project-header">
             <i class="fas fa-globe project-icon"></i>
           </div>
@@ -664,7 +674,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <div class="project-header">
             <i class="fas fa-cube project-icon"></i>
           </div>
@@ -687,7 +697,7 @@
     <section id="skills">
       <h2 data-aos="fade-up">Technical Skills</h2>
       <div class="skills-container">
-        <div class="skill-category" data-aos="fade-up">
+        <div class="skill-category" data-tilt data-aos="fade-up">
           <h3>Programming & Web</h3>
           <div class="skills-grid">
             <div class="skill-item"><i class="fab fa-java"></i> Java</div>
@@ -700,7 +710,7 @@
           </div>
         </div>
         
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-category" data-tilt data-aos="fade-up" data-aos-delay="100">
           <h3>Frameworks & Databases</h3>
           <div class="skills-grid">
             <div class="skill-item"><i class="fas fa-flask"></i> Flask</div>
@@ -711,7 +721,7 @@
           </div>
         </div>
         
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-category" data-tilt data-aos="fade-up" data-aos-delay="200">
           <h3>Tools & Core Concepts</h3>
           <div class="skills-grid">
             <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
@@ -729,7 +739,7 @@
     <section id="certificates">
       <h2 data-aos="fade-up">Certifications</h2>
       <div class="certificates-grid">
-        <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <img src="images/Certificates/Programming_In_Java.jpg" alt="NPTEL Java Programming Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Programming+in+Java';">
           <div class="certificate-info">
             <h3>Programming with Java</h3>
@@ -738,7 +748,7 @@
           </div>
         </div>
         
-        <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <img src="images/Certificates/Skyscanner.jpg" alt="Skyscanner Front-End Engineering Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Skyscanner';">
           <div class="certificate-info">
             <h3>Front-End Engineering</h3>
@@ -747,7 +757,7 @@
           </div>
         </div>
         
-        <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="300">
           <img src="images/Certificates/Prompt_Engineering.jpg" alt="LinkedIn Prompt Engineering Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Prompt+Engineering';">
           <div class="certificate-info">
             <h3>Prompt Engineering for AI</h3>
@@ -756,7 +766,7 @@
           </div>
         </div>
         
-        <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="500">
           <img src="images/Certificates/AI_for_Everyone.jpg" alt="AI for Everyone" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=AI+for+Everyone';">
           <div class="certificate-info">
             <h3>AI for Everyone</h3>
@@ -780,14 +790,14 @@
         <a href="https://github.com/SuraviR10" target="_blank"><i class="fab fa-github"></i></a>
       </div>
       <div class="contact-card-wrapper" data-aos="fade-up">
-        <div class="contact-card">
+        <div class="contact-card" data-tilt>
           <h3>Email</h3>
           <a href="mailto:suravimys@gmail.com" class="contact-email">suravimys@gmail.com</a>
         </div>
-      <div class="contact-card" style="margin-top: 20px;">
-        <h3>My Resume</h3>
-        <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-primary" style="margin-top: 10px; display: inline-block;"><i class="fas fa-download"></i> Download PDF</a>
-      </div>
+        <div class="contact-card" data-tilt style="margin-top: 20px;">
+          <h3>My Resume</h3>
+          <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-primary" style="margin-top: 10px; display: inline-block;"><i class="fas fa-download"></i> Download PDF</a>
+        </div>
       </div>
     </section>
   </main>
@@ -801,6 +811,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.23/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="three-bg.js"></script>
   <script src="script-enhanced.js"></script>
 </body>
 </html>

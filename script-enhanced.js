@@ -32,36 +32,8 @@ try {
   console.log('Lenis not available, using native scroll');
 }
 
-// Glowing cursor light effect (disabled on mobile and during scroll)
-try {
-  const isMobile = window.innerWidth <= 768;
-  if (!isMobile) {
-    const cursorLight = document.createElement('div');
-    cursorLight.className = 'cursor-light';
-    document.body.appendChild(cursorLight);
-    let isScrolling = false;
-    let scrollTimeout;
-    
-    window.addEventListener('mousemove', (e) => {
-      if (!isScrolling) {
-        gsap.to(cursorLight, { x: e.clientX, y: e.clientY, duration: 0.15, ease: 'power3.out' });
-      }
-    });
-    
-    window.addEventListener('scroll', () => {
-      isScrolling = true;
-      cursorLight.style.opacity = '0';
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-        cursorLight.style.opacity = '0.65';
-      }, 500);
-    });
-    
-    window.addEventListener('mouseout', () => { gsap.to(cursorLight, { opacity: 0, duration: 0.25 }); });
-    window.addEventListener('mouseover', () => { gsap.to(cursorLight, { opacity: 0.65, duration: 0.25 }); });
-  }
-} catch(e) {}
+// Old cursor-light replaced by new custom cursor system (see end of file)
+
 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
@@ -962,3 +934,379 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target === modal) modal.style.display = "none";
   };
 });
+
+// ========================================
+// PREMIUM VISUAL ENHANCEMENTS
+// ========================================
+
+(function premiumEnhancements() {
+  'use strict';
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return; // skip all enhancements
+
+  // --- 1. Custom Cursor & 3D Interactive Card Tilt ---
+  try {
+    const cursor = document.getElementById('custom-cursor');
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+
+    if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
+      let mouseX = 0, mouseY = 0;
+      let ringX = 0, ringY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = `${mouseX}px`;
+        dot.style.top = `${mouseY}px`;
+      });
+
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        ring.style.left = `${ringX}px`;
+        ring.style.top = `${ringY}px`;
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      const hoverTargets = 'a, button, input, textarea, select, .btn, .btn-small, ' +
+        '.project-card, .about-card, .skill-item, .hackathon-card, .visit-card, ' +
+        '.certificate-card, .suggestion-btn, .edu-card, .social-links a, ' +
+        '.back-to-top, .chatbot-toggle, .menu-toggle, .ppt-nav-btn, .ppt-dot, .modal-trigger';
+
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(hoverTargets)) {
+          document.body.classList.add('cursor-hover');
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(hoverTargets)) {
+          document.body.classList.remove('cursor-hover');
+        }
+      });
+    }
+
+    // --- Interactive 3D Card Tilt ---
+    const tiltCards = document.querySelectorAll('[data-tilt], .about-card, .project-card, .hackathon-card, .visit-card, .certificate-card, .edu-card, .profile-card, .contact-card');
+    tiltCards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -12;
+        const rotateY = ((x - centerX) / centerX) * 12;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale3d(1, 1, 1)';
+      });
+    });
+
+    // --- Header Scrolled State ---
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    });
+
+  } catch (e) {
+    console.log('Custom cursor and tilt init skipped:', e.message);
+  }
+
+  // --- 2. Section Heading Scroll Reveals ---
+  try {
+    document.querySelectorAll('section h2').forEach((heading) => {
+      gsap.fromTo(heading, 
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+
+    // Subsection titles
+    document.querySelectorAll('.subsection-title').forEach((title) => {
+      gsap.fromTo(title,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+  } catch (e) {
+    console.log('Heading reveal skipped:', e.message);
+  }
+
+  // --- 3. Scroll-triggered Card Staggers ---
+  try {
+    const cardGrids = [
+      { selector: '.projects-grid .project-card', stagger: 0.12 },
+      { selector: '.hackathons-grid .hackathon-card', stagger: 0.15 },
+      { selector: '.visits-grid .visit-card', stagger: 0.15 },
+      { selector: '.certificates-grid .certificate-card', stagger: 0.1 },
+      { selector: '.about-grid .about-card', stagger: 0.12 },
+      { selector: '.education-quick .edu-card', stagger: 0.1 },
+    ];
+
+    cardGrids.forEach(({ selector, stagger }) => {
+      const cards = document.querySelectorAll(selector);
+      if (cards.length === 0) return;
+
+      gsap.fromTo(cards,
+        { y: 50, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.7,
+          stagger: stagger,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: cards[0].parentElement,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+
+    // Journey timeline stages
+    document.querySelectorAll('.journey-stage').forEach((stage, i) => {
+      const isOdd = i % 2 === 0;
+      gsap.fromTo(stage,
+        { x: isOdd ? -40 : 40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: stage,
+            start: 'top 82%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+  } catch (e) {
+    console.log('Card staggers skipped:', e.message);
+  }
+
+  // --- 4. Parallax Depth Layers ---
+  try {
+    // Hero background blobs parallax
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      gsap.to(hero, {
+        '--parallax-y': '80px',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: hero,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      });
+    }
+
+    // Profile card subtle float
+    const profileCard = document.querySelector('.profile-card');
+    if (profileCard) {
+      gsap.to(profileCard, {
+        y: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: hero,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 2,
+        },
+      });
+    }
+  } catch (e) {
+    console.log('Parallax skipped:', e.message);
+  }
+
+  // --- 5. Stats Counter Animation ---
+  try {
+    const stats = document.querySelectorAll('.stat-number');
+    stats.forEach((stat) => {
+      const text = stat.textContent.trim();
+      // Parse numeric value
+      const match = text.match(/([\d.]+)/);
+      if (!match) return;
+
+      const target = parseFloat(match[1]);
+      const suffix = text.replace(match[1], '').trim(); // e.g., "%", " Projects"
+      const isDecimal = text.includes('.');
+      const originalText = text;
+
+      // Set initial display to 0
+      stat.textContent = isDecimal ? '0.00' + suffix : '0' + suffix;
+
+      const counter = { val: 0 };
+      gsap.to(counter, {
+        val: target,
+        duration: 2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: stat,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+        onUpdate: () => {
+          if (isDecimal) {
+            stat.textContent = counter.val.toFixed(2) + suffix;
+          } else {
+            stat.textContent = Math.round(counter.val) + suffix;
+          }
+        },
+        onComplete: () => {
+          // Restore original text to preserve exact formatting
+          stat.textContent = originalText;
+        },
+      });
+    });
+  } catch (e) {
+    console.log('Stats counter skipped:', e.message);
+  }
+
+  // --- 6. Navigation Active State ---
+  try {
+    const navLinksAll = document.querySelectorAll('nav ul li a[href^="#"]');
+    const sections = [];
+
+    navLinksAll.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const section = document.querySelector(href);
+      if (section) {
+        sections.push({ link, section });
+      }
+    });
+
+    sections.forEach(({ link, section }) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => setActiveLink(link),
+        onEnterBack: () => setActiveLink(link),
+      });
+    });
+
+    function setActiveLink(activeLink) {
+      navLinksAll.forEach((l) => l.classList.remove('active'));
+      activeLink.classList.add('active');
+    }
+  } catch (e) {
+    console.log('Nav active state skipped:', e.message);
+  }
+
+  // --- 7. Skill Items Magnetic Hover ---
+  try {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.skill-item').forEach((item) => {
+        item.addEventListener('mousemove', (e) => {
+          const rect = item.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          gsap.to(item, {
+            x: x * 0.2,
+            y: y * 0.2,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+
+        item.addEventListener('mouseleave', () => {
+          gsap.to(item, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+        });
+      });
+    }
+  } catch (e) {
+    console.log('Magnetic hover skipped:', e.message);
+  }
+
+  // --- 8. Smooth section reveal for contact section ---
+  try {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const socialLinks = contactSection.querySelectorAll('.social-links a');
+      gsap.fromTo(socialLinks,
+        { y: 20, opacity: 0, scale: 0.8 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: contactSection,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    }
+  } catch (e) {
+    console.log('Contact reveal skipped:', e.message);
+  }
+
+  // --- 9. Skills grid section reveal ---
+  try {
+    document.querySelectorAll('.skill-category').forEach((category) => {
+      const items = category.querySelectorAll('.skill-item');
+      gsap.fromTo(items,
+        { y: 20, opacity: 0, rotationX: -15 },
+        {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: category,
+            start: 'top 82%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+  } catch (e) {
+    console.log('Skills reveal skipped:', e.message);
+  }
+
+  console.log('Premium visual enhancements loaded! ✨');
+})();
