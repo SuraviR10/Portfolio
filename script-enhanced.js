@@ -129,7 +129,7 @@ const knowledgeBase = {
   virtualGardenProject: {
     keywords: ['virtual garden', 'herbaura', 'ayurvedic', '3d garden', 'khashayam', 'video', 'demo', 'youtube'],
     responses: [
-      "🌿 <b>HerbAura – Virtual Ayurvedic Knowledge Platform:</b><br>An interactive 3D WebGL garden built with Three.js & Python AI. Features interactive plant exploration and an AI Khashayam recipe maker. 🎥 <b>Watch the live video directly on the website under HerbAura!</b>"
+      "🌿 <b>HerbAura – Virtual Ayurvedic Knowledge Platform:</b><br>An interactive 3D WebGL garden built with Three.js & Python AI during VEC Hackathon. Features plant exploration and an AI Khashayam maker.<br>🎥 <b>YouTube Video:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>https://youtu.be/V2mUIwrPJEc</a> (Embedded directly on the website under HerbAura!)"
     ]
   },
   labAssistantProject: {
