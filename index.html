@@ -13,11 +13,25 @@
       overflow-x: hidden;
       max-width: 100vw;
       min-height: 100vh;
-      background-color: #0f172a; /* Slate 900 dark theme fallback */
+      background-color: #060811;
     }
   </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-ring"></div>
+      <span class="preloader-text"><i class="fas fa-code"></i></span>
+    </div>
+  </div>
+
+  <!-- Background Decoration Layers -->
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+  <div class="bg-ambient-orb bg-orb-1" aria-hidden="true"></div>
+  <div class="bg-ambient-orb bg-orb-2" aria-hidden="true"></div>
+  <div class="bg-ambient-orb bg-orb-3" aria-hidden="true"></div>
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="custom-cursor">
     <div class="cursor-dot" id="cursor-dot"></div>
