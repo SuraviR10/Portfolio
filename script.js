@@ -7,10 +7,17 @@ AOS.init({
 
 // Typing Effect
 new Typed('#typing-effect', {
-  strings: ['AI Engineer', 'Cloud Architect', 'Problem Solver', 'Full Stack Developer'],
-  typeSpeed: 80,
-  backSpeed: 40,
-  backDelay: 2000,
+  strings: [
+    'Information Science & Engineering Student @ MIT Mysore',
+    'AI & Intelligent Systems Enthusiast',
+    'Full-Stack Developer & Backend Builder',
+    'Creator of DARTX (VS Code Extension)',
+    'Building AI Lab Assistant & Socratic Tools',
+    'Passionate Problem Solver & Continuous Learner'
+  ],
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 2200,
   loop: true
 });
 
@@ -39,93 +46,144 @@ const suggestionBtns = document.querySelectorAll('.suggestion-btn');
 
 // Enhanced Intelligent Chatbot Knowledge Base
 const knowledgeBase = {
-  // Personal & Background
-  personal: {
-    keywords: ['who', 'about', 'yourself', 'background', 'introduce', 'tell me', 'describe', 'profile', 'bio'],
+  about: {
+    keywords: ['who', 'about', 'yourself', 'background', 'introduce', 'tell me', 'describe', 'profile', 'bio', 'who are you'],
     responses: [
-      "Suravi R is an exceptional Information Science & Engineering student at MIT Mysore with an outstanding 9.12 CGPA. She's a passionate technologist who combines academic excellence with practical innovation. Her journey is marked by consistent high performance - from scoring 93.92% in SSLC to 90% in PUC, and now maintaining top grades in engineering. What makes her truly special is her ability to turn theoretical knowledge into real-world solutions!",
-      "Meet Suravi R - a brilliant mind in the world of technology! She's not just another engineering student; she's a problem-solver, innovator, and award-winner. With a stellar 9.12 CGPA at MIT Mysore, she's proven her academic prowess. But what really sets her apart is her passion for AI and Cloud Computing, combined with her ability to build practical, impactful projects. She's the kind of person who doesn't just learn technology - she masters it and creates with it!"
+      "👋 <b>Suravi R</b> is an Information Science & Engineering student at <b>Maharaja Institute of Technology Mysore (MIT Mysore)</b>.<br>She specializes in building intelligent software systems, scalable backend architectures, developer automation tools, and 3D web applications. She loves solving real-world challenges through clean engineering!",
+      "🚀 Meet Suravi R — a passionate software engineer and problem solver focused on AI systems, full-stack web development, and algorithmic optimization. She actively builds production tools, extension utilities, and interactive educational platforms."
     ]
   },
   
-  // Education & Academic Excellence
   education: {
-    keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'school', 'academic', 'grades', 'score', 'mit', 'mysore'],
+    keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'school', 'academic', 'grades', 'score', 'mit', 'mysore', 'sslc', 'puc', '10th', '12th', 'branch', 'ise'],
     responses: [
-      "Suravi's academic journey is nothing short of impressive! She's currently pursuing B.E. in Information Science & Engineering at the prestigious MIT Mysore with an exceptional 9.12 CGPA. Her academic excellence started early - she scored an outstanding 93.92% in SSLC and maintained her momentum with 90% in PUC. This consistent high performance demonstrates her dedication, intelligence, and strong work ethic. She's not just studying technology; she's excelling at it!",
-      "Talk about academic excellence! Suravi is crushing it at MIT Mysore with a stellar 9.12 CGPA in Information Science & Engineering. Her academic track record speaks volumes - 93.92% in SSLC, 90% in PUC, and now maintaining top grades in one of India's premier engineering institutions. She's focused on cutting-edge subjects like AI, Cloud Computing, and Data Structures, proving she's not just book-smart but also future-ready!"
+      "🎓 <b>Academic Background:</b><br>• <b>B.E. in Information Science & Engineering:</b> MIT Mysore — <b>9.12 CGPA</b> (2023 – 2027)<br>• <b>Pre-University (PUC PCMC):</b> <b>90.18%</b><br>• <b>SSLC Schooling:</b> <b>93.92%</b><br>• <b>Key Core Subjects:</b> Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, and Java OOP."
     ]
   },
   
-  // Skills & Technical Expertise
+  experience: {
+    keywords: ['experience', 'internship', 'intern', 'work experience', 'job', 'future interns', 'role', 'work'],
+    responses: [
+      "💼 <b>Internship Experience:</b><br>• <b>Web Development Intern at Future Interns</b> (Aug – Sep 2024)<br>Built responsive web interfaces, enhanced JavaScript interactions, optimized cross-browser layouts, and contributed to production-ready web features."
+    ]
+  },
+  
   skills: {
-    keywords: ['skills', 'programming', 'languages', 'technologies', 'tools', 'know', 'tech', 'technical', 'code', 'coding', 'expertise', 'proficient', 'master'],
+    keywords: ['skills', 'programming', 'languages', 'technologies', 'tools', 'know', 'tech', 'technical', 'code', 'coding', 'stack', 'python', 'java', 'sql', 'javascript', 'typescript', 'frameworks', 'databases'],
     responses: [
-      "Suravi is a true tech polyglot with an impressive skill arsenal! She's proficient in Python, Java, C/C++, JavaScript, HTML5, and CSS3 - covering everything from systems programming to web development. She is hands-on with Docker and Kubernetes for modern DevOps. She's also skilled in SQL/MySQL for databases, Git for version control, and is actively working on Machine Learning and AI Development. This diverse skill set makes her incredibly versatile and valuable!",
-      "When it comes to technical skills, Suravi has it all! She's mastered multiple programming languages including Python (perfect for AI/ML), Java (enterprise-grade applications), C/C++ (system-level programming), and JavaScript (modern web development). She's comfortable with containerization (Docker, Kubernetes), database management (SQL/MySQL), and version control (Git). Plus, she's diving deep into Machine Learning and AI Development - the technologies shaping our future. She's not just learning these skills; she's applying them in real projects!"
+      "💪 <b>Technical Skills & Stack:</b><br>• <b>Languages:</b> Java, Python, C, C++, SQL, JavaScript (ES6+), TypeScript<br>• <b>Frameworks & Web:</b> Flask, Node.js, HTML5, CSS3, Three.js / WebGL, FastAPI (learning)<br>• <b>Databases:</b> Supabase, MySQL, PostgreSQL<br>• <b>Developer Tools:</b> Git, GitHub, VS Code Extension API, Docker (learning)<br>• <b>Core Fundamentals:</b> DSA, Object-Oriented Programming, OS, DBMS, Computer Networks."
     ]
   },
   
-  // Projects & Practical Work
   projects: {
-    keywords: ['projects', 'work', 'built', 'developed', 'created', 'portfolio', 'made', 'application', 'system', 'mitm', 'timetable', 'stepping stone', 'food', 'gemini', 'assistant', 'code assist', 'dartx'],
+    keywords: ['projects', 'work', 'built', 'developed', 'portfolio', 'application', 'system', 'showcase', 'apps', 'what have you built'],
     responses: [
-      "Suravi's projects showcase her ability to solve real-world problems! Her crown jewel is MITM-Time Evolver, an Automatic Timetable Generation System that won 2nd Prize at the Mini Project Expo. She's also built DARTX (Dependency Analysis, Resolution, Tracking & eXecution), an intelligent VS Code extension published on the marketplace that automatically detects and resolves dependency issues. Additionally, she's built the Stepping Stone Academy Website and a Food Ordering Platform. Each project demonstrates her ability to go from concept to a production-ready working solution!",
-      "Let me tell you about Suravi's impressive project portfolio! First, there's MITM-Time Evolver - an award-winning automatic timetable generator. Then there's DARTX, a published VS Code extension acting as a smart dependency manager for Python and Node.js. She has also developed the Stepping Stone Academy Website, showcasing front-end skills, and a Food Ordering Platform. What's remarkable is the diversity - from algorithmic problem-solving to user interface design to developer tooling. She's a complete developer!"
+      "🚀 <b>Suravi's Featured Projects:</b><br>1. ⏰ <b>Smart Automated Timetable Generator:</b> Genetic algorithm scheduler resolving room/faculty conflicts.<br>2. 🛠️ <b>DARTX – Smart Dependency Manager:</b> Published VS Code Extension for 1-click dependency fixes.<br>3. 🌿 <b>HerbAura:</b> 3D Ayurvedic Virtual Garden with AI Kashayam maker & WebGL models.<br>4. 🎓 <b>AI Powered Lab Programming Assistant:</b> Socratic logic-building tutor for student coding labs.<br>5. 🌐 <b>Stepping Stone Academy Website:</b> Live, responsive school platform deployed on Netlify.<br><br>👉 <i>Ask me about any specific project (e.g., 'Tell me about DARTX') to learn more!</i>"
     ]
   },
   
-  // Achievements & Recognition
+  timetableProject: {
+    keywords: ['timetable', 'time table', 'schedule', 'time evolver', 'mitm-time', 'timetable generator', 'genetic', 'genetic algorithm'],
+    responses: [
+      "⏰ <b>Smart Automated Timetable Generator:</b><br>An intelligent academic scheduling engine powered by <b>Genetic Algorithms</b>. It models complex constraints like room allocations, faculty workloads, and batch schedules to generate conflict-free timetables in under 2 minutes (down from 3 weeks manually).<br>• <b>Tech Stack:</b> Python, Flask, Supabase, Genetic Algorithm.<br>• <b>Recognition:</b> Won <b>2nd Prize</b> at Mini Project Expo.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Automatic_TimeTable_Generator.git' target='_blank' style='color: var(--secondary-light);'>Automatic_TimeTable_Generator</a>"
+    ]
+  },
+  
+  dependencyManager: {
+    keywords: ['dependency', 'dartx', 'vs code extension', 'vs code tool', 'dependify', 'package', 'dependency manager', 'extension'],
+    responses: [
+      "🛠️ <b>DARTX – Smart Dependency Manager:</b><br>An intelligent <b>VS Code Extension</b> published on the Visual Studio Marketplace. It silently monitors terminal execution streams, catches missing package tracebacks, maps tricky aliases (e.g., `cv2` → `opencv-python`, `PIL` → `Pillow`), and provides secure 1-click package installs directly within the editor.<br>• <b>Tech Stack:</b> TypeScript, Node.js, VS Code API.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>Dependency_Manager</a>"
+    ]
+  },
+  
+  virtualGardenProject: {
+    keywords: ['virtual garden', 'herbaura', 'ayurvedic', '3d garden', 'khashayam', 'video', 'demo', 'youtube', 'garden', 'plants'],
+    responses: [
+      "🌿 <b>HerbAura – Virtual Ayurvedic Knowledge Platform:</b><br>An interactive 3D WebGL garden built during the VEC Hackathon. Features Three.js 3D plant models, botanical quizzes, interactive games, and an AI-powered Kashayam maker that analyzes medicinal herb combinations.<br>• <b>Tech Stack:</b> Three.js, WebGL, Python, JavaScript.<br>• 🎥 <b>YouTube Video:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>Watch Demo on YouTube</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/HerbAura-Virtual-Ayurvedic-Garden.git' target='_blank' style='color: var(--secondary-light);'>HerbAura Repo</a>"
+    ]
+  },
+  
+  labAssistantProject: {
+    keywords: ['lab assistant', 'programming assistant', 'socratic', 'viva', 'viva prep', 'edtech', 'lab'],
+    responses: [
+      "🎓 <b>AI Powered Lab Programming Assistant:</b><br>An ongoing major EdTech project designed for computer science programming labs. Uses a <b>Socratic guidance engine</b> to provide progressive reasoning hints and plain-English compiler error translations instead of giving away direct code answers. Also automatically generates Viva preparation questions.<br>• <b>Tech Stack:</b> Python, Flask, Socratic AI Engine.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git' target='_blank' style='color: var(--secondary-light);'>Ai-Programming-Lab-Assistant</a>"
+    ]
+  },
+  
+  steppingStoneProject: {
+    keywords: ['stepping stone', 'academy website', 'school website', 'montessori', 'netlify', 'school'],
+    responses: [
+      "🌐 <b>Stepping Stone Academy Website:</b><br>A fully responsive, high-performance website created and deployed for a Montessori school in Mysore. Features intuitive navigation, curriculum overviews, admissions guidelines, and mobile-first layouts.<br>• <b>Tech Stack:</b> HTML5, CSS3, JavaScript, Netlify.<br>• <b>Live Site:</b> <a href='https://the-stepping-stone-academy-mysore.netlify.app/' target='_blank' style='color: var(--secondary-light);'>the-stepping-stone-academy-mysore.netlify.app</a>"
+    ]
+  },
+  
   achievements: {
-    keywords: ['achievements', 'awards', 'prizes', 'accomplishments', 'recognition', 'won', 'winner', 'success', 'nptel', 'gold', 'top 1'],
+    keywords: ['achievements', 'awards', 'prizes', 'accomplishments', 'recognition', 'won', 'winner', 'gold medal', 'prizes'],
     responses: [
-      "Suravi's achievements are truly outstanding! She won 2nd Prize at the Mini Project Expo for her MITM-Time Evolver project - competing against numerous talented students. But here's the real showstopper: she scored an exceptional 98% in the NPTEL Java Programming course, placing her in the Top 1% nationwide and earning a Gold Medal! That's competing against thousands of students across India. She has completed prestigious certifications from Skyscanner and LinkedIn. These aren't just certificates; they're proof of her exceptional abilities and dedication!",
-      "When it comes to achievements, Suravi is in a league of her own! Her 98% score in NPTEL Java Programming placed her in the Top 1% nationwide - that's Gold Medal territory! She won 2nd Prize at the Mini Project Expo, proving her practical skills match her theoretical knowledge. She completed Skyscanner's Front-End Software Engineering program, and earned LinkedIn's Prompt Engineering certification. Each achievement represents hours of hard work, dedication, and excellence. She doesn't just participate; she excels!"
+      "🏆 <b>Key Achievements & Recognitions:</b><br>• <b>NPTEL Java Programming:</b> <b>98% Score</b>, <b>Top 1% Nationwide</b> & Elite+Gold Medal.<br>• <b>Mini Project Expo:</b> <b>2nd Prize Winner</b> for Smart Automated Timetable Generator.<br>• <b>Best Project Award:</b> Awarded for AI-driven Waste Segregation System with Voice Assistance.<br>• <b>Published Tool:</b> Published DARTX extension on the VS Code Marketplace."
     ]
   },
   
-  // Certifications
   certificates: {
-    keywords: ['certificates', 'certifications', 'certified', 'credentials', 'course', 'training', 'coursera', 'skyscanner', 'linkedin'],
+    keywords: ['certificates', 'certifications', 'certified', 'nptel', 'skyscanner', 'linkedin', 'coursera', 'credentials'],
     responses: [
-      "Suravi's certification portfolio is impressive and strategic! Her NPTEL Java Programming certification with 98% (Top 1%, Gold Medal) is exceptional. She completed Skyscanner's Front-End Software Engineering Job Simulation, gaining industry-relevant experience. And her LinkedIn certification in Prompt Engineering for Generative AI shows she's staying ahead of the AI curve. These aren't random certificates; they're carefully chosen credentials that demonstrate expertise in high-demand areas!",
-      "Let's talk about Suravi's strategic approach to certifications! The NPTEL Java certification with 98% score (Top 1% nationwide, Gold Medal) is phenomenal - that's competing against thousands! Skyscanner's Front-End Engineering certification shows she can work with industry standards. And her Prompt Engineering for Generative AI certification from LinkedIn proves she's at the forefront of AI technology. Each certification adds real value to her skill set and demonstrates her commitment to continuous learning!"
+      "📜 <b>Verified Certifications:</b><br>• <b>Programming in Java</b> — NPTEL (98%, Top 1% Elite+Gold)<br>• <b>Front-End Software Engineering</b> — Skyscanner (Forage Job Simulation)<br>• <b>Prompt Engineering for AI</b> — LinkedIn Learning<br>• <b>AI for Everyone</b> — Coursera"
     ]
   },
   
-  // Career Goals & Vision
-  career: {
-    keywords: ['career', 'goals', 'future', 'vision', 'aspiration', 'dream', 'want', 'plan', 'ambition', 'looking for'],
+  hobbies: {
+    keywords: ['hobbies', 'hobby', 'interests', 'free time', 'singing', 'drawing', 'travel', 'travelling', 'passions', 'spare time'],
     responses: [
-      "Suravi has a clear and exciting vision for her future! She's passionate about building AI-driven systems and cloud engineering solutions that create real-world impact. Her goal is to work on cutting-edge technology projects that solve meaningful problems. She's particularly interested in the intersection of AI and Cloud Computing - two of the most transformative technologies of our time. With her strong foundation, practical experience, and continuous learning mindset, she's perfectly positioned to become a leader in this space. She's not just looking for a job; she's building a career in innovation!",
-      "Suravi's career vision is both ambitious and achievable! She aims to specialize in AI-driven systems and cloud engineering, focusing on scalable, intelligent solutions that make a difference. She's not content with just using technology - she wants to push its boundaries. Her interest in AI and Cloud Computing positions her at the forefront of digital transformation. With her proven track record of academic excellence, award-winning projects, and continuous skill development, she's on track to become a sought-after professional in the tech industry. She's building the future, one project at a time!"
+      "🎨 <b>Hobbies & Personal Interests:</b><br>Outside of software development, Suravi enjoys **singing**, **drawing occasionally**, and **travelling** to explore new places and viewpoints. Creative pursuits keep her energized, curious, and balanced!"
     ]
   },
   
-  // Strengths & What Makes Her Special
   strengths: {
-    keywords: ['strengths', 'special', 'unique', 'stand out', 'different', 'best', 'good at', 'strong', 'advantage', 'why hire'],
+    keywords: ['strengths', 'personality', 'work style', 'what are you like', 'soft skills', 'characteristics', 'mindset', 'qualities'],
     responses: [
-      "What makes Suravi truly exceptional? It's the perfect combination of academic excellence (9.12 CGPA), practical skills (award-winning projects), and continuous growth (multiple certifications). She's not just a theoretical learner - she applies knowledge to build real solutions. Her 98% NPTEL score (Top 1%) proves she can compete at the highest level. Her project wins show she can deliver results. Her diverse skill set from Python to Machine Learning makes her incredibly versatile. But most importantly, she has that rare quality of being both a fast learner and a problem solver. She doesn't just complete tasks; she finds better ways to do them!",
-      "Suravi stands out for several compelling reasons! First, her consistent excellence - from 93.92% in SSLC to 9.12 CGPA in engineering. Second, her practical impact - building award-winning projects that solve real problems. Third, her competitive edge - Top 1% nationwide in NPTEL. Fourth, her modern skill set - AI, Cloud, DevOps, Full Stack. Fifth, her learning agility - constantly adding new certifications and skills. But what really sets her apart is her mindset: she's not just learning technology; she's mastering it to create innovative solutions. She's the complete package - smart, skilled, proven, and passionate!"
+      "🌟 <b>Core Strengths & Mindset:</b><br>• <b>Fast & Adaptive Learner:</b> Quickly masters new tools, frameworks, and engineering patterns.<br>• <b>Analytical Problem Solver:</b> Methodically dissects complex logic into elegant, practical solutions.<br>• <b>Strong CS Fundamentals:</b> Grounded in clean code, algorithmic efficiency, and modular design.<br>• <b>Collaborative Team Member:</b> Enjoys peer code reviews, hackathons, and delivering real value."
     ]
   },
   
-  // Contact & Collaboration
+  career: {
+    keywords: ['career', 'goals', 'future', 'vision', 'aspiration', 'aim', 'plan', 'dream', 'target', 'sde', 'roles'],
+    responses: [
+      "🎯 <b>Career Aspirations:</b><br>Suravi aims to work as a **Software Development Engineer (SDE)** or **AI Systems Engineer**, building robust, scalable backend architectures and intelligent software that create positive real-world impact at innovative tech organizations."
+    ]
+  },
+  
+  hiring: {
+    keywords: ['hire', 'why hire', 'recruiter', 'hr', 'candidate', 'fit', 'role', 'interview', 'special', 'stand out', 'why should we hire'],
+    responses: [
+      "💼 <b>Why Hire Suravi R?</b><br>1. <b>Solid Engineering Discipline:</b> Strong grasp of Data Structures, OOP, OS, and Database architectures.<br>2. <b>Proven Practical Builder:</b> Published a VS Code Extension, built complex optimization algorithms, and deployed live web systems.<br>3. <b>Fast Learner & Adaptable:</b> Quick to ramp up on new stacks across AI, Cloud, and DevOps.<br>4. <b>Ready for Impact:</b> Open for SDE, Full-Stack, and AI Engineering roles and internships!"
+    ]
+  },
+  
+  hackathons: {
+    keywords: ['hackathon', 'hackathons', 'vec', 'agroforecast', 'build for mysuru', 'competition', 'onemysuru'],
+    responses: [
+      "💡 <b>Hackathon Participation:</b><br>1. <b>MIT Mysore Hackathon:</b> Built <b>AgroForeCast</b> (24-hour weather & crop guidance for farmers).<br>2. <b>VEC Hackathon:</b> Developed <b>HerbAura</b> (3D WebGL plant explorer with AI herbal scoring).<br>3. <b>Build for Mysuru Hackathon:</b> Designed <b>OneMysuru</b> (unified digital ecosystem for local tourism & commerce)."
+    ]
+  },
+  
+  industrial: {
+    keywords: ['industrial', 'visit', 'visits', 'fanuc', 'sap', 'factory', 'exposure', 'ibm'],
+    responses: [
+      "🏭 <b>Industry Exposure & Visits:</b><br>• <b>FANUC India:</b> Explored industrial robotics, CNC systems, and factory automation.<br>• <b>SAP Labs:</b> Studied enterprise cloud software, SaaS architectures, and large-scale data systems.<br>• <b>IBM Meetup:</b> Gained insights into Agentic AI frameworks, LLM security (OWASP), and developer tooling."
+    ]
+  },
+  
   contact: {
-    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'social', 'message', 'talk', 'hire', 'recruit'],
+    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'message', 'mail'],
     responses: [
-      "Interested in connecting with Suravi? Great choice! You can reach her via email at suravimys@gmail.com for professional inquiries and opportunities. Connect with her on LinkedIn at linkedin.com/in/suravir/ to see her professional journey and network. Check out her code and projects on GitHub at github.com/SuraviR10 to see her work in action. She's always open to discussing exciting opportunities, collaborative projects, and innovative ideas. Whether you're looking for a talented developer, a project collaborator, or just want to connect with a passionate technologist, Suravi is approachable and responsive!",
-      "Want to get in touch with Suravi? Here's how! Email her at suravimys@gmail.com - she's professional and responsive. Connect on LinkedIn (linkedin.com/in/suravir/) to see her achievements and professional network. Explore her GitHub (github.com/SuraviR10) to see her coding skills firsthand. She's open to internship opportunities, project collaborations, full-time positions, and networking with fellow tech enthusiasts. Don't hesitate to reach out - she's friendly, professional, and always excited to discuss technology and opportunities!"
+      "📬 <b>Get In Touch with Suravi:</b><br>• <b>Email:</b> <a href='mailto:suravimys@gmail.com' style='color: var(--secondary-light);'>suravimys@gmail.com</a><br>• <b>LinkedIn:</b> <a href='https://linkedin.com/in/suravir/' target='_blank' style='color: var(--secondary-light);'>linkedin.com/in/suravir</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10</a>"
     ]
   },
   
-  // Personality & Work Style
-  personality: {
-    keywords: ['personality', 'person', 'character', 'work style', 'team', 'collaborate', 'attitude', 'approach'],
+  resume: {
+    keywords: ['resume', 'cv', 'download', 'pdf', 'document'],
     responses: [
-      "Suravi is not just technically brilliant - she's also a great person to work with! She's a fast learner who adapts quickly to new technologies and challenges. Her problem-solving approach is methodical yet creative. She's detail-oriented (evident from her high CGPA) but also sees the big picture (evident from her project choices). She's self-motivated (look at all those certifications!) but also collaborative. Her consistent academic and project success shows she's reliable and delivers quality work. She's the kind of person who brings both technical excellence and positive energy to any team!",
-      "Let me tell you about Suravi's work style and personality! She's incredibly driven - her 9.12 CGPA and multiple certifications prove she doesn't settle for mediocrity. She's a problem-solver at heart, always looking for elegant solutions to complex challenges. She's detail-oriented yet efficient, balancing quality with productivity. Her diverse project portfolio shows she's versatile and adaptable. She's a continuous learner who stays updated with latest technologies. And most importantly, she's passionate about what she does - technology isn't just her field of study; it's her passion. She's the kind of person who makes teams better!"
+      "📄 <b>Resume Download:</b><br>You can download Suravi's resume directly here: <a href='Resume_of_SuraviR.pdf' download class='btn btn-small btn-primary' style='display:inline-flex; margin-top:6px; color:#fff;'><i class='fas fa-download'></i> Download Resume PDF</a>"
     ]
   }
 };
@@ -258,10 +316,8 @@ function getBotResponse(message) {
   
   // Intelligent fallback - try to be helpful and positive
   const fallbackResponses = [
-    "That's an interesting question! While I don't have specific information about that, I can tell you that Suravi is an exceptional technologist with a 9.12 CGPA, award-winning projects, and Top 1% NPTEL ranking. What specific aspect would you like to know more about - her skills, projects, achievements, or career goals?",
-    "Great question! Let me help you better. Suravi excels in many areas - she's a brilliant student (9.12 CGPA) and an award-winning developer (2nd Prize at Mini Project Expo). Would you like to know more about her technical skills, academic achievements, or impressive projects?",
-    "I'd love to give you the best answer! Suravi has an amazing profile - from her Top 1% NPTEL ranking to her AI and Cloud Computing expertise. Could you be more specific? Are you interested in her education, technical skills, project portfolio, certifications, or career aspirations?",
-    "Interesting! While I might not have covered that exact angle, I can tell you Suravi is incredibly talented! She combines academic excellence (9.12 CGPA) with practical skills (Python, Java, ML) and proven results (award-winning projects). What would you like to explore - her strengths, achievements, or technical expertise?"
+    "💡 I can help you explore Suravi's **projects** (DARTX, Timetable Generator, AI Lab Assistant, HerbAura), **skills**, **internship experience**, **education**, or **contact details**. What would you like to know?",
+    "🤖 Feel free to ask me about Suravi's technical stack, project architecture, hackathons, or how to get in touch!"
   ];
   
   return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];

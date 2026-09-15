@@ -77,6 +77,11 @@ KNOWLEDGE_BASE = {
         "priority": 5,
         "response": "DARTX – Smart Dependency Manager is an intelligent VS Code extension that automatically detects dependency and environment issues in Python and Node.js projects, analyzes root causes, validates packages, and assists developers with secure, one-click dependency resolution, enhancing developer productivity. It is published on the VS Code Marketplace."
     },
+    "experience": {
+        "keywords": ["experience", "internship", "intern", "work experience", "job", "future interns", "role", "work"],
+        "priority": 4,
+        "response": "I worked as a Web Development Intern at Future Interns (Aug – Sep 2024), where I built responsive web interfaces, enhanced JavaScript interactions, optimized cross-browser layouts, and contributed to production-ready web features."
+    },
     "journey": {
         "keywords": ["journey", "growth", "timeline", "story", "path", "progression", "evolution", "started", "began", "semester", "stage"],
         "response": "My journey began with C++ in 11th grade, progressing through web development, strong programming foundations, deep CS concepts, real-world deployments, and award-winning innovation in AI and intelligent systems. I am continuously focused on growth in AI-powered applications and scalable software."
