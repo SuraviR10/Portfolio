@@ -3,89 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Powered Lab Programming Assistant — Suravi R</title>
+  <title>SMART LAB — AI-Powered C Programming Lab Assistant & Assessment System — Suravi R</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="project-detail-body">
 
-  <!-- Floating Navigation Island -->
+  <!-- Navigation Bar -->
   <nav class="project-nav-bar">
     <a href="index.html#projects" class="logo"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: white;">🎓 AI Lab Assistant</div>
-    <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" target="_blank" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
+    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">🎓 SMART LAB Assistant</div>
+    <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
   </nav>
 
-  <main class="project-container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 5% 5rem;">
+  <main class="project-container" style="max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem;">
     <!-- Hero Banner -->
     <section class="project-detail-hero">
-      <div class="hero-badge">🚧 Ongoing Major EdTech Project</div>
-      <h1 class="name-highlight">AI Powered Lab Programming Assistant</h1>
-      <p class="project-detail-subtitle">A Socratic AI tutor designed for computer science programming labs that guides students through logic building with progressive hints, translates compiler tracebacks into plain English, and generates Viva exam questions.</p>
+      <div class="availability-badge" style="display: inline-flex; margin-bottom: 1rem;">
+        <span class="status-dot-pulse"></span>
+        <span>Major Academic System & Automated Assessment Engine</span>
+      </div>
+      <h1 class="name-highlight">SMART LAB: AI-Powered C Programming Lab Assistant</h1>
+      <p class="project-detail-subtitle">
+        An intelligent academic laboratory assessment platform that combines GCC/MinGW automated compilation, regex/AST error translation into plain English, dual-tier test case evaluation (public + hidden), and automated lab manual PDF extraction.
+      </p>
       
       <div class="tech-stack-row">
-        <span class="tech-pill"><i class="fas fa-robot"></i> Socratic AI Engine</span>
-        <span class="tech-pill"><i class="fab fa-python"></i> Python</span>
-        <span class="tech-pill"><i class="fas fa-flask"></i> Flask Framework</span>
-        <span class="tech-pill"><i class="fas fa-graduation-cap"></i> EdTech Pedagogy</span>
+        <span class="tech-pill"><i class="fab fa-python"></i> Python Backend</span>
+        <span class="tech-pill"><i class="fas fa-flask"></i> Flask / FastAPI</span>
+        <span class="tech-pill"><i class="fas fa-terminal"></i> GCC / MinGW Toolchain</span>
+        <span class="tech-pill"><i class="fas fa-vial"></i> Test Case Engine</span>
+        <span class="tech-pill"><i class="fas fa-database"></i> SQLite Problem Bank</span>
       </div>
 
       <!-- Quick Impact Stats -->
       <div class="stats-row">
-        <div class="stat" data-tilt>
-          <span class="stat-number">No Spoilers</span>
-          <span class="stat-label">Socratic Pedagogy</span>
+        <div class="stat-card-compact">
+          <span class="stat-number">GCC Native</span>
+          <span class="stat-label">Automated Compilation</span>
         </div>
-        <div class="stat" data-tilt>
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Lab Guidance</span>
+        <div class="stat-card-compact">
+          <span class="stat-number">Dual-Tier</span>
+          <span class="stat-label">Public & Hidden Tests</span>
         </div>
-        <div class="stat" data-tilt>
-          <span class="stat-number">Viva Prep</span>
-          <span class="stat-label">Automated Questions</span>
+        <div class="stat-card-compact">
+          <span class="stat-number">PDF Parser</span>
+          <span class="stat-label">Lab Syllabus Extraction</span>
         </div>
       </div>
     </section>
 
-    <!-- Structured 3-Card Overview -->
-    <section class="content-section">
-      <h2><i class="fas fa-layer-group"></i> Project Architecture & Briefing</h2>
-      <div class="about-grid" style="margin-top: 2rem;">
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
-          <h3>01. Problem & Rote Coding Trap</h3>
-          <p>Lab students often copy solution code without grasping fundamental logic. This leads to weak debugging skills, high anxiety during Viva exams, and poor performance in technical coding interviews.</p>
+    <!-- Structured 3-Card Technical Overview -->
+    <section class="content-section" style="margin-top: 2rem;">
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-layer-group" style="color: var(--secondary-light);"></i> System Architecture & Core Capabilities</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-exclamation-circle"></i></div>
+          <h3>01. Problem: Lab Bottlenecks & Delayed Feedback</h3>
+          <p>With 60+ students per programming lab section, faculty and teaching assistants face severe bandwidth limits answering repetitive syntax questions and grading student code manually. Cryptic compiler warnings frequently stall beginner students for 20+ minutes on trivial mistakes.</p>
         </div>
 
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>02. Socratic Guidance Engine</h3>
-          <p>Uses Socratic prompt chaining to guide students step-by-step with logic questions instead of dumping direct answer code. Translates cryptic C/Python compiler errors into clear action steps.</p>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-cogs"></i></div>
+          <h3>02. Automated Compilation & Error Translation</h3>
+          <p>SMART LAB runs GCC/MinGW subprocess sandboxes to compile student C submissions. It parses stderr outputs and regex maps cryptic errors (e.g. missing semicolons, type mismatches, segmentation faults) into clear, step-by-step guidance without giving away answers directly.</p>
         </div>
 
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>03. Educational Impact</h3>
-          <p>Transforms lab practicals into genuine problem-solving sessions. Delivers scalable 1-on-1 AI tutoring to 60+ students per lab batch and boosts student confidence for viva evaluations.</p>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-tasks"></i></div>
+          <h3>03. Automated Test Execution & Assessment</h3>
+          <p>Every submission is evaluated against both public sample test cases and hidden edge test cases with execution timeouts to prevent infinite loops. Detailed reports show passed test assertions, runtime efficiency, and logic accuracy.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>04. Syllabus PDF Extraction & Problem Bank</h3>
+          <p>Includes an automated syllabus parser that ingests university lab manual PDFs, extracts problem statements and constraint definitions, and automatically generates starter test cases into a structured SQLite problem repository for instructors.</p>
         </div>
       </div>
     </section>
 
     <!-- Screenshot Gallery -->
     <section class="content-section" style="margin-top: 3.5rem;">
-      <h2><i class="fas fa-images"></i> System Overview Screenshots</h2>
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-images" style="color: var(--secondary-light);"></i> System Diagrams & Screenshots</h2>
       <div class="detail-gallery">
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/lab_assistant_problem.png" alt="Educational Gap & Rote Coding Problem" class="modal-trigger">
-          <p>Educational Gap & Rote Problem</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/lab_assistant_problem.png" alt="Educational Gap & Lab Problem" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Lab+Problem';">
+          <p>Lab Bottlenecks & Problem Analysis</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/lab_assistant_solution.png" alt="Socratic Guidance Solution" class="modal-trigger">
-          <p>Socratic AI Guidance Architecture</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/lab_assistant_solution.png" alt="SMART LAB Architecture" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=System+Architecture';">
+          <p>Compilation & Error Translation Architecture</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/lab_assistant_impact.png" alt="Viva Prep & Impact" class="modal-trigger">
-          <p>Educational Impact & Viva Prep</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/lab_assistant_impact.png" alt="Assessment & Test Case Impact" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Impact+Report';">
+          <p>Test Case Evaluation & Assessment Impact</p>
         </div>
       </div>
     </section>
@@ -93,12 +105,13 @@
     <!-- Footer Actions -->
     <div style="display: flex; gap: 1.2rem; justify-content: center; margin-top: 4rem; flex-wrap: wrap;">
       <a href="index.html#projects" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-      <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
+      <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
       <a href="index.html#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Suravi</a>
     </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="script-enhanced.js"></script>
+  <footer>
+    <p>&copy; 2025 Suravi R. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

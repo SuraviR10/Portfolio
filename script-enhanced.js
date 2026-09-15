@@ -1,6 +1,6 @@
 /**
- * script-enhanced.js — Premium Interactive Portfolio Engine
- * All content is preserved. Only visual/interaction enhancements.
+ * script-enhanced.js — High-Performance Interactive Portfolio Engine
+ * Suravi R — Software Engineer & AI Systems Developer
  */
 
 // ==========================================================================
@@ -11,77 +11,80 @@ window.addEventListener('load', () => {
   if (preloader) {
     setTimeout(() => {
       preloader.classList.add('loaded');
-    }, 400);
+    }, 300);
   }
 });
 
 // ==========================================================================
-// AOS INIT
+// AOS ANIMATIONS INITIALIZATION
 // ==========================================================================
-AOS.init({
-  duration: 900,
-  once: true,
-  offset: 80,
-  easing: 'ease-out-cubic'
-});
-
-// ==========================================================================
-// TYPING EFFECT — Meaningful & Engaging Personal Titles
-// ==========================================================================
-new Typed('#typing-effect', {
-  strings: [
-    'Information Science & Engineering Student @ MIT Mysore',
-    'AI & Intelligent Systems Enthusiast',
-    'Full-Stack Developer & Backend Builder',
-    'Creator of DARTX (VS Code Extension)',
-    'Building AI Lab Assistant & Socratic Tools',
-    'Passionate Problem Solver & Continuous Learner'
-  ],
-  typeSpeed: 50,
-  backSpeed: 25,
-  backDelay: 2200,
-  loop: true
-});
-
-// ==========================================================================
-// LENIS SMOOTH SCROLL (Optimized for Mobile & Desktop)
-// ==========================================================================
-let lenis = null;
-try {
-  lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-    smoothTouch: false, // Allows natural touch scrolling on mobile devices without jank
-    touchMultiplier: 1.5,
-    infinite: false
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 60,
+    easing: 'ease-out-cubic'
   });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Sync with GSAP ScrollTrigger if loaded
-  if (typeof ScrollTrigger !== 'undefined') {
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-  }
-} catch (e) {
-  console.log('Lenis smooth scroll running in fallback mode:', e.message);
 }
 
 // ==========================================================================
-// PREFERS REDUCED MOTION
+// TYPING EFFECT — Accurate & Professional Engineering Roles
+// ==========================================================================
+if (document.getElementById('typing-effect') && typeof Typed !== 'undefined') {
+  new Typed('#typing-effect', {
+    strings: [
+      'Information Science & Engineering Student @ MIT Mysore',
+      'Python Backend & AI-Enabled Systems',
+      'Creator of DARTX (VS Code Extension)',
+      'Building SMART LAB & Algorithmic Solutions'
+    ],
+    typeSpeed: 45,
+    backSpeed: 25,
+    backDelay: 2200,
+    loop: true
+  });
+}
+
+// ==========================================================================
+// LENIS SMOOTH SCROLL (Mobile & Desktop Optimized)
+// ==========================================================================
+let lenis = null;
+try {
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false, // Keep native touch scrolling on mobile to prevent jank
+      touchMultiplier: 1.5,
+      infinite: false
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    }
+  }
+} catch (e) {
+  console.log('Lenis running in native fallback mode:', e.message);
+}
+
+// ==========================================================================
+// REDUCED MOTION PREFERENCE CHECK
 // ==========================================================================
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ==========================================================================
-// UNIVERSE VIDEO BACKGROUND
+// BACKGROUND VIDEO OPTIMIZATION
 // ==========================================================================
 try {
   const universeVideo = document.getElementById('universe-video');
@@ -90,26 +93,11 @@ try {
       universeVideo.pause();
     } else {
       universeVideo.play().catch(() => {
-        console.log('Video autoplay fallback active');
+        console.log('Video autoplay fallback handled');
       });
     }
   }
 } catch (e) {}
-
-// ==========================================================================
-// UNIVERSAL EMAIL HANDLER
-// ==========================================================================
-document.addEventListener('click', (e) => {
-  const mailTarget = e.target.closest('.fa-envelope, a[href*="mailto"], .contact-email, .btn-cyber-mail');
-  if (mailTarget) {
-    const mailUrl = 'mailto:suravimys@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%94%20Suravi%20R';
-    if (mailTarget.tagName === 'A') {
-      mailTarget.setAttribute('href', mailUrl);
-    } else {
-      window.location.href = mailUrl;
-    }
-  }
-});
 
 // ==========================================================================
 // MOBILE MENU TOGGLE
@@ -117,380 +105,306 @@ document.addEventListener('click', (e) => {
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
-menuToggle.addEventListener('click', () => {
-  const isActive = navLinks.classList.toggle('active');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    const isActive = navLinks.classList.toggle('active');
+    if (typeof gsap !== 'undefined' && isActive) {
+      const items = navLinks.querySelectorAll('li');
+      gsap.fromTo(items,
+        { y: -8, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.25, stagger: 0.04, ease: 'power2.out' }
+      );
+    }
+  });
 
-  // Animate menu items with GSAP if available
-  if (typeof gsap !== 'undefined' && isActive) {
-    const items = navLinks.querySelectorAll('li');
-    gsap.fromTo(items,
-      { y: -10, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        stagger: 0.05,
-        ease: 'power3.out'
-      }
-    );
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+}
+
+// ==========================================================================
+// HEADER SCROLL STATE & SCROLL PROGRESS
+// ==========================================================================
+const header = document.querySelector('header');
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  if (header) {
+    if (scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
+  if (scrollProgress) {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
   }
 });
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+// ==========================================================================
+// BACK TO TOP BUTTON
+// ==========================================================================
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ==========================================================================
+// IMAGE LIGHTBOX MODAL
+// ==========================================================================
+const imageModal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const modalCaption = document.getElementById('image-modal-caption');
+const imageModalClose = document.getElementById('image-modal-close');
+
+function openImageModal(src, alt) {
+  if (!imageModal || !modalImg) return;
+  modalImg.src = src;
+  if (modalCaption) modalCaption.textContent = alt || '';
+  imageModal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+  if (!imageModal) return;
+  imageModal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+if (imageModalClose) {
+  imageModalClose.addEventListener('click', closeImageModal);
+}
+
+if (imageModal) {
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) closeImageModal();
+  });
+}
+
+document.querySelectorAll('.modal-trigger').forEach(el => {
+  el.addEventListener('click', (e) => {
+    const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+    if (img && img.src) {
+      e.stopPropagation();
+      openImageModal(img.src, img.alt);
+    }
   });
 });
 
 // ==========================================================================
-// GSAP & SCROLLTRIGGER — PREMIUM ANIMATIONS
+// CUSTOM CURSOR FOLLOWER
 // ==========================================================================
-gsap.registerPlugin(ScrollTrigger);
+const cursorDot = document.getElementById('cursor-dot');
+const cursorRing = document.getElementById('cursor-ring');
 
-if (!prefersReducedMotion) {
-  try {
-    // Hero entrance
-    gsap.from('header', { y: -60, opacity: 0, duration: 1, ease: 'power3.out' });
-    gsap.from('.hero-badge', { y: 15, opacity: 0, duration: 0.8, delay: 0.3, ease: 'power3.out' });
-    gsap.from('.hero-content h1', { y: 40, opacity: 0, duration: 1, delay: 0.45, ease: 'power3.out' });
-    gsap.from('.hero-description', { y: 25, opacity: 0, duration: 0.9, delay: 0.7, ease: 'power3.out' });
-    gsap.from('.hero-stats .stat', { y: 25, opacity: 0, duration: 0.8, delay: 0.9, ease: 'power3.out', stagger: 0.1 });
-    gsap.from('.hero-buttons .btn', { y: 25, opacity: 0, duration: 0.8, delay: 1.1, ease: 'power3.out', stagger: 0.1 });
+if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
 
-    // Hero parallax on mouse move
-    const heroCard = document.querySelector('.profile-card');
-    const heroContent = document.querySelector('.hero-content');
-    if (window.innerWidth > 768) {
-      window.addEventListener('mousemove', (event) => {
-        const x = (event.clientX / window.innerWidth - 0.5) * 14;
-        const y = (event.clientY / window.innerHeight - 0.5) * 14;
-        gsap.to(heroCard, { x, y, rotationY: x * 0.05, rotationX: -y * 0.05, duration: 1.2, ease: 'power3.out' });
-        gsap.to(heroContent, { x: x * 0.25, y: y * 0.25, duration: 1.2, ease: 'power3.out' });
-      });
-    }
-  } catch(e) {
-    console.log('GSAP hero animations skipped:', e.message);
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  });
+
+  function renderCursor() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
+    requestAnimationFrame(renderCursor);
   }
+  requestAnimationFrame(renderCursor);
+
+  document.querySelectorAll('a, button, .btn, .stat-card-compact, .project-card, .skill-pill, .experience-card').forEach(item => {
+    item.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    item.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
 }
 
 // ==========================================================================
-// CHATBOT
+// PORTFOLIO AI CHATBOT KNOWLEDGE ENGINE
+// Accurate, Non-Repetitive, Recruiter-Aligned Knowledge Base
 // ==========================================================================
-const isLocalFile = window.location.protocol === 'file:';
-const isLiveServer = window.location.port !== '' && window.location.port !== '5000';
-const CHATBOT_API_URL = (isLocalFile || isLiveServer)
-  ? 'http://localhost:5000/api/chat'
-  : '/api/chat';
 const chatbotToggle = document.getElementById('chatbot-toggle');
-const chatbotWidget = document.getElementById('chatbot-widget');
 const chatbotClose = document.getElementById('chatbot-close');
+const chatbotWidget = document.getElementById('chatbot-widget');
+const chatbotMessages = document.getElementById('chatbot-messages');
 const chatbotInput = document.getElementById('chatbot-input-field');
 const chatbotSend = document.getElementById('chatbot-send');
-const chatbotMessages = document.getElementById('chatbot-messages');
 const suggestionBtns = document.querySelectorAll('.suggestion-btn');
 
 const knowledgeBase = {
-  about: {
-    keywords: ['who are you', 'about', 'background', 'introduce', 'yourself', 'what do you do', 'who is suravi', 'tell me about suravi', 'bio', 'profile'],
-    responses: [
-      "👋 <b>Suravi R</b> is an Information Science & Engineering student at <b>Maharaja Institute of Technology Mysore (MIT Mysore)</b>.<br>She specializes in building intelligent software systems, scalable backend architectures, developer automation tools, and 3D web applications. She loves solving real-world challenges through clean engineering!",
-      "🚀 Meet Suravi R — a passionate software engineer and problem solver focused on AI systems, full-stack web development, and algorithmic optimization. She actively builds production tools, extension utilities, and interactive educational platforms."
-    ]
-  },
   education: {
-    keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'school', 'academic', 'academics', 'mit', 'mysore', 'sslc', 'puc', '10th', '12th', 'grades', 'branch', 'ise'],
+    keywords: ['education', 'college', 'university', 'degree', 'cgpa', 'marks', 'academic', 'mit', 'mysore', 'puc', 'sslc', 'grades', 'branch', 'ise'],
     responses: [
-      "🎓 <b>Academic Background:</b><br>• <b>B.E. in Information Science & Engineering:</b> MIT Mysore — <b>9.12 CGPA</b> (2023 – 2027)<br>• <b>Pre-University (PUC PCMC):</b> <b>90.18%</b><br>• <b>SSLC Schooling:</b> <b>93.92%</b><br>• <b>Key Core Subjects:</b> Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, and Java OOP."
+      "🎓 <b>Academic Background:</b><br>• <b>B.E. in Information Science & Engineering:</b> Maharaja Institute of Technology Mysore — <b>9.12 CGPA</b> (2022 – 2026)<br>• <b>Pre-University (PUC PCMC):</b> <b>90.18%</b><br>• <b>SSLC:</b> <b>93.92%</b><br>• <b>Key Core Subjects:</b> Data Structures & Algorithms, Relational DBMS, Operating Systems, Computer Networks, and Java OOP."
     ]
   },
   experience: {
-    keywords: ['experience', 'internship', 'intern', 'work experience', 'job', 'future interns', 'role', 'work'],
+    keywords: ['experience', 'internship', 'intern', 'work', 'ethnotech', 'wizzy', 'future interns', 'job'],
     responses: [
-      "💼 <b>Internship Experience:</b><br>• <b>Web Development Intern at Future Interns</b> (Aug – Sep 2024)<br>Built responsive web interfaces, enhanced JavaScript interactions, optimized cross-browser layouts, and contributed to production-ready web features."
+      "💼 <b>Experience & Internships:</b><br>• <b>Ethnotech Academy (GenAI & Backend Intern):</b> Built an automated civic complaint classification engine to route citizen grievances (sanitation, roads, electricity, water) across regional languages to municipal departments.<br>• <b>Wizzy Box (Technical Training):</b> Undergoing intensive technical training in full-stack architecture, backend systems, database modeling, and API engineering.<br>• <b>Future Interns (Web Development Intern):</b> Built responsive web layouts, interactive JavaScript modules, and optimized frontend performance."
     ]
   },
   skills: {
-    keywords: ['skills', 'programming', 'languages', 'technologies', 'tools', 'know', 'tech', 'technical', 'code', 'coding', 'stack', 'python', 'java', 'sql', 'javascript', 'typescript', 'frameworks', 'databases'],
+    keywords: ['skills', 'programming', 'languages', 'tech', 'stack', 'python', 'java', 'sql', 'fastapi', 'flask', 'databases', 'tools', 'technologies'],
     responses: [
-      "💪 <b>Technical Skills & Stack:</b><br>• <b>Languages:</b> Java, Python, C, C++, SQL, JavaScript (ES6+), TypeScript<br>• <b>Frameworks & Web:</b> Flask, Node.js, HTML5, CSS3, Three.js / WebGL, FastAPI (learning)<br>• <b>Databases:</b> Supabase, MySQL, PostgreSQL<br>• <b>Developer Tools:</b> Git, GitHub, VS Code Extension API, Docker (learning)<br>• <b>Core Fundamentals:</b> DSA, Object-Oriented Programming, OS, DBMS, Computer Networks."
+      "💻 <b>Technical Skills & Stack:</b><br>• <b>Languages:</b> Python, Java (NPTEL Gold), C, SQL, JavaScript (ES6+), TypeScript, HTML5, CSS3<br>• <b>Backend & Web:</b> Flask, FastAPI (exploring), REST APIs, Node.js basics, Three.js / WebGL<br>• <b>Databases:</b> PostgreSQL, MySQL, SQLite, Supabase<br>• <b>Core CS:</b> Data Structures & Algorithms, Object-Oriented Design (OOP), DBMS, Operating Systems, Computer Networks<br>• <b>Developer Tools:</b> Git, GitHub, VS Code Extension API, GCC/MinGW, Postman, Linux Basics"
     ]
   },
   projects: {
-    keywords: ['projects', 'work', 'built', 'developed', 'portfolio', 'application', 'system', 'showcase', 'apps', 'what have you built'],
+    keywords: ['projects', 'built', 'developed', 'portfolio', 'applications', 'showcase', 'work'],
     responses: [
-      "🚀 <b>Suravi's Featured Projects:</b><br>1. ⏰ <b>Smart Automated Timetable Generator:</b> Genetic algorithm scheduler resolving room/faculty conflicts.<br>2. 🛠️ <b>DARTX – Smart Dependency Manager:</b> Published VS Code Extension for 1-click dependency fixes.<br>3. 🌿 <b>HerbAura:</b> 3D Ayurvedic Virtual Garden with AI Kashayam maker & WebGL models.<br>4. 🎓 <b>AI Powered Lab Programming Assistant:</b> Socratic logic-building tutor for student coding labs.<br>5. 🌐 <b>Stepping Stone Academy Website:</b> Live, responsive school platform deployed on Netlify.<br><br>👉 <i>Ask me about any specific project (e.g., 'Tell me about DARTX') to learn more!</i>"
+      "🚀 <b>Featured Projects:</b><br>1. 🛠️ <b>DARTX:</b> Published VS Code Extension for AST import scanning, alias mapping, and 1-click dependency resolution.<br>2. ⏰ <b>MITM-TimeEvolver:</b> Academic scheduling platform using Genetic Algorithms to resolve faculty/room constraints (2nd Prize Mini Project Expo).<br>3. 🎓 <b>SMART LAB:</b> C Programming Lab Assistant with GCC automated compilation, public/hidden test case evaluation, and syllabus PDF extraction.<br>4. 🏛️ <b>Civic Complaint Classifier:</b> Multilingual NLP categorization engine for municipal grievance routing.<br>5. 🌿 <b>HerbAura:</b> 3D WebGL Ayurvedic botanical garden with Three.js and AI mixture scoring.<br>6. 🌐 <b>Stepping Stone Academy:</b> Production Montessori web platform deployed on Netlify."
     ]
   },
-  timetableProject: {
-    keywords: ['timetable', 'time table', 'schedule', 'time evolver', 'mitm-time', 'timetable generator', 'genetic', 'genetic algorithm'],
+  dartx: {
+    keywords: ['dartx', 'dependency', 'extension', 'vs code extension', 'vs code tool', 'package manager'],
     responses: [
-      "⏰ <b>Smart Automated Timetable Generator:</b><br>An intelligent academic scheduling engine powered by <b>Genetic Algorithms</b>. It models complex constraints like room allocations, faculty workloads, and batch schedules to generate conflict-free timetables in under 2 minutes (down from 3 weeks manually).<br>• <b>Tech Stack:</b> Python, Flask, Supabase, Genetic Algorithm.<br>• <b>Recognition:</b> Won <b>2nd Prize</b> at Mini Project Expo.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Automatic_TimeTable_Generator.git' target='_blank' style='color: var(--secondary-light);'>Automatic_TimeTable_Generator</a>"
+      "🛠️ <b>DARTX – Smart Dependency Manager & Scanner:</b><br>A published VS Code extension that automatically scans codebase imports via AST analysis, detects missing runtime packages, resolves tricky alias mappings (e.g., <code>cv2</code> &rarr; <code>opencv-python</code>, <code>PIL</code> &rarr; <code>Pillow</code>), and triggers secure 1-click package installs via pip/npm.<br>• <b>Stack:</b> TypeScript, Node.js, VS Code API.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>Dependency_Manager Repo</a>"
     ]
   },
-  dependencyManager: {
-    keywords: ['dependency', 'dartx', 'vs code extension', 'vs code tool', 'dependify', 'package', 'dependency manager', 'extension'],
+  timetable: {
+    keywords: ['timetable', 'time evolver', 'scheduling', 'genetic algorithm', 'genetic', 'mitm-time'],
     responses: [
-      "🛠️ <b>DARTX – Smart Dependency Manager:</b><br>An intelligent <b>VS Code Extension</b> published on the Visual Studio Marketplace. It silently monitors terminal execution streams, catches missing package tracebacks, maps tricky aliases (e.g., `cv2` → `opencv-python`, `PIL` → `Pillow`), and provides secure 1-click package installs directly within the editor.<br>• <b>Tech Stack:</b> TypeScript, Node.js, VS Code API.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>Dependency_Manager</a>"
+      "⏰ <b>MITM-TimeEvolver – Smart Timetable Generator:</b><br>An algorithmic academic scheduling engine that uses Genetic Algorithms to solve multi-variable constraint satisfaction (faculty workload caps, lab block allocations, room collisions). Generates conflict-free departmental timetables in under 2 minutes.<br>• <b>Stack:</b> Python, Flask, Genetic Algorithm, Supabase.<br>• <b>Recognition:</b> Won <b>2nd Prize</b> at Mini Project Expo 2025.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/MITM-TimeEvolver.git' target='_blank' style='color: var(--secondary-light);'>MITM-TimeEvolver Repo</a>"
     ]
   },
-  virtualGardenProject: {
-    keywords: ['virtual garden', 'herbaura', 'ayurvedic', '3d garden', 'khashayam', 'video', 'demo', 'youtube', 'garden', 'plants'],
+  smartLab: {
+    keywords: ['smart lab', 'lab assistant', 'c programming', 'assessment', 'gcc', 'compiler', 'test case', 'viva'],
     responses: [
-      "🌿 <b>HerbAura – Virtual Ayurvedic Knowledge Platform:</b><br>An interactive 3D WebGL garden built during the VEC Hackathon. Features Three.js 3D plant models, botanical quizzes, interactive games, and an AI-powered Kashayam maker that analyzes medicinal herb combinations.<br>• <b>Tech Stack:</b> Three.js, WebGL, Python, JavaScript.<br>• 🎥 <b>YouTube Video:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>Watch Demo on YouTube</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/HerbAura-Virtual-Ayurvedic-Garden.git' target='_blank' style='color: var(--secondary-light);'>HerbAura Repo</a>"
+      "🎓 <b>SMART LAB – C Programming Assessment System:</b><br>An intelligent lab assistant combining automated GCC/MinGW code compilation, plain-English compiler error translation, automated dual-tier test case evaluation (public + hidden), and automated lab syllabus PDF problem extraction.<br>• <b>Stack:</b> Python, Flask/FastAPI, GCC/MinGW Toolchain, SQLite.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git' target='_blank' style='color: var(--secondary-light);'>Ai-Programming-Lab-Assistant Repo</a>"
     ]
   },
-  labAssistantProject: {
-    keywords: ['lab assistant', 'programming assistant', 'socratic', 'viva', 'viva prep', 'edtech', 'lab'],
+  ethnotech: {
+    keywords: ['ethnotech', 'civic', 'complaint', 'municipal', 'nlp', 'classifier', 'grievance'],
     responses: [
-      "🎓 <b>AI Powered Lab Programming Assistant:</b><br>An ongoing major EdTech project designed for computer science programming labs. Uses a <b>Socratic guidance engine</b> to provide progressive reasoning hints and plain-English compiler error translations instead of giving away direct code answers. Also automatically generates Viva preparation questions.<br>• <b>Tech Stack:</b> Python, Flask, Socratic AI Engine.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git' target='_blank' style='color: var(--secondary-light);'>Ai-Programming-Lab-Assistant</a>"
+      "🏛️ <b>Civic-Tech Multilingual Complaint Classifier (Ethnotech):</b><br>Engineered an automated complaint classification engine that ingests unstructured citizen grievances across regional languages, extracts key issues, classifies categories (sanitation, roads, electricity, water), and generates structured routing tickets for municipal administrators."
     ]
   },
-  steppingStoneProject: {
-    keywords: ['stepping stone', 'academy website', 'school website', 'montessori', 'netlify', 'school'],
+  herbaura: {
+    keywords: ['herbaura', 'ayurvedic', '3d garden', 'three.js', 'virtual garden', 'kashayam', 'plants'],
     responses: [
-      "🌐 <b>Stepping Stone Academy Website:</b><br>A fully responsive, high-performance website created and deployed for a Montessori school in Mysore. Features intuitive navigation, curriculum overviews, admissions guidelines, and mobile-first layouts.<br>• <b>Tech Stack:</b> HTML5, CSS3, JavaScript, Netlify.<br>• <b>Live Site:</b> <a href='https://the-stepping-stone-academy-mysore.netlify.app/' target='_blank' style='color: var(--secondary-light);'>the-stepping-stone-academy-mysore.netlify.app</a>"
+      "🌿 <b>HerbAura – 3D Virtual Ayurvedic Platform:</b><br>An interactive 3D botanical platform built with Three.js and WebGL. Features real-time 3D plant rendering, an AI herbal formula evaluator (Kashayam maker), and gamified botanical quizzes.<br>• <b>Stack:</b> Three.js, WebGL, Python AI, JavaScript.<br>• <b>Video Demo:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>Watch YouTube Demo</a>"
     ]
   },
   achievements: {
-    keywords: ['achievements', 'awards', 'prizes', 'accomplishments', 'recognition', 'won', 'winner', 'gold medal', 'prizes'],
+    keywords: ['achievements', 'awards', 'prizes', 'recognition', 'gold medal', 'winner', 'rank'],
     responses: [
-      "🏆 <b>Key Achievements & Recognitions:</b><br>• <b>NPTEL Java Programming:</b> <b>98% Score</b>, <b>Top 1% Nationwide</b> & Elite+Gold Medal.<br>• <b>Mini Project Expo:</b> <b>2nd Prize Winner</b> for Smart Automated Timetable Generator.<br>• <b>Best Project Award:</b> Awarded for AI-driven Waste Segregation System with Voice Assistance.<br>• <b>Published Tool:</b> Published DARTX extension on the VS Code Marketplace."
+      "🏆 <b>Key Achievements & Credentials:</b><br>• <b>NPTEL Java Programming:</b> <b>98% Score</b>, <b>Top 1% Nationwide</b> (Elite + Gold Medal).<br>• <b>Mini Project Expo 2025:</b> <b>2nd Prize Winner</b> for MITM-TimeEvolver.<br>• <b>Best Project Award:</b> Recognized for AI-driven Waste Segregation System.<br>• <b>Published Tool:</b> Published DARTX extension on the official VS Code Marketplace."
     ]
   },
-  certificates: {
-    keywords: ['certificates', 'certifications', 'certified', 'nptel', 'skyscanner', 'linkedin', 'coursera', 'credentials'],
+  certifications: {
+    keywords: ['certificates', 'certifications', 'credentials', 'nptel', 'skyscanner', 'coursera', 'linkedin'],
     responses: [
-      "📜 <b>Verified Certifications:</b><br>• <b>Programming in Java</b> — NPTEL (98%, Top 1% Elite+Gold)<br>• <b>Front-End Software Engineering</b> — Skyscanner (Forage Job Simulation)<br>• <b>Prompt Engineering for AI</b> — LinkedIn Learning<br>• <b>AI for Everyone</b> — Coursera"
-    ]
-  },
-  hobbies: {
-    keywords: ['hobbies', 'hobby', 'interests', 'free time', 'singing', 'drawing', 'travel', 'travelling', 'passions', 'spare time'],
-    responses: [
-      "🎨 <b>Hobbies & Personal Interests:</b><br>Outside of software development, Suravi enjoys **singing**, **drawing occasionally**, and **travelling** to explore new places and viewpoints. Creative pursuits keep her energized, curious, and balanced!"
-    ]
-  },
-  strengths: {
-    keywords: ['strengths', 'personality', 'work style', 'what are you like', 'soft skills', 'characteristics', 'mindset', 'qualities'],
-    responses: [
-      "🌟 <b>Core Strengths & Mindset:</b><br>• <b>Fast & Adaptive Learner:</b> Quickly masters new tools, frameworks, and engineering patterns.<br>• <b>Analytical Problem Solver:</b> Methodically dissects complex logic into elegant, practical solutions.<br>• <b>Strong CS Fundamentals:</b> Grounded in clean code, algorithmic efficiency, and modular design.<br>• <b>Collaborative Team Member:</b> Enjoys peer code reviews, hackathons, and delivering real value."
-    ]
-  },
-  career: {
-    keywords: ['career', 'goals', 'future', 'vision', 'aspiration', 'aim', 'plan', 'dream', 'target', 'sde', 'roles'],
-    responses: [
-      "🎯 <b>Career Aspirations:</b><br>Suravi aims to work as a **Software Development Engineer (SDE)** or **AI Systems Engineer**, building robust, scalable backend architectures and intelligent software that create positive real-world impact at innovative tech organizations."
-    ]
-  },
-  hiring: {
-    keywords: ['hire', 'why hire', 'recruiter', 'hr', 'candidate', 'fit', 'role', 'interview', 'special', 'stand out', 'why should we hire'],
-    responses: [
-      "💼 <b>Why Hire Suravi R?</b><br>1. <b>Solid Engineering Discipline:</b> Strong grasp of Data Structures, OOP, OS, and Database architectures.<br>2. <b>Proven Practical Builder:</b> Published a VS Code Extension, built complex optimization algorithms, and deployed live web systems.<br>3. <b>Fast Learner & Adaptable:</b> Quick to ramp up on new stacks across AI, Cloud, and DevOps.<br>4. <b>Ready for Impact:</b> Open for SDE, Full-Stack, and AI Engineering roles and internships!"
-    ]
-  },
-  hackathons: {
-    keywords: ['hackathon', 'hackathons', 'vec', 'agroforecast', 'build for mysuru', 'competition', 'onemysuru'],
-    responses: [
-      "💡 <b>Hackathon Participation:</b><br>1. <b>MIT Mysore Hackathon:</b> Built <b>AgroForeCast</b> (24-hour weather & crop guidance for farmers).<br>2. <b>VEC Hackathon:</b> Developed <b>HerbAura</b> (3D WebGL plant explorer with AI herbal scoring).<br>3. <b>Build for Mysuru Hackathon:</b> Designed <b>OneMysuru</b> (unified digital ecosystem for local tourism & commerce)."
-    ]
-  },
-  industrial: {
-    keywords: ['industrial', 'visit', 'visits', 'fanuc', 'sap', 'factory', 'exposure', 'ibm'],
-    responses: [
-      "🏭 <b>Industry Exposure & Visits:</b><br>• <b>FANUC India:</b> Explored industrial robotics, CNC systems, and factory automation.<br>• <b>SAP Labs:</b> Studied enterprise cloud software, SaaS architectures, and large-scale data systems.<br>• <b>IBM Meetup:</b> Gained insights into Agentic AI frameworks, LLM security (OWASP), and developer tooling."
+      "📜 <b>Verified Certifications:</b><br>• <b>Programming in Java</b> — NPTEL (98%, Top 1% Nationwide Gold Medal)<br>• <b>Front-End Software Engineering</b> — Skyscanner (Forage Virtual Experience)<br>• <b>Prompt Engineering for AI</b> — LinkedIn Learning<br>• <b>AI for Everyone</b> — DeepLearning.AI / Coursera"
     ]
   },
   contact: {
-    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'message', 'mail'],
+    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'hire', 'phone', 'mail'],
     responses: [
-      "📬 <b>Get In Touch with Suravi:</b><br>• <b>Email:</b> <a href='mailto:suravimys@gmail.com' style='color: var(--secondary-light);'>suravimys@gmail.com</a><br>• <b>LinkedIn:</b> <a href='https://linkedin.com/in/suravir/' target='_blank' style='color: var(--secondary-light);'>linkedin.com/in/suravir</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10</a>"
+      "📬 <b>Contact Suravi R:</b><br>• <b>Email:</b> <a href='mailto:suravimys@gmail.com' style='color: var(--secondary-light);'>suravimys@gmail.com</a><br>• <b>LinkedIn:</b> <a href='https://linkedin.com/in/suravir/' target='_blank' style='color: var(--secondary-light);'>linkedin.com/in/suravir</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10</a>"
     ]
   },
   resume: {
-    keywords: ['resume', 'cv', 'download', 'pdf', 'document'],
+    keywords: ['resume', 'cv', 'download', 'pdf'],
     responses: [
-      "📄 <b>Resume Download:</b><br>You can download Suravi's resume directly here: <a href='Resume_of_SuraviR.pdf' download class='btn btn-small btn-primary' style='display:inline-flex; margin-top:6px; color:#fff;'><i class='fas fa-download'></i> Download Resume PDF</a>"
+      "📄 <b>Resume Download:</b><br>You can download Suravi's verified resume here: <a href='Resume_of_SuraviR.pdf' download class='btn btn-small btn-primary' style='display:inline-flex; margin-top:6px; color:#fff;'><i class='fas fa-download'></i> Download Resume PDF</a>"
     ]
   }
 };
 
-const innovativeFallbacks = [
-  "💡 I can help you explore Suravi's **projects** (DARTX, Timetable Generator, AI Lab Assistant, HerbAura), **skills**, **internship experience**, **education**, or **contact details**. What would you like to know?",
-  "🤖 Feel free to ask me about Suravi's technical stack, project architecture, hackathons, or how to get in touch!"
+const defaultFallbacks = [
+  "💡 I can provide detailed technical insights on Suravi's <b>projects</b> (DARTX, Timetable Generator, SMART LAB), <b>skills</b>, <b>internship experience</b>, or <b>contact details</b>. What would you like to explore?",
+  "🤖 Feel free to ask about Suravi's backend architecture, algorithm implementations, educational background, or resume!"
 ];
 
-function calculateKeywordScore(message, keyword) {
-  const exactMatch = new RegExp(`\\b${keyword.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
-  if (exactMatch.test(message)) return keyword.length * 3;
-  if (message.includes(keyword)) return keyword.length * 2;
+function calculateScore(msg, keyword) {
+  const regex = new RegExp(`\\b${keyword.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i');
+  if (regex.test(msg)) return keyword.length * 3;
+  if (msg.includes(keyword)) return keyword.length * 2;
   return 0;
 }
 
-// Toggle Chatbot
-chatbotToggle.addEventListener('click', () => {
-  chatbotWidget.classList.toggle('active');
-});
+function getChatbotResponse(msg) {
+  const lower = msg.toLowerCase().trim();
 
-chatbotClose.addEventListener('click', () => {
-  chatbotWidget.classList.remove('active');
-});
-
-const chatbotClear = document.getElementById('chatbot-clear');
-if (chatbotClear) {
-  chatbotClear.addEventListener('click', () => {
-    chatbotMessages.innerHTML = `
-      <div class="bot-message">
-        <div class="message-avatar"><i class="fas fa-robot"></i></div>
-        <div class="message-content"><p>Chat cleared! Ask me anything about Suravi. 😊</p></div>
-      </div>`;
-  });
-}
-
-// Send Message
-async function sendMessage() {
-  const message = chatbotInput.value.trim();
-  if (!message) return;
-
-  addMessage(message, 'user');
-  chatbotInput.value = '';
-  showTypingIndicator();
-
-  try {
-    const response = await fetch(CHATBOT_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: message })
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      removeTypingIndicator();
-      addMessage(data.bot_response, 'bot');
-    } else {
-      throw new Error('Backend unreachable');
-    }
-  } catch (error) {
-    console.log('Using local fallback knowledge base...');
-    setTimeout(() => {
-      removeTypingIndicator();
-      const response = getBotResponse(message);
-      addMessage(response, 'bot');
-    }, 700);
-  }
-}
-
-chatbotSend.addEventListener('click', sendMessage);
-chatbotInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') sendMessage();
-});
-
-suggestionBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const question = btn.getAttribute('data-question');
-    chatbotInput.value = question;
-    sendMessage();
-  });
-});
-
-// Project buttons
-function initializeProjectButtons() {
-  const buttons = document.querySelectorAll('.btn-ppt');
-  buttons.forEach(button => {
-    button.type = 'button';
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const projectId = button.dataset.project;
-      if (!projectId) return;
-      openPPT(projectId);
-    });
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeProjectButtons);
-} else {
-  initializeProjectButtons();
-}
-
-function addMessage(text, type) {
-  const messageDiv = document.createElement('div');
-  messageDiv.className = type === 'user' ? 'user-message' : 'bot-message';
-
-  if (type === 'bot') {
-    messageDiv.innerHTML = `
-      <div class="message-avatar"><i class="fas fa-robot"></i></div>
-      <div class="message-content"><p>${text}</p></div>`;
-  } else {
-    messageDiv.innerHTML = `
-      <div class="message-content"><p>${text}</p></div>`;
+  if (lower.match(/^(hi|hello|hey|greetings|namaste|good morning|good afternoon)/)) {
+    return "Hello! 👋 I'm Suravi's portfolio assistant. What would you like to know about her software projects, technical skills, or experience?";
   }
 
-  chatbotMessages.appendChild(messageDiv);
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-}
-
-function getBotResponse(message) {
-  const lowerMessage = message.toLowerCase();
-
-  if (lowerMessage.match(/^(hi|hello|hey|greetings|hola|namaste|good morning|good afternoon|good evening)/)) {
-    const greetings = [
-      "Hello! 👋 I'm Portfolio AI Assistant. What would you like to know about Suravi?",
-      "Hi there! 😊 Great to meet you! Ask me anything about Suravi's skills, projects, hackathons, or achievements!",
-      "Hey! 🌟 Welcome! I'd love to share Suravi's incredible journey with you!"
-    ];
-    return greetings[Math.floor(Math.random() * greetings.length)];
-  }
-
-  if (lowerMessage.match(/(thank|thanks|appreciate|thx|awesome|great|cool|nice)/)) {
-    const thanks = [
-      "You're very welcome! 😊 Feel free to ask me anything else!",
-      "My pleasure! 🌟 Is there anything else you'd like to know?",
-      "Glad I could help! 👍 Want to explore more about Suravi?"
-    ];
-    return thanks[Math.floor(Math.random() * thanks.length)];
-  }
-
-  if (lowerMessage.match(/(bye|goodbye|see you|later|gtg|got to go)/)) {
-    const byes = [
-      "Goodbye! 👋 Thanks for learning about Suravi. Don't forget to connect with her!",
-      "See you later! 🌟 I hope you're impressed by Suravi's profile!",
-      "Take care! 😊 Remember, Suravi is always open to exciting opportunities!"
-    ];
-    return byes[Math.floor(Math.random() * byes.length)];
+  if (lower.match(/(thank|thanks|great|cool|awesome|perfect)/)) {
+    return "You're welcome! Feel free to ask anything else about Suravi's engineering work or how to connect with her.";
   }
 
   let bestMatch = null;
   let highestScore = 0;
-  let bestKeywordLength = 0;
 
-  for (const [category, data] of Object.entries(knowledgeBase)) {
+  for (const [key, item] of Object.entries(knowledgeBase)) {
     let score = 0;
-    let matchedKeywordLength = 0;
-    for (const keyword of data.keywords) {
-      const keywordScore = calculateKeywordScore(lowerMessage, keyword);
-      score += keywordScore;
-      if (keywordScore > 0) {
-        matchedKeywordLength = Math.max(matchedKeywordLength, keyword.length);
-      }
+    for (const kw of item.keywords) {
+      score += calculateScore(lower, kw);
     }
-    if (score > highestScore || (score === highestScore && matchedKeywordLength > bestKeywordLength)) {
+    if (score > highestScore) {
       highestScore = score;
-      bestMatch = data;
-      bestKeywordLength = matchedKeywordLength;
+      bestMatch = item;
     }
   }
 
   if (bestMatch && highestScore > 0) {
-    return bestMatch.responses[Math.floor(Math.random() * bestMatch.responses.length)];
+    return bestMatch.responses[0];
   }
 
-  return innovativeFallbacks[Math.floor(Math.random() * innovativeFallbacks.length)];
+  return defaultFallbacks[Math.floor(Math.random() * defaultFallbacks.length)];
 }
 
-function showTypingIndicator() {
+function appendMessage(text, sender) {
+  if (!chatbotMessages) return;
+  const msgDiv = document.createElement('div');
+  msgDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
+
+  if (sender === 'bot') {
+    msgDiv.innerHTML = `
+      <div class="message-avatar"><i class="fas fa-robot"></i></div>
+      <div class="message-content"><p>${text}</p></div>`;
+  } else {
+    msgDiv.innerHTML = `
+      <div class="message-content"><p>${text}</p></div>`;
+  }
+
+  chatbotMessages.appendChild(msgDiv);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function sendUserMessage() {
+  if (!chatbotInput) return;
+  const text = chatbotInput.value.trim();
+  if (!text) return;
+
+  appendMessage(text, 'user');
+  chatbotInput.value = '';
+
   const typingDiv = document.createElement('div');
-  typingDiv.className = 'bot-message typing-indicator';
-  typingDiv.id = 'typing-indicator';
+  typingDiv.className = 'bot-message';
+  typingDiv.id = 'chat-typing';
   typingDiv.innerHTML = `
     <div class="message-avatar"><i class="fas fa-robot"></i></div>
     <div class="message-content">
@@ -498,624 +412,51 @@ function showTypingIndicator() {
     </div>`;
   chatbotMessages.appendChild(typingDiv);
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+  setTimeout(() => {
+    const typingEl = document.getElementById('chat-typing');
+    if (typingEl) typingEl.remove();
+    const reply = getChatbotResponse(text);
+    appendMessage(reply, 'bot');
+  }, 450);
 }
 
-function removeTypingIndicator() {
-  const typingIndicator = document.getElementById('typing-indicator');
-  if (typingIndicator) typingIndicator.remove();
-}
-
-// ==========================================================================
-// SMOOTH SCROLLING
-// ==========================================================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-window.addEventListener('load', () => {
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    }
-  }
-});
-
-// ==========================================================================
-// HEADER SCROLL STATE
-// ==========================================================================
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (header) {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-});
-
-// ==========================================================================
-// CONTACT FORM
-// ==========================================================================
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const formStatus = document.getElementById('form-status');
-    const formData = new FormData(contactForm);
-    const visitorName = formData.get('name') || 'Visitor';
-    const visitorEmail = formData.get('_replyto') || '';
-    formData.set('_subject', `Portfolio message from ${visitorName}`);
-    formData.set('_replyto', visitorEmail);
-    formData.set('_to', 'suravimys@gmail.com');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    fetch(contactForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        formStatus.className = 'form-status success';
-        formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
-        contactForm.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    }).catch(error => {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = '✗ Oops! Something went wrong. Please try again.';
-    }).finally(() => {
-      submitBtn.textContent = 'Send Message';
-      submitBtn.disabled = false;
-      setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
-    });
+if (chatbotToggle && chatbotWidget) {
+  chatbotToggle.addEventListener('click', () => {
+    chatbotWidget.classList.toggle('active');
   });
 }
 
-// ==========================================================================
-// SCROLL PROGRESS BAR
-// ==========================================================================
-const scrollProgress = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (window.scrollY / windowHeight) * 100;
-  scrollProgress.style.width = scrolled + '%';
-});
-
-// ==========================================================================
-// BACK TO TOP BUTTON
-// ==========================================================================
-const backToTopBtn = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 500) {
-    backToTopBtn.classList.add('visible');
-  } else {
-    backToTopBtn.classList.remove('visible');
-  }
-});
-
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// ==========================================================================
-// PPT PRESENTATION LOGIC
-// ==========================================================================
-let currentSlideIndex = 0;
-let currentProjectSlides = [];
-
-const projectData = {
-  timetable: {
-    title: "Smart Automated Timetable Generation System",
-    slides: [
-      { title: "01. Problem Brief", tag: "MANUAL SCHEDULING BOTTLENECK", items: ["<b>Manual Effort:</b> Timetable creation consumes weeks of administrative work and is error-prone.", "<b>Resource Conflicts:</b> Frequent clashes occur with faculty, room allocations, and student batches.", "<b>Space Waste:</b> Sub-optimal lab and room utilization leads to schedule bottlenecks."], media: { type: 'image', src: 'images/Timetable/1.png' } },
-      { title: "02. Core Innovation", tag: "GENETIC ALGORITHM ENGINE", items: ["<b>Genetic Algorithm:</b> Evolves timetable schedules through iterative selection to find optimal fits.", "<b>Constraint Engine:</b> Enforces faculty workload limits, room capacity, and lab availability.", "<b>Rapid Execution:</b> Generates fully conflict-free timetables in under 2 minutes."], media: { type: 'image', src: 'images/Timetable/2.png' } },
-      { title: "03. Impact & Recognition", tag: "EXPO AWARD WINNER", items: ["<b>95% Time Reduction:</b> Replaces weeks of manual scheduling with automated calculation.", "<b>Zero Conflicts:</b> Guarantees clash-free timetables for faculty, rooms, and departments.", "<b>Award Winner:</b> Recognized with 2nd Prize at the Mini Project Expo for real-world impact."], media: { type: 'image', src: 'images/Timetable/3.png' } }
-    ]
-  },
-  dependency: {
-    title: "DARTX – Smart Dependency Manager",
-    slides: [
-      { title: "01. Problem Brief", tag: "DEVELOPMENT WORKFLOW FRICTION", items: ["<b>Runtime Crashes:</b> Cryptic `ModuleNotFoundError` tracebacks interrupt active coding.", "<b>Context Switching:</b> Developers lose focus jumping between editor and command terminal.", "<b>Wasted Hours:</b> Manual environment debugging burns developer time and energy."], media: { type: 'image', src: 'images/DARTX/DARTX_Problem.png' } },
-      { title: "02. Core Solution", tag: "INTELLIGENT VS CODE EXTENSION", items: ["<b>Silent Monitor:</b> Silently analyzes terminal logs to catch package error tracebacks.", "<b>One-Click Resolution:</b> Recommends instant, secure package fixes right inside VS Code.", "<b>Developer Focus:</b> Keeps developers in their editor code view without interruption."], media: { type: 'image', src: 'images/DARTX/DARTX1.png' } },
-      { title: "03. Core Features & Status", tag: "VS CODE MARKETPLACE PUBLISHED", items: ["<b>Smart Alias Mapping:</b> Resolves import aliases (e.g. `cv2` → `opencv-python`, `PIL` → `Pillow`).", "<b>Security Protection:</b> Validates package names against registries to block typosquatting.", "<b>Published Extension:</b> Available live on VS Code Marketplace for instant installation."], media: { type: 'image', src: 'images/DARTX/DARTX.png' } }
-    ]
-  },
-  steppingStone: {
-    title: "Stepping Stone Academy Website",
-    slides: [
-      { title: "01. Client Objective", tag: "MONTESSORI SCHOOL DIGITAL PRESENCE", items: ["<b>Digital Gateway:</b> Build a modern, trustworthy web platform for a real Montessori school.", "<b>Parent Confidence:</b> Showcase admissions info, facilities, and curriculum clearly.", "<b>Cross-Device Access:</b> Provide seamless mobile navigation for parents on the move."], media: { type: 'image', src: 'images/stepping_stone_preview.png' } },
-      { title: "02. Design & Delivery", tag: "LIVE PRODUCTION NETLIFY DEPLOYMENT", items: ["<b>Mobile-First UX:</b> Clean layout optimized for instant browsing on mobile and desktop.", "<b>Visual Storytelling:</b> Interactive galleries and engaging animations depicting school life.", "<b>Live Deployment:</b> Successfully deployed on Netlify and actively serving school clients."], media: { type: 'image', src: 'images/stepping_stone_live.png' } }
-    ]
-  },
-  virtualGarden: {
-    title: "HerbAura – Virtual Ayurvedic Knowledge Platform",
-    slides: [
-      { title: "01. Vision & Concept", tag: "GAMIFIED AYURVEDIC EDUCATION", items: ["<b>Interactive Knowledge:</b> Replaces static botanical texts with an immersive 3D digital garden.", "<b>Ayurvedic Awareness:</b> Educates users on medicinal plants, health benefits, and remedies.", "<b>Gamified Learning:</b> Uses memory games and interactive quizzes to reinforce retention."], media: { type: 'video', src: 'images/Virtual_Garden/Screen_Recording.mp4' } },
-      { title: "02. Core Features", tag: "THREE.JS 3D & AI KASHAYAM ENGINE", items: ["<b>3D Plant Explorer:</b> Interactive 3D plant models rendered smoothly using Three.js.", "<b>AI Khashayam Maker:</b> Intelligent recipe generator that scores herbal combinations.", "<b>Engaging Quizzes:</b> Interactive memory game module to test Ayurvedic herbal knowledge."], media: { type: 'image', src: 'images/Hackathon/2nd_hackthon.jpg' } },
-      { title: "03. Hackathon Success", tag: "VEC HACKATHON RECOGNITION", items: ["<b>24-Hour Prototype:</b> Developed as a complete full-stack app during VEC Hackathon.", "<b>Praised Innovation:</b> Recognized for unique 3D gamification and social health impact.", "<b>Rapid Prototyping:</b> Proved rapid integration of WebGL frontend and AI backend."], media: { type: 'image', src: 'images/Project.jpeg' } }
-    ]
-  },
-  labAssistant: {
-    title: "AI Powered Lab Programming Assistant",
-    slides: [
-      { title: "01. Educational Gap", tag: "BEYOND COPY-PASTE CODING", items: ["<b>Rote Learning:</b> Students often copy lab code without understanding core logic.", "<b>Viva Skill Gap:</b> Weak logic understanding leads to low viva confidence and exam stress.", "<b>Instructor Overload:</b> Instructors cannot give 1-on-1 logic guidance to 60+ lab students at once."], media: { type: 'image', src: 'images/lab_assistant_problem.png' } },
-      { title: "02. Socratic AI Engine", tag: "LOGIC GUIDANCE WITHOUT SPOILERS", items: ["<b>Socratic Tutoring:</b> Guides students through logic with hints instead of raw code dumps.", "<b>Plain-English Debugger:</b> Translates compiler errors into beginner-friendly explanations.", "<b>Automated Viva Prep:</b> Automatically parses lab manuals to generate targeted viva questions."], media: { type: 'image', src: 'images/lab_assistant_solution.png' } },
-      { title: "03. Educational Impact", tag: "ONGOING MAJOR PROJECT", items: ["<b>Active Comprehension:</b> Shifts student mindset from code-copying to true logic building.", "<b>Elevated Confidence:</b> Prepares students for lab viva sessions and technical interviews.", "<b>Scalable Support:</b> Delivers personalized 24/7 AI lab assistance across programming courses."], media: { type: 'image', src: 'images/lab_assistant_impact.png' } }
-    ]
-  }
-};
-
-function openPPT(projectId) {
-  const project = projectData[projectId];
-  if (!project) return;
-  const titleElement = document.getElementById('ppt-title');
-  if (titleElement) titleElement.innerText = project.title;
-  currentProjectSlides = project.slides;
-  currentSlideIndex = 0;
-  renderSlides();
-  const modal = document.getElementById('ppt-modal');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+if (chatbotClose && chatbotWidget) {
+  chatbotClose.addEventListener('click', () => {
+    chatbotWidget.classList.remove('active');
+  });
 }
 
-function closePPT() {
-  const modal = document.getElementById('ppt-modal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-}
-
-function renderSlides() {
-  const body = document.getElementById('ppt-body');
-  const dotsContainer = document.getElementById('ppt-dots');
-  if (!body || !dotsContainer) return;
-  body.innerHTML = '';
-  dotsContainer.innerHTML = '';
-
-  currentProjectSlides.forEach((slide, index) => {
-    const slideDiv = document.createElement('div');
-    slideDiv.className = `ppt-slide ${index === currentSlideIndex ? 'active' : ''}`;
-
-    let mediaMarkup = '<div class="slide-media"><div class="slide-no-media"><i class="fas fa-lightbulb"></i></div></div>';
-    if (slide.media) {
-      if (slide.media.type === 'video') {
-        mediaMarkup = `<div class="slide-media"><video src="${slide.media.src}" autoplay muted loop playsinline></video></div>`;
-      } else {
-        mediaMarkup = `<div class="slide-media"><img src="${slide.media.src}" alt="${slide.title}"></div>`;
-      }
-    }
-
-    let listItems = slide.items.map(item => `<li>${item}</li>`).join('');
-    slideDiv.innerHTML = `
-      ${mediaMarkup}
-      <div class="slide-panel">
-        <div class="slide-badge-row">
-          <span class="slide-step-badge">SLIDE 0${index + 1} OF 0${currentProjectSlides.length}</span>
-          ${slide.tag ? `<span class="slide-step-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary-light); border-color: rgba(6, 182, 212, 0.3);">${slide.tag}</span>` : ''}
-        </div>
-        <h4>${slide.title}</h4>
-        <ul>${listItems}</ul>
+const chatbotClear = document.getElementById('chatbot-clear');
+if (chatbotClear && chatbotMessages) {
+  chatbotClear.addEventListener('click', () => {
+    chatbotMessages.innerHTML = `
+      <div class="bot-message">
+        <div class="message-avatar"><i class="fas fa-robot"></i></div>
+        <div class="message-content"><p>Chat history cleared! Ask me anything about Suravi's projects or skills. 😊</p></div>
       </div>`;
-    body.appendChild(slideDiv);
-
-    const dot = document.createElement('div');
-    dot.className = `ppt-dot ${index === currentSlideIndex ? 'active' : ''}`;
-    dot.onclick = () => goToSlide(index);
-    dotsContainer.appendChild(dot);
-  });
-
-  const videos = body.querySelectorAll('video');
-  videos.forEach(v => {
-    try { v.playbackRate = 1.5; v.muted = true; v.loop = true; v.play().catch(() => {}); } catch (err) {}
-  });
-
-  try {
-    const slides = Array.from(body.querySelectorAll('.ppt-slide'));
-    slides.forEach((s, i) => {
-      if (i === currentSlideIndex) {
-        gsap.fromTo(s, { x: 40, opacity: 0, scale: 0.97 }, { x: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' });
-      }
-    });
-  } catch (err) {}
-}
-
-function nextSlide() { if (currentSlideIndex < currentProjectSlides.length - 1) { currentSlideIndex++; renderSlides(); } }
-function prevSlide() { if (currentSlideIndex > 0) { currentSlideIndex--; renderSlides(); } }
-function goToSlide(index) { currentSlideIndex = index; renderSlides(); }
-
-window.openPPT = openPPT;
-window.closePPT = closePPT;
-window.nextSlide = nextSlide;
-window.prevSlide = prevSlide;
-window.goToSlide = goToSlide;
-
-document.getElementById('ppt-modal').addEventListener('click', (e) => {
-  if (e.target.id === 'ppt-modal') closePPT();
-});
-
-let touchStartX = 0;
-const pptBody = document.getElementById('ppt-body');
-if (pptBody) {
-  pptBody.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; });
-  pptBody.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    if (touchEndX - touchStartX > 50) prevSlide();
-    if (touchStartX - touchEndX > 50) nextSlide();
   });
 }
 
-window.addEventListener('keyup', (e) => {
-  const modal = document.getElementById('ppt-modal');
-  if (!modal.classList.contains('active')) return;
-  if (e.key === 'ArrowRight') nextSlide();
-  if (e.key === 'ArrowLeft') prevSlide();
-  if (e.key === 'Escape') closePPT();
-});
-
-// ==========================================================================
-// IMAGE MODAL LOGIC
-// ==========================================================================
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById("image-modal");
-  if (!modal) return;
-  const modalImg = document.getElementById("modal-img");
-  const captionText = document.getElementById("image-modal-caption");
-
-  document.querySelectorAll('.modal-trigger').forEach(trigger => {
-    trigger.onclick = function(e) {
-      e.preventDefault();
-      let imageElement = this;
-      if (this.tagName !== 'IMG') {
-        const card = this.closest('.certificate-card, .hackathon-card, .visit-card, .journey-stage, .profile-card');
-        if (card) imageElement = card.querySelector('img');
-      }
-      if (imageElement && imageElement.src) {
-        modal.style.display = "flex";
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        modalImg.src = imageElement.src;
-        captionText.innerHTML = imageElement.alt || '';
-      }
-    };
+if (chatbotSend) chatbotSend.addEventListener('click', sendUserMessage);
+if (chatbotInput) {
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendUserMessage();
   });
+}
 
-  function closeImageModal() {
-    modal.style.display = "none";
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-
-  const closeBtn = document.getElementById("image-modal-close");
-  if (closeBtn) closeBtn.onclick = closeImageModal;
-  modal.onclick = (event) => { if (event.target === modal) closeImageModal(); };
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') closeImageModal();
+suggestionBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const q = btn.getAttribute('data-question');
+    if (chatbotInput) {
+      chatbotInput.value = q;
+      sendUserMessage();
+    }
   });
 });
-
-// ==========================================================================
-// PREMIUM VISUAL ENHANCEMENTS
-// ==========================================================================
-(function premiumEnhancements() {
-  'use strict';
-  if (prefersReducedMotion) return;
-
-  // --- 1. Custom Cursor ---
-  try {
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-
-    if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-      let mouseX = 0, mouseY = 0;
-      let ringX = 0, ringY = 0;
-
-      window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        dot.style.left = `${mouseX}px`;
-        dot.style.top = `${mouseY}px`;
-      });
-
-      function animateRing() {
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        ring.style.left = `${ringX}px`;
-        ring.style.top = `${ringY}px`;
-        requestAnimationFrame(animateRing);
-      }
-      animateRing();
-
-      const hoverTargets = 'a, button, input, textarea, select, .btn, .btn-small, ' +
-        '.project-card, .about-card, .skill-item, .hackathon-card, .visit-card, ' +
-        '.certificate-card, .suggestion-btn, .edu-card, .social-links a, ' +
-        '.back-to-top, .chatbot-toggle, .menu-toggle, .ppt-nav-btn, .ppt-dot, .modal-trigger';
-
-      document.addEventListener('mouseover', (e) => {
-        if (e.target.closest(hoverTargets)) document.body.classList.add('cursor-hover');
-      });
-      document.addEventListener('mouseout', (e) => {
-        if (e.target.closest(hoverTargets)) document.body.classList.remove('cursor-hover');
-      });
-    }
-  } catch (e) {
-    console.log('Cursor init skipped:', e.message);
-  }
-
-  // --- 2. Cursor-Following Card Spotlight ---
-  try {
-    const spotlightCards = document.querySelectorAll(
-      '.about-card, .project-card, .hackathon-card, .visit-card, .certificate-card, ' +
-      '.edu-card, .stage-card, .skill-category, .hero-stats .stat, .contact-card'
-    );
-
-    spotlightCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-  } catch (e) {
-    console.log('Card spotlight skipped:', e.message);
-  }
-
-  // --- 3. Refined 3D Card Tilt (5° max) ---
-  try {
-    const tiltCards = document.querySelectorAll(
-      '[data-tilt], .about-card, .project-card, .hackathon-card, .visit-card, ' +
-      '.certificate-card, .edu-card, .profile-card, .contact-card'
-    );
-
-    if (window.innerWidth > 768) {
-      tiltCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = ((y - centerY) / centerY) * -5;
-          const rotateY = ((x - centerX) / centerX) * 5;
-          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale3d(1.01, 1.01, 1.01)`;
-          card.style.transition = 'none';
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = '';
-          card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-        });
-      });
-    }
-  } catch (e) {
-    console.log('Tilt skipped:', e.message);
-  }
-
-  // --- 4. Section Heading Reveals ---
-  try {
-    document.querySelectorAll('section h2').forEach((heading, index) => {
-      const startX = index % 2 === 0 ? -60 : 60;
-      gsap.fromTo(heading,
-        { x: startX, y: 20, opacity: 0, scale: 0.9, filter: 'blur(6px)' },
-        {
-          x: 0, y: 0, opacity: 1, scale: 1, filter: 'blur(0px)',
-          duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: heading, start: 'top 88%', toggleActions: 'play none none reverse' }
-        }
-      );
-    });
-
-    document.querySelectorAll('.section-subtitle').forEach(sub => {
-      gsap.fromTo(sub,
-        { y: 25, opacity: 0, scale: 0.95 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 0.8, delay: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: sub, start: 'top 88%', toggleActions: 'play none none reverse' }
-        }
-      );
-    });
-
-    document.querySelectorAll('.subsection-title').forEach(title => {
-      const icon = title.querySelector('i');
-      gsap.fromTo(title,
-        { x: -50, opacity: 0, filter: 'blur(4px)' },
-        {
-          x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.85, ease: 'power3.out',
-          scrollTrigger: { trigger: title, start: 'top 88%', toggleActions: 'play none none reverse' }
-        }
-      );
-      if (icon) {
-        gsap.fromTo(icon,
-          { rotation: -45, scale: 0.5, opacity: 0 },
-          {
-            rotation: 0, scale: 1, opacity: 1, duration: 0.7, delay: 0.15, ease: 'back.out(1.7)',
-            scrollTrigger: { trigger: title, start: 'top 88%', toggleActions: 'play none none reverse' }
-          }
-        );
-      }
-    });
-  } catch (e) {
-    console.log('Heading reveals skipped:', e.message);
-  }
-
-  // --- 5. Staggered Card Reveals ---
-  try {
-    const cardGrids = [
-      { selector: '.projects-grid .project-card', stagger: 0.1 },
-      { selector: '.hackathons-grid .hackathon-card', stagger: 0.12 },
-      { selector: '.visits-grid .visit-card', stagger: 0.12 },
-      { selector: '.certificates-grid .certificate-card', stagger: 0.08 },
-      { selector: '.about-grid .about-card', stagger: 0.1 },
-      { selector: '.education-quick .edu-card', stagger: 0.08 },
-    ];
-
-    cardGrids.forEach(({ selector, stagger }) => {
-      const cards = document.querySelectorAll(selector);
-      if (cards.length === 0) return;
-      gsap.fromTo(cards,
-        { y: 40, opacity: 0, scale: 0.96 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 0.65, stagger, ease: 'power3.out',
-          scrollTrigger: { trigger: cards[0].parentElement, start: 'top 82%', toggleActions: 'play none none none' }
-        }
-      );
-    });
-
-    document.querySelectorAll('.journey-stage').forEach((stage, i) => {
-      const isOdd = i % 2 === 0;
-      gsap.fromTo(stage,
-        { x: isOdd ? -30 : 30, opacity: 0 },
-        {
-          x: 0, opacity: 1, duration: 0.6, ease: 'power3.out',
-          scrollTrigger: { trigger: stage, start: 'top 84%', toggleActions: 'play none none none' }
-        }
-      );
-    });
-  } catch (e) {
-    console.log('Card staggers skipped:', e.message);
-  }
-
-  // --- 6. Parallax ---
-  try {
-    const hero = document.querySelector('.hero');
-    const profileCard = document.querySelector('.profile-card');
-    if (hero && profileCard) {
-      gsap.to(profileCard, {
-        y: -25, ease: 'none',
-        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 2 }
-      });
-    }
-  } catch (e) {}
-
-  // --- 7. Stats Counter ---
-  try {
-    document.querySelectorAll('.stat-number').forEach(stat => {
-      const text = stat.textContent.trim();
-      const match = text.match(/([\d.]+)/);
-      if (!match) return;
-      const target = parseFloat(match[1]);
-      const suffix = text.replace(match[1], '').trim();
-      const isDecimal = text.includes('.');
-      const originalText = text;
-      stat.textContent = isDecimal ? '0.00' + suffix : '0' + suffix;
-      const counter = { val: 0 };
-      gsap.to(counter, {
-        val: target, duration: 1.8, ease: 'power2.out',
-        scrollTrigger: { trigger: stat, start: 'top 85%', toggleActions: 'play none none none' },
-        onUpdate: () => {
-          stat.textContent = isDecimal ? counter.val.toFixed(2) + suffix : Math.round(counter.val) + suffix;
-        },
-        onComplete: () => { stat.textContent = originalText; }
-      });
-    });
-  } catch (e) {}
-
-  // --- 8. Nav Active State ---
-  try {
-    const navLinksAll = document.querySelectorAll('nav ul li a[href^="#"]');
-    const sections = [];
-    navLinksAll.forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href || href === '#') return;
-      const section = document.querySelector(href);
-      if (section) sections.push({ link, section });
-    });
-
-    sections.forEach(({ link, section }) => {
-      ScrollTrigger.create({
-        trigger: section, start: 'top center', end: 'bottom center',
-        onEnter: () => setActiveLink(link),
-        onEnterBack: () => setActiveLink(link)
-      });
-    });
-
-    function setActiveLink(activeLink) {
-      navLinksAll.forEach(l => l.classList.remove('active'));
-      activeLink.classList.add('active');
-    }
-  } catch (e) {}
-
-  // --- 9. Skill Items Magnetic Hover ---
-  try {
-    if (window.innerWidth > 768) {
-      document.querySelectorAll('.skill-item').forEach(item => {
-        item.addEventListener('mousemove', (e) => {
-          const rect = item.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          gsap.to(item, { x: x * 0.15, y: y * 0.15, duration: 0.3, ease: 'power2.out' });
-        });
-        item.addEventListener('mouseleave', () => {
-          gsap.to(item, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
-        });
-      });
-    }
-  } catch (e) {}
-
-  // --- 10. Magnetic Buttons ---
-  try {
-    if (window.innerWidth > 768) {
-      document.querySelectorAll('.btn-primary, .btn-secondary, .social-links a').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          gsap.to(btn, { x: x * 0.2, y: y * 0.2, duration: 0.3, ease: 'power2.out' });
-        });
-        btn.addEventListener('mouseleave', () => {
-          gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
-        });
-      });
-    }
-  } catch (e) {}
-
-  // --- 11. Contact section reveal ---
-  try {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const socialLinks = contactSection.querySelectorAll('.social-links a');
-      gsap.fromTo(socialLinks,
-        { y: 15, opacity: 0, scale: 0.85 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 0.45, stagger: 0.08, ease: 'back.out(1.7)',
-          scrollTrigger: { trigger: contactSection, start: 'top 82%', toggleActions: 'play none none none' }
-        }
-      );
-    }
-  } catch (e) {}
-
-  // --- 12. Skills grid reveal ---
-  try {
-    document.querySelectorAll('.skill-category').forEach(category => {
-      const items = category.querySelectorAll('.skill-item');
-      gsap.fromTo(items,
-        { y: 15, opacity: 0 },
-        {
-          y: 0, opacity: 1, duration: 0.4, stagger: 0.04, ease: 'power3.out',
-          scrollTrigger: { trigger: category, start: 'top 84%', toggleActions: 'play none none none' }
-        }
-      );
-    });
-  } catch (e) {}
-
-  console.log('Premium visual enhancements loaded ✨');
-})();
-
-console.log('Portfolio with Enhanced AI Assistant loaded! 🚀');

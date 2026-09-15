@@ -3,101 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DARTX – Smart Dependency Manager — Suravi R</title>
+  <title>DARTX – Smart Dependency Manager & Scanner (VS Code Extension) — Suravi R</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="project-detail-body">
 
-  <!-- Floating Navigation Island -->
+  <!-- Navigation Bar -->
   <nav class="project-nav-bar">
     <a href="index.html#projects" class="logo"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: white;">🛠️ DARTX Extension</div>
-    <a href="https://github.com/SuraviR10/Dependency_Manager.git" target="_blank" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
+    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">🛠️ DARTX Extension</div>
+    <a href="https://github.com/SuraviR10/Dependency_Manager.git" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
   </nav>
 
-  <main class="project-container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 5% 5rem;">
+  <main class="project-container" style="max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem;">
     <!-- Hero Banner -->
     <section class="project-detail-hero">
-      <div class="hero-badge">🛠️ VS Code Marketplace Published</div>
-      <h1 class="name-highlight">DARTX – Smart Dependency Manager</h1>
-      <p class="project-detail-subtitle">An intelligent VS Code extension that silently monitors environment outputs, detects package resolution failures, maps tricky import aliases, and fixes broken dependencies in 1 click.</p>
+      <div class="availability-badge" style="display: inline-flex; margin-bottom: 1rem;">
+        <span class="status-dot-pulse"></span>
+        <span>Published Developer Tool on VS Code Marketplace</span>
+      </div>
+      <h1 class="name-highlight">DARTX – Smart Dependency Manager & Scanner</h1>
+      <p class="project-detail-subtitle">
+        A developer productivity tool for VS Code that performs AST-based import scanning, catches missing runtime packages, resolves tricky alias mappings, and executes secure 1-click package installations directly inside the editor.
+      </p>
       
       <div class="tech-stack-row">
         <span class="tech-pill"><i class="fab fa-js"></i> TypeScript</span>
         <span class="tech-pill"><i class="fab fa-node-js"></i> Node.js</span>
-        <span class="tech-pill"><i class="fas fa-plug"></i> VS Code API</span>
-        <span class="tech-pill"><i class="fab fa-python"></i> Python & Node Registries</span>
+        <span class="tech-pill"><i class="fas fa-plug"></i> VS Code Extension API</span>
+        <span class="tech-pill"><i class="fas fa-sitemap"></i> AST Import Parser</span>
+        <span class="tech-pill"><i class="fab fa-python"></i> PyPI / npm Package Registries</span>
       </div>
 
       <!-- Quick Impact Stats -->
       <div class="stats-row">
-        <div class="stat" data-tilt>
+        <div class="stat-card-compact">
           <span class="stat-number">1-Click</span>
-          <span class="stat-label">Resolution</span>
+          <span class="stat-label">Instant Resolution</span>
         </div>
-        <div class="stat" data-tilt>
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Editor Focus</span>
+        <div class="stat-card-compact">
+          <span class="stat-number">AST Scan</span>
+          <span class="stat-label">Import-to-Package Mapping</span>
         </div>
-        <div class="stat" data-tilt>
+        <div class="stat-card-compact">
           <span class="stat-number">Marketplace</span>
-          <span class="stat-label">Published Tool</span>
+          <span class="stat-label">Live Published Extension</span>
         </div>
       </div>
     </section>
 
     <!-- Structured 3-Card Overview -->
-    <section class="content-section">
-      <h2><i class="fas fa-layer-group"></i> Project Architecture & Briefing</h2>
-      <div class="about-grid" style="margin-top: 2rem;">
-        <div class="about-card" data-tilt>
+    <section class="content-section" style="margin-top: 2rem;">
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-layer-group" style="color: var(--secondary-light);"></i> Engineering Architecture & Solution</h2>
+      <div class="about-grid">
+        <div class="about-card">
           <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
-          <h3>01. Problem & Friction</h3>
-          <p>Developers frequently encounter `ModuleNotFoundError` or package conflicts that break their workflow. Moving to an external terminal to debug environment aliases wastes time and degrades developer focus.</p>
+          <h3>01. Problem: Dependency Friction & Tracebacks</h3>
+          <p>Developers cloning unfamiliar repositories or collaborating on multi-package Python and JavaScript projects frequently hit cryptic <code>ModuleNotFoundError</code> or uninstalled package errors. Leaving the editor to search for package names disrupts developer flow.</p>
         </div>
 
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-cogs"></i></div>
-          <h3>02. Intelligent VS Code Engine</h3>
-          <p>DARTX silently listens to terminal execution streams, isolates missing package tracebacks, maps import aliases (e.g. `cv2` → `opencv-python`, `PIL` → `Pillow`), and presents secure 1-click install notifications.</p>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>02. Intelligent Alias Mapping & Detection</h3>
+          <p>Many popular libraries have import names that differ from their package install names (e.g., importing <code>cv2</code> requires <code>pip install opencv-python</code>; importing <code>PIL</code> requires <code>pip install Pillow</code>). DARTX includes a curated alias resolution database to prevent install failures.</p>
         </div>
 
-        <div class="about-card" data-tilt>
+        <div class="about-card">
           <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>03. Security & Marketplace Status</h3>
-          <p>Enforces strict command and package validation against official registries to prevent typosquatting attacks. Published live on the VS Code Extension Marketplace for community installation.</p>
+          <h3>03. Registry Validation & 1-Click Install</h3>
+          <p>Integrates VS Code notifications with secure subprocess triggers to execute pip/npm installation in the active virtual environment, verifying package names against official registries to prevent typosquatting security vulnerabilities.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-check-double"></i></div>
+          <h3>04. Published Extension & Real Impact</h3>
+          <p>Packaged using <code>vsce</code> and published on the official Visual Studio Code Marketplace, delivering a friction-free developer experience for students, hobbyists, and professional software engineers.</p>
         </div>
       </div>
     </section>
 
     <!-- Screenshot Gallery -->
     <section class="content-section" style="margin-top: 3.5rem;">
-      <h2><i class="fas fa-images"></i> Extension Screenshots Gallery</h2>
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-images" style="color: var(--secondary-light);"></i> Extension Workflow & Screenshots</h2>
       <div class="detail-gallery">
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/DARTX/DARTX_Problem.png" alt="Dependency Conflict Problem" class="modal-trigger">
-          <p>Terminal Error Detection</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/DARTX/DARTX_Problem.png" alt="Dependency Error Detection" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Error+Detection';">
+          <p>Terminal Error & Import Detection</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/DARTX/DARTX1.png" alt="1-Click Resolution Notification" class="modal-trigger">
-          <p>1-Click Package Resolution</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/DARTX/DARTX1.png" alt="1-Click Resolution Notification" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=1-Click+Resolution';">
+          <p>1-Click Auto Install Notification</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/DARTX/DARTX.png" alt="DARTX Extension Overview" class="modal-trigger">
-          <p>DARTX Extension Architecture</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/DARTX/DARTX.png" alt="DARTX Extension Overview" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Marketplace+Tool';">
+          <p>VS Code Marketplace Architecture</p>
         </div>
       </div>
     </section>
 
     <!-- Footer Actions -->
-    <div style="display: flex; gap: 1.2rem; justify-content: center; margin-top: 4rem;">
+    <div style="display: flex; gap: 1.2rem; justify-content: center; margin-top: 4rem; flex-wrap: wrap;">
       <a href="index.html#projects" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-      <a href="https://github.com/SuraviR10/Dependency_Manager.git" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
+      <a href="https://github.com/SuraviR10/Dependency_Manager.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
+      <a href="index.html#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Suravi</a>
     </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="script-enhanced.js"></script>
+  <footer>
+    <p>&copy; 2025 Suravi R. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

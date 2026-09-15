@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Suravi R — Information Science & Engineering student specializing in AI systems, backend engineering, optimization algorithms, and DevOps. Explore projects, certifications, and portfolio.">
-  <meta name="keywords" content="Suravi R, Software Engineer, AI Systems, Full Stack Developer, MIT Mysore, DARTX, Timetable Generator, Portfolio">
-  <meta property="og:title" content="Suravi R — Software Engineer & AI Innovator Portfolio">
-  <meta property="og:description" content="Explore award-winning AI systems, developer tools, published VS Code extensions, and academic achievements.">
+  <meta name="description" content="Suravi R — Information Science & Engineering student at MIT Mysore specializing in Python backend engineering, optimization algorithms, and AI-enabled systems. Explore projects, credentials, and resume.">
+  <meta name="keywords" content="Suravi R, Software Engineer, Python Developer, Backend Developer, MIT Mysore, DARTX, SMART LAB, Timetable Generator, Portfolio">
+  <meta name="author" content="Suravi R">
+  <meta property="og:title" content="Suravi R — Software Engineer & AI Systems Developer Portfolio">
+  <meta property="og:description" content="Explore published developer tools, algorithmic optimization systems, academic assessment platforms, and verified credentials.">
   <meta property="og:type" content="website">
-  <title>Suravi R — Software Engineer & AI Innovator Portfolio</title>
+  <meta property="og:url" content="https://suravir-portfolio.vercel.app/">
+  <title>Suravi R — Software Engineer & AI Systems Developer Portfolio</title>
+  
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* Fix mobile layout: prevent horizontal scroll and ensure background fills the whole page */
+    /* Prevent accidental horizontal overflow on mobile screens */
     html, body {
       overflow-x: hidden;
       max-width: 100vw;
-      min-height: 100vh;
-      background-color: #060811;
+      background-color: #070a13;
     }
   </style>
 </head>
@@ -27,7 +29,7 @@
   <div id="preloader">
     <div class="preloader-inner">
       <div class="preloader-ring"></div>
-      <span class="preloader-text"><i class="fas fa-code"></i></span>
+      <span class="preloader-text"><i class="fas fa-terminal"></i></span>
     </div>
   </div>
 
@@ -37,6 +39,7 @@
   <div class="bg-ambient-orb bg-orb-1" aria-hidden="true"></div>
   <div class="bg-ambient-orb bg-orb-2" aria-hidden="true"></div>
   <div class="bg-ambient-orb bg-orb-3" aria-hidden="true"></div>
+
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="custom-cursor">
     <div class="cursor-dot" id="cursor-dot"></div>
@@ -47,16 +50,23 @@
   <header>
     <div class="scroll-progress" id="scroll-progress"></div>
     <nav>
-      <a href="#home" class="logo"><i class="fas fa-code"></i> Suravi R</a>
+      <a href="#home" class="logo">
+        <i class="fas fa-terminal"></i> Suravi R <span class="logo-badge">SWE</span>
+      </a>
       <ul id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#journey">Journey</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#exposure">Exposure</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" style="color: var(--primary-light); font-weight: bold;"><i class="fas fa-file-pdf"></i> Resume</a></li>
+        <li>
+          <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="nav-cta-btn">
+            <i class="fas fa-download"></i> Resume
+          </a>
+        </li>
       </ul>
       <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
@@ -75,7 +85,7 @@
 
   <!-- Floating Resume Button -->
   <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="floating-resume-btn" title="Download Resume">
-    <i class="fas fa-download"></i> <span>Resume</span>
+    <i class="fas fa-file-pdf"></i> <span>Download Resume</span>
   </a>
 
   <!-- Chatbot Widget -->
@@ -86,7 +96,7 @@
       </div>
       <div class="chatbot-title">
         <h3>Portfolio AI Assistant</h3>
-        <span class="status-indicator">● Online</span>
+        <span class="status-indicator">● Online & Ready</span>
       </div>
       <button class="chatbot-header-btn" id="chatbot-clear" title="Clear Chat"><i class="fas fa-trash-alt"></i></button>
       <button class="chatbot-close" id="chatbot-close"><i class="fas fa-times"></i></button>
@@ -97,90 +107,104 @@
           <i class="fas fa-robot"></i>
         </div>
         <div class="message-content">
-          <p>Hi! 👋 I'm your Portfolio AI Assistant. I can answer any questions about Suravi's background, skills, projects, achievements, hackathons, and more. Ask me anything!</p>
+          <p>Hi! 👋 I'm Suravi's portfolio assistant. Ask me about her technical skills, major projects (DARTX, Timetable Generator, SMART LAB), internship experience, or academic background!</p>
         </div>
       </div>
     </div>
     <div class="chatbot-suggestions">
-      <button class="suggestion-btn" data-question="What makes Suravi stand out?">⭐ What makes her special?</button>
-      <button class="suggestion-btn" data-question="Tell me about her achievements">🏆 Achievements</button>
-      <button class="suggestion-btn" data-question="What are her technical skills?">💻 Skills</button>
-      <button class="suggestion-btn" data-question="What makes Suravi unique?">🌟 What makes her unique?</button>
-      <button class="suggestion-btn" data-question="Show me her best projects">🚀 Projects</button>
+      <button class="suggestion-btn" data-question="Tell me about her technical skills">💻 Technical Skills</button>
+      <button class="suggestion-btn" data-question="Tell me about DARTX VS Code extension">🛠️ DARTX Tool</button>
+      <button class="suggestion-btn" data-question="Tell me about SMART LAB Assistant">🎓 SMART LAB Project</button>
+      <button class="suggestion-btn" data-question="Tell me about her internship experience">💼 Experience</button>
+      <button class="suggestion-btn" data-question="How can I contact Suravi?">📬 Contact Info</button>
     </div>
     <div class="chatbot-input">
-      <input type="text" id="chatbot-input-field" placeholder="Ask me anything about Suravi...">
+      <input type="text" id="chatbot-input-field" placeholder="Ask about projects, skills, experience...">
       <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
-    </div>
-  </div>
-
-  <!-- Project Presentation Modal (PPT Style) -->
-  <div class="ppt-modal" id="ppt-modal">
-    <div class="ppt-container">
-      <div class="ppt-header">
-        <div class="ppt-project-info">
-          <i class="fas fa-presentation-screen"></i>
-          <h3 id="ppt-title">Project Presentation</h3>
-        </div>
-        <button class="ppt-close" onclick="closePPT()"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="ppt-body" id="ppt-body">
-        <!-- Slides will be injected here by JS -->
-      </div>
-      <div class="ppt-footer">
-        <button class="ppt-nav-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Previous</button>
-        <div class="ppt-dots" id="ppt-dots"></div>
-        <button class="ppt-nav-btn" onclick="nextSlide()">Next <i class="fas fa-chevron-right"></i></button>
-      </div>
     </div>
   </div>
 
   <!-- Image Viewer Modal -->
   <div id="image-modal" class="image-modal">
     <span class="image-modal-close" id="image-modal-close">&times;</span>
-    <img class="image-modal-content" id="modal-img">
+    <img class="image-modal-content" id="modal-img" alt="Certificate Preview">
     <div id="image-modal-caption"></div>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Main Content -->
   <main>
+    <!-- Hero Section -->
     <section id="home" class="hero">
-      <!-- Full-Screen Cinematic Universe Video Background -->
+      <!-- Background Video Overlay -->
       <video id="universe-video" class="universe-bg-video" autoplay muted loop playsinline>
         <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-the-night-sky-4022-large.mp4" type="video/mp4">
         <source src="https://cdn.pixabay.com/video/2020/09/24/51139-463286595_large.mp4" type="video/mp4">
       </video>
-
-      <!-- Transparent Dark Blue-to-Black Overlay -->
       <div class="universe-video-overlay"></div>
-
-      <!-- 3D Particle Constellation Canvas -->
       <canvas id="hero-canvas"></canvas>
+
       <div class="hero-content" data-aos="fade-right">
-        <div class="hero-badge">👋 Welcome to my portfolio</div>
+        <div class="hero-badge-container">
+          <div class="availability-badge">
+            <span class="status-dot-pulse"></span>
+            <span>Open to Software Engineering Internships & Entry-Level Roles (2026 Grad)</span>
+          </div>
+        </div>
+
         <h1>Hi, I'm <span class="name-highlight">Suravi R</span></h1>
-        <p class="hero-subtitle"><i class="fas fa-sparkles" style="color: var(--secondary-light); font-size: 1.2rem; margin-right: 0.4rem;"></i> <span id="typing-effect"></span></p>
-        <p class="hero-description">Information Science & Engineering student at MIT Mysore passionate about building AI-driven software, robust backend architectures, and developer tools that solve real-world problems.</p>
+        <p class="hero-subtitle">
+          <i class="fas fa-terminal" style="color: var(--secondary-light); font-size: 1.1rem; margin-right: 0.5rem;"></i>
+          <span id="typing-effect"></span>
+        </p>
+        <p class="hero-description">
+          Information Science & Engineering student at Maharaja Institute of Technology Mysore. Focused on building high-performance Python backends, constraint optimization algorithms, and practical developer tools that solve real engineering bottlenecks.
+        </p>
         
-        <div class="hero-stats">
-          <div class="stat" data-tilt><span class="stat-number">9.12</span><span class="stat-label">CGPA</span></div>
-          <div class="stat" data-tilt><span class="stat-number">98%</span><span class="stat-label">NPTEL Score</span></div>
-          <div class="stat" data-tilt><span class="stat-number">2 Projects</span><span class="stat-label">Award</span></div>
+        <!-- 4-Card Credibility Stats Grid -->
+        <div class="hero-stats-grid">
+          <div class="stat-card-compact" data-tilt>
+            <span class="stat-number">9.12</span>
+            <span class="stat-label">CGPA (ISE, MIT Mysore)</span>
+          </div>
+          <div class="stat-card-compact" data-tilt>
+            <span class="stat-number">98%</span>
+            <span class="stat-label">NPTEL Java (Top 1% Gold)</span>
+          </div>
+          <div class="stat-card-compact" data-tilt>
+            <span class="stat-number">2×</span>
+            <span class="stat-label">Project Awards Won</span>
+          </div>
+          <div class="stat-card-compact" data-tilt>
+            <span class="stat-number">Published</span>
+            <span class="stat-label">DARTX (VS Code Tool)</span>
+          </div>
         </div>
         
         <div class="hero-buttons">
-          <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-primary"><i class="fas fa-download"></i> View / Download Resume</a>
-          <a href="#projects" class="btn btn-secondary">View Projects</a>
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-layer-group"></i> View Featured Projects</a>
+          <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-secondary"><i class="fas fa-file-pdf"></i> Download Resume</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
         </div>
       </div>
       
       <div class="hero-image" data-aos="fade-left">
-        <div class="profile-card" data-tilt>
-          <img src="images/Self.jpg" alt="Suravi R" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400/1a243e/8b5cf6?text=Profile';">
-          <div class="profile-badges">
-            <span class="badge">🤖 Intelligent Systems</span>
-            <span class="badge">⚙️ Backend & DevOps</span>
-            <span class="badge">🏆 Awarded Innovator</span>
+        <div class="profile-card-modern" data-tilt>
+          <div class="profile-img-wrapper">
+            <img src="images/Self.jpg" alt="Suravi R - Software Engineering Candidate" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/340x420/0d1224/6366f1?text=Suravi+R';">
+          </div>
+          <div class="profile-badges-list">
+            <div class="profile-badge-item badge-purple">
+              <i class="fas fa-server"></i>
+              <span>Python Backend & Optimization</span>
+            </div>
+            <div class="profile-badge-item badge-cyan">
+              <i class="fas fa-puzzle-piece"></i>
+              <span>Published VS Code Tool Creator</span>
+            </div>
+            <div class="profile-badge-item badge-gold">
+              <i class="fas fa-medal"></i>
+              <span>NPTEL Gold Medalist (Top 1%)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -189,51 +213,356 @@
     <!-- About Section -->
     <section id="about">
       <h2 data-aos="fade-up">About Me</h2>
+      <p class="section-subtitle" data-aos="fade-up">Engineering Philosophy • Core Foundations • Technical Mindset</p>
+      
       <div class="about-container">
         <div class="about-grid">
           <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="100">
-            <div class="card-icon"><i class="fas fa-user-astronaut"></i></div>
+            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
             <h3>Who I Am</h3>
-            <p>I am an Information Science & Engineering student focused on building intelligent software systems using AI, backend engineering, and modern development practices. I enjoy solving practical problems through software engineering.</p>
+            <p>I am a pre-final year Information Science & Engineering student at Maharaja Institute of Technology Mysore with a strong academic foundation (9.12 CGPA). I approach software engineering as an applied science—focusing on clean code architecture, algorithmic efficiency, and building reliable systems that solve tangible problems.</p>
           </div>
           
-          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="300">
-            <div class="card-icon"><i class="fas fa-rocket"></i></div>
-            <h3>Vision</h3>
-            <p>To become a Software Engineer specializing in AI-powered applications and intelligent systems, building scalable and impactful solutions that solve meaningful real-world problems.</p>
+          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+            <div class="card-icon"><i class="fas fa-cubes"></i></div>
+            <h3>Engineering Focus & Vision</h3>
+            <p>My core technical strengths center on Python backend engineering, Java OOP design, relational database modeling, and algorithmic problem solving. Whether building genetic algorithms for complex scheduling or automated compiler evaluation systems for programming labs, I enjoy engineering end-to-end solutions that are practical, robust, and defensible in technical discussions.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience & Internships Section -->
     <section id="experience">
-      <h2 data-aos="fade-up">Experience & Internship</h2>
-      <div class="about-container">
-        <div class="about-grid">
-          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="100">
-            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
-            <h3>Future Interns</h3>
-            <p><strong>Web Development Intern</strong> (Aug – Sep 2024)<br>Built responsive interfaces, improved JavaScript interactions, and enhanced user experience on production-ready web applications.</p>
+      <h2 data-aos="fade-up">Experience & Internships</h2>
+      <p class="section-subtitle" data-aos="fade-up">Hands-on technical internships and industry-focused engineering training</p>
+      
+      <div class="experience-grid">
+        <!-- Ethnotech Academy -->
+        <div class="experience-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="exp-header">
+            <div class="exp-company-info">
+              <h3>Ethnotech Academy</h3>
+              <span class="exp-role-title">Generative AI & Backend Intern</span>
+            </div>
+            <span class="exp-date-badge">Aug 2024 – Present</span>
           </div>
-          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="200">
-            <div class="card-icon"><i class="fas fa-rocket"></i></div>
-            <h3>Ongoing Major Project</h3>
-            <p><strong>AI Powered Lab Programming Assistant</strong><br>Building an interactive AI-driven EdTech system that guides students through logic building, code understanding, and viva preparation using intelligent AI-powered workflows.</p>
+          <p class="exp-description">Engineered an AI-driven civic-tech complaint classification and routing engine for municipal administration.</p>
+          <ul class="exp-bullets">
+            <li>Built structured prompt workflows and validation pipelines to parse unstructured citizen complaints across regional languages.</li>
+            <li>Automated grievance categorization (sanitation, roads, electricity, water supply) with priority tagging for departmental escalation.</li>
+            <li>Designed REST API endpoints connecting the NLP classification engine with administrative tracking dashboards.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>GenAI Pipelines</span>
+            <span>NLP Classification</span>
+            <span>Civic Tech</span>
           </div>
-          <div class="about-card" data-tilt data-aos="fade-up" data-aos-delay="300">
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Impact Delivered</h3>
-            <p>Focused on building intelligent software systems and backend solutions that solve meaningful real-world problems, rather than just showcasing technologies.</p>
+        </div>
+
+        <!-- Wizzy Box -->
+        <div class="experience-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="exp-header">
+            <div class="exp-company-info">
+              <h3>Wizzy Box</h3>
+              <span class="exp-role-title">Selected Trainee / Technical Training</span>
+            </div>
+            <span class="exp-date-badge">2024 – Present</span>
           </div>
-        </div> 
+          <p class="exp-description">Undergoing rigorous technical training in full-stack architecture, backend systems, and scalable web engineering.</p>
+          <ul class="exp-bullets">
+            <li>Hands-on system design exercises covering RESTful API lifecycle, request routing, and backend middleware.</li>
+            <li>Database modeling, indexing strategies, and query optimization for relational databases (MySQL/PostgreSQL).</li>
+            <li>Applied modern software design patterns and clean code principles to production-style problem sets.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Full-Stack</span>
+            <span>Backend Systems</span>
+            <span>Database Modeling</span>
+            <span>API Design</span>
+            <span>Clean Architecture</span>
+          </div>
+        </div>
+
+        <!-- Future Interns -->
+        <div class="experience-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+          <div class="exp-header">
+            <div class="exp-company-info">
+              <h3>Future Interns</h3>
+              <span class="exp-role-title">Web Development Intern</span>
+            </div>
+            <span class="exp-date-badge">Aug 2024 – Sep 2024</span>
+          </div>
+          <p class="exp-description">Developed responsive web interfaces, interactive JavaScript modules, and optimized frontend performance.</p>
+          <ul class="exp-bullets">
+            <li>Implemented responsive, mobile-first web layouts ensuring smooth cross-device and cross-browser rendering.</li>
+            <li>Built asynchronous JavaScript DOM manipulation routines, form validators, and interactive UI components.</li>
+            <li>Collaborated on code reviews, component refactoring, and frontend performance optimizations.</li>
+          </ul>
+          <div class="exp-tags">
+            <span>JavaScript (ES6+)</span>
+            <span>HTML5 & CSS3</span>
+            <span>Responsive Layouts</span>
+            <span>DOM API</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Journey Section (Combined: Education, Growth, Hackathons, Industry, Awards) -->
+    <!-- Featured Projects Section -->
+    <section id="projects">
+      <h2 data-aos="fade-up">Featured Projects</h2>
+      <p class="section-subtitle" data-aos="fade-up">Practical software tools, algorithmic engines, and systems built to solve real problems</p>
+      
+      <div class="projects-grid">
+        <!-- 1. DARTX (VS Code Extension) -->
+        <div class="project-card featured" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="project-header">
+            <i class="fas fa-puzzle-piece project-icon"></i>
+            <span class="project-badge">🛠️ VS Code Marketplace</span>
+          </div>
+          <h3>DARTX – Smart Dependency Manager & Scanner</h3>
+          <p>
+            An intelligent VS Code extension that automatically scans codebase imports, detects missing runtime packages, resolves tricky alias mappings (e.g., <code>cv2</code> &rarr; <code>opencv-python</code>, <code>PIL</code> &rarr; <code>Pillow</code>), and triggers secure 1-click package installs via pip/npm.
+          </p>
+          <div class="project-tags">
+            <span>TypeScript</span>
+            <span>Node.js</span>
+            <span>VS Code Extension API</span>
+            <span>AST Analysis</span>
+            <span>Marketplace</span>
+          </div>
+          <div class="project-btns">
+            <a href="dependency-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
+            <a href="https://github.com/SuraviR10/Dependency_Manager.git" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- 2. MITM-TimeEvolver (Genetic Algorithm) -->
+        <div class="project-card featured" data-tilt data-aos="fade-up" data-aos-delay="150">
+          <div class="project-header">
+            <i class="fas fa-dna project-icon"></i>
+            <span class="project-badge">🏆 Mini Expo 2nd Prize</span>
+          </div>
+          <h3>MITM-TimeEvolver – Smart Timetable Generator</h3>
+          <p>
+            An algorithmic academic scheduling platform using Genetic Algorithms to solve multi-variable constraint satisfaction (faculty workload caps, lab block allocations, and room collisions). Generates conflict-free departmental schedules in under 2 minutes.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Genetic Algorithm</span>
+            <span>Constraint Optimization</span>
+            <span>Supabase</span>
+          </div>
+          <div class="project-btns">
+            <a href="timetable-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
+            <a href="https://github.com/SuraviR10/MITM-TimeEvolver.git" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- 3. SMART LAB (AI Lab Assistant & Assessment System) -->
+        <div class="project-card featured" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="project-header">
+            <i class="fas fa-flask-vial project-icon"></i>
+            <span class="project-badge" style="background: rgba(99, 102, 241, 0.15); color: var(--primary-light); border-color: rgba(99, 102, 241, 0.35);">🎓 Major Academic System</span>
+          </div>
+          <h3>SMART LAB – C Programming Assessment System</h3>
+          <p>
+            An intelligent programming lab assistant combining GCC/MinGW automated code compilation, plain-English compiler/runtime error parser, automated test case evaluation (public + hidden), lab manual PDF problem extraction, and instructor grading dashboards.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask / FastAPI</span>
+            <span>GCC / MinGW</span>
+            <span>Automated Testing</span>
+            <span>SQLite</span>
+          </div>
+          <div class="project-btns">
+            <a href="lab-assistant-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
+            <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- 4. Civic-Tech Complaint Classifier (Ethnotech) -->
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+          <div class="project-header">
+            <i class="fas fa-landmark project-icon"></i>
+            <span class="project-badge" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-light); border-color: rgba(16, 185, 129, 0.3);">🏛️ Civic-Tech AI System</span>
+          </div>
+          <h3>Civic-Tech Multilingual Complaint Classifier</h3>
+          <p>
+            An automated grievance categorization engine that ingests citizen complaints across regional languages, extracts core issues, classifies them into municipal departments (sanitation, roads, electricity, water), and generates structured routing tickets.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>GenAI Pipelines</span>
+            <span>NLP Classification</span>
+            <span>REST API</span>
+          </div>
+          <div class="project-btns">
+            <a href="https://github.com/SuraviR10/Civic-Complaint-Classifier" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View GitHub Repo</a>
+          </div>
+        </div>
+
+        <!-- 5. HerbAura (Virtual Ayurvedic Garden) -->
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+          <div class="project-header">
+            <i class="fas fa-cube project-icon"></i>
+            <span class="project-badge" style="background: rgba(6, 182, 212, 0.12); color: var(--secondary-light); border-color: rgba(6, 182, 212, 0.3);">🌱 3D & AI Hackathon</span>
+          </div>
+          <h3>HerbAura – 3D Virtual Ayurvedic Platform</h3>
+          <p>
+            An interactive 3D WebGL herbal garden built during the VEC Hackathon. Features real-time Three.js 3D plant rendering, an AI herbal combination scoring engine (Kashayam maker), and gamified botanical quizzes to make traditional medicinal knowledge accessible.
+          </p>
+          <div class="project-tags">
+            <span>Three.js</span>
+            <span>WebGL</span>
+            <span>Python AI</span>
+            <span>JavaScript</span>
+            <span>EdTech</span>
+          </div>
+          <div class="project-btns">
+            <a href="virtual-garden-project.html" class="btn btn-small btn-primary"><i class="fas fa-info-circle"></i> Details & Demo</a>
+            <a href="https://youtu.be/V2mUIwrPJEc" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary" style="color: #fca5a5;"><i class="fab fa-youtube"></i> Demo Video</a>
+            <a href="https://github.com/SuraviR10/HerbAura-Virtual-Ayurvedic-Garden.git" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+
+        <!-- 6. Stepping Stone Academy -->
+        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="350">
+          <div class="project-header">
+            <i class="fas fa-globe project-icon"></i>
+            <span class="project-badge" style="background: rgba(245, 158, 11, 0.12); color: var(--gold-light); border-color: rgba(245, 158, 11, 0.3);">🌐 Live Deployed Platform</span>
+          </div>
+          <h3>Stepping Stone Academy Educational Website</h3>
+          <p>
+            A high-performance, responsive web platform designed and deployed for a Montessori institution in Mysore. Features mobile-first admissions information, facilities gallery, dynamic contact points, and fast-loading layouts on Netlify.
+          </p>
+          <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Netlify</span>
+            <span>Production Web</span>
+          </div>
+          <div class="project-btns">
+            <a href="stepping-stone-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
+            <a href="https://the-stepping-stone-academy-mysore.netlify.app/" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills">
+      <h2 data-aos="fade-up">Technical Skills</h2>
+      <p class="section-subtitle" data-aos="fade-up">Core competencies organized by software engineering domains</p>
+      
+      <div class="skills-container-structured">
+        <!-- 1. Languages -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-category-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fab fa-java"></i> Java (NPTEL Gold)</div>
+            <div class="skill-pill"><i class="fas fa-terminal"></i> C / C++</div>
+            <div class="skill-pill"><i class="fas fa-database"></i> SQL</div>
+            <div class="skill-pill"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
+            <div class="skill-pill"><i class="fab fa-js-square"></i> TypeScript</div>
+            <div class="skill-pill"><i class="fab fa-html5"></i> HTML5 & CSS3</div>
+          </div>
+        </div>
+
+        <!-- 2. Backend & Web -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend & Web Technologies</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fas fa-flask"></i> Flask</div>
+            <div class="skill-pill"><i class="fas fa-bolt"></i> FastAPI (Exploring)</div>
+            <div class="skill-pill"><i class="fas fa-network-wired"></i> RESTful APIs</div>
+            <div class="skill-pill"><i class="fab fa-node-js"></i> Node.js Basics</div>
+            <div class="skill-pill"><i class="fas fa-cube"></i> Three.js / WebGL</div>
+            <div class="skill-pill"><i class="fas fa-shield-alt"></i> API Validation</div>
+          </div>
+        </div>
+
+        <!-- 3. Databases -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-category-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases & Storage</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="skill-pill"><i class="fas fa-database"></i> MySQL</div>
+            <div class="skill-pill"><i class="fas fa-database"></i> SQLite</div>
+            <div class="skill-pill"><i class="fas fa-bolt"></i> Supabase</div>
+            <div class="skill-pill"><i class="fas fa-project-diagram"></i> Relational Schema Design</div>
+            <div class="skill-pill"><i class="fas fa-search"></i> Query Optimization</div>
+          </div>
+        </div>
+
+        <!-- 4. Core CS Foundations -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+          <div class="skill-category-header">
+            <i class="fas fa-brain"></i>
+            <h3>Core CS Foundations</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fas fa-sitemap"></i> Data Structures & Algorithms</div>
+            <div class="skill-pill"><i class="fas fa-shapes"></i> Object-Oriented Design (OOP)</div>
+            <div class="skill-pill"><i class="fas fa-table"></i> Database Management (DBMS)</div>
+            <div class="skill-pill"><i class="fas fa-microchip"></i> Operating Systems (OS)</div>
+            <div class="skill-pill"><i class="fas fa-network-wired"></i> Computer Networks (CN)</div>
+          </div>
+        </div>
+
+        <!-- 5. Developer Tools & Workflow -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-category-header">
+            <i class="fas fa-tools"></i>
+            <h3>Developer Tools & Environments</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="skill-pill"><i class="fab fa-github"></i> GitHub</div>
+            <div class="skill-pill"><i class="fas fa-code"></i> VS Code Extension API</div>
+            <div class="skill-pill"><i class="fas fa-terminal"></i> GCC / MinGW Toolchain</div>
+            <div class="skill-pill"><i class="fas fa-paper-plane"></i> Postman</div>
+            <div class="skill-pill"><i class="fab fa-linux"></i> Linux CLI Basics</div>
+          </div>
+        </div>
+
+        <!-- 6. Currently Exploring -->
+        <div class="skill-category-card" data-tilt data-aos="fade-up" data-aos-delay="350">
+          <div class="skill-category-header">
+            <i class="fas fa-compass"></i>
+            <h3>Currently Exploring</h3>
+          </div>
+          <div class="skills-pill-grid">
+            <div class="skill-pill"><i class="fab fa-docker"></i> Docker Containerization</div>
+            <div class="skill-pill"><i class="fas fa-cubes"></i> Microservices Architecture</div>
+            <div class="skill-pill"><i class="fas fa-robot"></i> LLM Agent Workflows</div>
+            <div class="skill-pill"><i class="fas fa-cloud"></i> Cloud Deployment Practices</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Streamlined Journey Section -->
     <section id="journey">
       <h2 data-aos="fade-up">My Journey</h2>
-      <p class="section-subtitle" data-aos="fade-up">Education • Growth • Hackathons • Industry • Awards</p>
+      <p class="section-subtitle" data-aos="fade-up">Milestones in academic rigor, hands-on building, and technical growth</p>
       
       <!-- Quick Education Overview -->
       <div class="education-quick" data-aos="fade-up">
@@ -241,571 +570,318 @@
           <i class="fas fa-graduation-cap"></i>
           <h3>B.E. ISE</h3>
           <p>Maharaja Institute of Technology Mysore</p>
-          <span>CGPA: 9.12</span>
+          <span>9.12 CGPA</span>
         </div>
         <div class="edu-card" data-tilt>
-          <i class="fas fa-trophy"></i>
+          <i class="fas fa-medal"></i>
           <h3>NPTEL Java</h3>
           <p>Top 1% Nationwide</p>
           <span>98% Score (Gold Medal)</span>
         </div>
         <div class="edu-card" data-tilt>
           <i class="fas fa-award"></i>
-          <h3>Awards</h3>
-          <p>2 Project Prizes</p>
-          <span>Mini & Best</span>
+          <h3>Project Prizes</h3>
+          <p>2 Project Recognitions</p>
+          <span>Mini Expo & Best Project</span>
         </div>
       </div>
-      
-      <div class="journey-timeline">
-        <!-- Stage 1 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
-              <i class="fas fa-lightbulb"></i>
+
+      <!-- 6 Clean Milestone Stages -->
+      <div class="journey-timeline-streamlined">
+        <!-- Milestone 1 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+              <i class="fas fa-university"></i>
             </div>
-            <div class="stage-year">Pre-University</div>
+            <span class="milestone-year">2022</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-star"></i> Early Curiosity</h3>
-            <p>Introduced to programming through C++ in 11th grade, sparking a lasting passion for computer science, logical problem-solving, and building intelligent systems.</p>
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>Academic Enrollment in ISE @ MIT Mysore</h3>
+              <span class="milestone-tag">Foundation</span>
+            </div>
+            <p>Started Bachelor of Engineering in Information Science & Engineering. Built strong mathematical foundations in discrete logic, calculus, and computational fundamentals.</p>
           </div>
         </div>
 
-        <!-- Stage 2 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+        <!-- Milestone 2 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
               <i class="fas fa-code"></i>
             </div>
-            <div class="stage-year">1st Semester</div>
+            <span class="milestone-year">2023</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-globe"></i> Web Foundations</h3>
-            <p>Mastered HTML and CSS fundamentals, discovering how design and functionality create engaging user experiences and practical web solutions.</p>
-          </div>
-        </div>
-
-        <!-- Stage 3 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-              <i class="fab fa-python"></i>
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>Core Systems Programming & Data Structures</h3>
+              <span class="milestone-tag">Core CS</span>
             </div>
-            <div class="stage-year">2nd Semester</div>
-          </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-laptop-code"></i> Programming Fundamentals</h3>
-            <p>Strengthened core programming skills with C and Python, focusing on algorithms, data structures, and robust software logic essential for backend engineering.</p>
+            <p>Mastered procedural C and Object-Oriented Programming in Java. Implemented core Data Structures (trees, graphs, heaps) and deepened understanding of OS memory management and relational DBMS.</p>
           </div>
         </div>
 
-        <!-- Stage 4 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-              <i class="fas fa-project-diagram"></i>
+        <!-- Milestone 3 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <i class="fas fa-medal"></i>
             </div>
-            <div class="stage-year">3rd Semester</div>
+            <span class="milestone-year">2024</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-brain"></i> Exploring Computer Science Depth</h3>
-            <p>Delved into Data Structures, Algorithms, Operating Systems, DBMS, and Computer Networks, developing a deep fascination for system architecture and backend engineering.</p>
-          </div>
-        </div>
-
-        <!-- Stage 5 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-              <i class="fas fa-rocket"></i>
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>NPTEL Java Elite Gold Medal (Top 1% Nationwide)</h3>
+              <span class="milestone-tag">Academic Excellence</span>
             </div>
-            <div class="stage-year">4th Semester</div>
-          </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-cloud-upload-alt"></i> Real World Development</h3>
-            <p>Built and deployed a responsive website for Stepping Stone Academy using Netlify, gaining hands-on experience in practical web development and deployment.</p>
-            <div class="stage-badge">🚀 First Deployment</div>
+            <p>Achieved a 98% score in NPTEL's "Programming in Java", ranking in the Top 1% of candidates nationwide and earning the Elite+Gold certificate for mastery of Java OOP and algorithm design.</p>
           </div>
         </div>
 
-        <!-- Stage 6 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
-              <i class="fas fa-shopping-cart"></i>
+        <!-- Milestone 4 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+              <i class="fas fa-puzzle-piece"></i>
             </div>
-            <div class="stage-year">4th Semester</div>
+            <span class="milestone-year">2024</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-store"></i> Building Practical Projects</h3>
-            <p>Developed complex applications, including a full-stack e-commerce platform, mastering robust backend engineering and scalable frontend-backend integration.</p>
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>Engineered & Published DARTX on VS Code Marketplace</h3>
+              <span class="milestone-tag">Developer Tooling</span>
+            </div>
+            <p>Designed and launched DARTX, a TypeScript-based extension for VS Code that resolves runtime dependency errors and aliases with 1-click execution for developers worldwide.</p>
           </div>
         </div>
 
-        <!-- Stage 7 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #eab308, #ca8a04);">
+        <!-- Milestone 5 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
               <i class="fas fa-trophy"></i>
             </div>
-            <div class="stage-year">5th Semester</div>
+            <span class="milestone-year">2025</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-award"></i> Innovation & Recognition</h3>
-            <p>Created the <strong>Smart Automated Timetable Generator</strong>, an intelligent system handling real college constraints. Won <strong>2nd Prize</strong> at the Mini Project Expo.</p>
-            <div class="stage-badge">🏆 2nd Prize Winner</div>
-            <div class="award-image">
-              <img src="images/Mini_Project.jpeg" alt="Mini Project Expo 2nd Prize" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Award';">
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>MITM-TimeEvolver (Expo 2nd Prize) & SMART LAB System</h3>
+              <span class="milestone-tag">Algorithmic Innovation</span>
             </div>
+            <p>Built MITM-TimeEvolver (Genetic Algorithm scheduling engine) winning 2nd Prize at Mini Project Expo, and initiated SMART LAB to automate compiler assessment in university coding practicals.</p>
           </div>
         </div>
 
-        <!-- Stage 8 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
-              <i class="fas fa-leaf"></i>
+        <!-- Milestone 6 -->
+        <div class="timeline-milestone" data-aos="fade-up">
+          <div class="milestone-marker">
+            <div class="milestone-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+              <i class="fas fa-rocket"></i>
             </div>
-            <div class="stage-year">5th Semester</div>
+            <span class="milestone-year">Present</span>
           </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-seedling"></i> Social Impact Projects</h3>
-            <p>Built <strong>HerbAura – Virtual Ayurvedic Knowledge Platform</strong>, a 3D interactive garden using Three.js with AI-powered features to gamify and spread awareness about traditional Ayurvedic medicinal plants.</p>
-            <div class="stage-badge">🌱 Social Impact</div>
-          </div>
-        </div>
-
-        <!-- Stage 9 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
-              <i class="fas fa-robot"></i>
+          <div class="milestone-card" data-tilt>
+            <div class="milestone-header">
+              <h3>GenAI Civic-Tech Development & Targeting SWE Roles</h3>
+              <span class="milestone-tag">Active Growth</span>
             </div>
-            <div class="stage-year">5th Semester</div>
-          </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-microchip"></i> AI & Intelligent Systems</h3>
-            <p>Leveraged AI & ML to build a <strong>Waste Segregation System with voice assistance</strong>, earning the <strong>Best Project Award</strong>. This project showcased practical AI application for real-world problems.</p>
-            <div class="stage-badge">🥇 Best Project Award</div>
-            <div class="award-image">
-              <img src="images/Project.jpeg" alt="Best Project Award" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Award';">
-            </div>
-          </div>
-        </div>
-
-        <!-- Stage 10 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-              <i class="fas fa-award"></i>
-            </div>
-            <div class="stage-year">5th Semester</div>
-          </div>
-          <div class="stage-card" data-tilt>
-            <h3><i class="fas fa-trophy"></i> NPTEL Excellence - Top 1% Nationwide</h3>
-            <p>Scored an exceptional <strong>98%</strong> in NPTEL's "Programming in Java", ranking in the <strong>Top 1% nationwide</strong> and earning a Gold Medal. This solidified my object-oriented design and algorithm expertise.</p>
-            <div class="stage-badge">🏆 Top 1% Nationwide</div>
-            <div class="award-image">
-              <img src="images/Certificates/Programming_In_Java.jpg" alt="NPTEL Java Programming Gold Medal Certificate" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Certificate';">
-            </div>
-          </div>
-        </div>
-
-        <!-- Stage 11 -->
-        <div class="journey-stage" data-aos="fade-up">
-          <div class="stage-marker">
-            <div class="stage-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
-              <i class="fas fa-infinity"></i>
-            </div>
-            <div class="stage-year">6th Semester</div>
-          </div>
-          <div class="stage-card future" data-tilt>
-            <h3><i class="fas fa-forward"></i> Continuous Growth</h3>
-            <p>Currently undergoing industry training in Generative AI and preparing for placements. Continuously exploring advanced software development, intelligent systems, backend engineering, and scalable applications. The journey continues with new challenges and innovative solutions.</p>
-            <div class="stage-badge">🚀 In Progress</div>
+            <p>Developing municipal complaint classification pipelines at Ethnotech Academy while preparing for competitive software engineering internships and entry-level developer opportunities.</p>
           </div>
         </div>
       </div>
-      
-      <!-- Hackathons -->
-      <h3 class="subsection-title" data-aos="fade-up"><i class="fas fa-code"></i> Hackathons</h3>
-      
+
+      <!-- Hackathons Subsection -->
+      <h3 class="subsection-title" data-aos="fade-up"><i class="fas fa-trophy"></i> Hackathon Participations</h3>
       <div class="hackathons-grid">
         <div class="hackathon-card" data-tilt data-aos="fade-up">
           <div class="hackathon-image">
-            <img src="images/Hackathon/1st_hackathon.jpg" alt="MIT Mysore Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
+            <img src="images/Hackathon/1st_hackathon.jpg" alt="MIT Mysore Hackathon AgroForeCast" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x220/0d1224/6366f1?text=AgroForeCast';">
           </div>
           <div class="hackathon-content">
             <div class="hackathon-header">
-              <div class="hackathon-icon">
-                <i class="fas fa-cloud-sun"></i>
-              </div>
-              <span class="hackathon-badge">Completed</span>
+              <i class="fas fa-cloud-sun hackathon-icon"></i>
+              <span class="hackathon-badge">24h Hackathon</span>
             </div>
-            <h3>AgroForeCast - MIT Mysore Hackathon (AI for Agriculture)</h3>
-            <p class="hackathon-organizer"><i class="fas fa-university"></i> Maharaja Institute of Technology Mysore</p>
-            <p class="hackathon-description">Developed <strong>AgroForeCast</strong> to help farmers combat crop loss from sudden weather changes. Our app provides localized weather updates and crop advice. Focused on full-stack integration using HTML, CSS, JS, and Python, bringing the idea to life in just 24 hours.</p>
+            <h3>AgroForeCast — MIT Mysore Hackathon</h3>
+            <p class="hackathon-organizer">Maharaja Institute of Technology Mysore</p>
+            <p class="hackathon-description">Developed a rapid-response web platform that ingests live weather API data and delivers actionable crop protection guidance to help farmers mitigate weather-induced crop damage.</p>
             <div class="hackathon-skills">
-              <span><i class="fas fa-code"></i> Full Stack Development</span>
-              <span><i class="fas fa-clock"></i> 24 Hours</span>
-              <span><i class="fas fa-users"></i> Team Collaboration</span>
-              <span><i class="fas fa-cloud"></i> Weather API</span>
+              <span>Python</span>
+              <span>Weather API</span>
+              <span>Full-Stack Web</span>
             </div>
           </div>
         </div>
 
         <div class="hackathon-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <div class="hackathon-image">
-            <img src="images/Hackathon/2nd_hackthon.jpg" alt="VEC Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
+            <img src="images/Hackathon/2nd_hackthon.jpg" alt="VEC Hackathon HerbAura" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x220/0d1224/6366f1?text=HerbAura';">
           </div>
           <div class="hackathon-content">
             <div class="hackathon-header">
-              <div class="hackathon-icon">
-                <i class="fas fa-leaf"></i>
-              </div>
-              <span class="hackathon-badge">Completed</span>
+              <i class="fas fa-leaf hackathon-icon"></i>
+              <span class="hackathon-badge">3D & AI Hackathon</span>
             </div>
-            <h3>HerbAura – Virtual Ayurvedic Garden - VEC Hackathon (3D & AI)</h3>
-            <p class="hackathon-organizer"><i class="fas fa-university"></i> Vidyavardhaka Engineering College | Oct 11-12</p>
-            <p class="hackathon-description">Built an immersive <strong>Virtual Garden</strong> using Three.js to explore 3D Ayurvedic plant models. Features an AI-powered Khashayam Maker that scores herbal combos, interactive quizzes, and memory games to make learning engaging for all ages.</p>
+            <h3>HerbAura — VEC Hackathon</h3>
+            <p class="hackathon-organizer">Vidyavardhaka College of Engineering</p>
+            <p class="hackathon-description">Engineered a 3D WebGL botanical garden in Three.js featuring interactive 3D plant inspection, an AI-powered herbal mixture evaluator, and interactive memory quizzes.</p>
             <div class="hackathon-skills">
-              <span><i class="fas fa-cube"></i> Three.js</span>
-              <span><i class="fas fa-brain"></i> AI Integration</span>
-              <span><i class="fab fa-python"></i> Python</span>
-              <span><i class="fas fa-gamepad"></i> Interactive Games</span>
+              <span>Three.js</span>
+              <span>WebGL</span>
+              <span>Python AI</span>
             </div>
           </div>
         </div>
 
         <div class="hackathon-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <div class="hackathon-image">
-            <img src="images/Hackathon/3rd_hackthon.jpg" alt="Build for Mysuru Hackathon" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/1a243e/8b5cf6?text=Hackathon';">
+            <img src="images/Hackathon/3rd_hackthon.jpg" alt="Build for Mysuru Hackathon OneMysuru" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x220/0d1224/6366f1?text=OneMysuru';">
           </div>
           <div class="hackathon-content">
             <div class="hackathon-header">
-              <div class="hackathon-icon">
-                <i class="fas fa-city"></i>
-              </div>
-              <span class="hackathon-badge">Completed</span>
+              <i class="fas fa-city hackathon-icon"></i>
+              <span class="hackathon-badge">Strategy & Civic Hackathon</span>
             </div>
-            <h3>OneMysuru - Build for Mysuru (Entrepreneurial & Strategy)</h3>
-            <p class="hackathon-organizer"><i class="fas fa-university"></i> Dept. of CSE-AIML MIT Mysore</p>
-            <p class="hackathon-description">Designed and pitched <strong>OneMysuru</strong>—a platform connecting tourism, events, local businesses, artisans, and citizens through a unified digital ecosystem. Gained experience in entrepreneurial thinking, branding, and business strategy.</p>
+            <h3>OneMysuru — Build for Mysuru</h3>
+            <p class="hackathon-organizer">Dept. of CSE-AIML, MIT Mysore</p>
+            <p class="hackathon-description">Architected a unified digital platform connecting local artisans, cultural heritage tourism, and civic events into an integrated municipal marketplace ecosystem.</p>
             <div class="hackathon-skills">
-              <span><i class="fas fa-lightbulb"></i> Entrepreneurship</span>
-              <span><i class="fas fa-bullseye"></i> Business Strategy</span>
-              <span><i class="fas fa-users"></i> Team Collaboration</span>
+              <span>System Design</span>
+              <span>UI/UX Architecture</span>
+              <span>Civic Tech</span>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Industrial Visits -->
-      <h3 class="subsection-title" data-aos="fade-up"><i class="fas fa-industry"></i> Industry Exposure</h3>
+    </section>
+
+    <!-- Industry Exposure Section -->
+    <section id="exposure">
+      <h2 data-aos="fade-up">Industry Exposure</h2>
+      <p class="section-subtitle" data-aos="fade-up">Field visits and technical meetups bridging classroom theory with enterprise scale</p>
       
       <div class="visits-grid">
+        <!-- FANUC India -->
         <div class="visit-card" data-tilt data-aos="fade-up">
           <div class="visit-image">
-            <img src="images/Industry_Exposure/FANUC.jpeg" alt="FANUC India Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
+            <img src="images/Industry_Exposure/FANUC.jpeg" alt="FANUC India Industrial Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/0d1224/6366f1?text=FANUC+India';">
           </div>
           <div class="visit-content">
             <div class="visit-header">
               <h3>FANUC India</h3>
-                <span class="visit-type">Industrial Robotics & Automation</span>
+              <span class="visit-type">Industrial Robotics & Automation</span>
             </div>
-            <div class="company-info">
-              <p class="company-tagline"><i class="fas fa-quote-left"></i> Global Leader in Factory Automation</p>
-              <p class="company-description">Learned how FANUC powers intelligent manufacturing worldwide through advanced robotics, CNC systems, and factory automation.</p>
-            </div>
+            <p class="company-description">Gained first-hand understanding of precision CNC systems, automated assembly lines, and real-time control algorithms powering modern factory robotics.</p>
             <div class="visit-learnings">
-              <h4><i class="fas fa-lightbulb"></i> Key Learnings:</h4>
+              <h4>Key Takeaways:</h4>
               <ul>
-                <li>Advanced robotics and industrial automation systems</li>
-                <li>CNC machining, precision manufacturing, and automated assembly lines</li>
-                <li>Integration of AI in production lines</li>
-                <li>Real-world applications of IoT in factories</li>
+                <li>Real-time robotics coordination & industrial PLC controllers</li>
+                <li>Automated quality testing & robotic toolpath optimization</li>
               </ul>
             </div>
             <div class="visit-stats">
-              <div class="stat-item">
-                <i class="fas fa-industry"></i>
-                <span>Factory Automation</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-cogs"></i>
-                <span>CNC Systems</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-robot"></i>
-                <span>Industrial Robots</span>
-              </div>
+              <span class="stat-item"><i class="fas fa-robot"></i> Robotics</span>
+              <span class="stat-item"><i class="fas fa-cogs"></i> CNC Control</span>
             </div>
           </div>
         </div>
 
+        <!-- SAP Labs India -->
         <div class="visit-card" data-tilt data-aos="fade-up" data-aos-delay="100">
           <div class="visit-image">
-            <img src="images/Industry_Exposure/SAP.jpeg" alt="SAP Labs Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
+            <img src="images/Industry_Exposure/SAP.jpeg" alt="SAP Labs India Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/0d1224/6366f1?text=SAP+Labs';">
           </div>
           <div class="visit-content">
             <div class="visit-header">
-              <h3>SAP Labs</h3>
-                <span class="visit-type">Enterprise Software & Cloud Platforms</span>
+              <h3>SAP Labs India</h3>
+              <span class="visit-type">Enterprise Cloud & ERP Architecture</span>
             </div>
-            <div class="company-info">
-              <p class="company-tagline"><i class="fas fa-quote-left"></i> Transforming Business Through Innovation</p>
-              <p class="company-description">Explored SAP's cloud-based ERP solutions and learned how Fortune 500 companies optimize operations and data at scale.</p>
-            </div>
+            <p class="company-description">Studied enterprise-scale cloud architectures, multi-tenant database partitioning, and high-throughput data processing workflows serving global Fortune 500 enterprises.</p>
             <div class="visit-learnings">
-              <h4><i class="fas fa-lightbulb"></i> Key Learnings:</h4>
+              <h4>Key Takeaways:</h4>
               <ul>
-                <li>Enterprise Resource Planning (ERP) architecture</li>
-                <li>Cloud-based business solutions, SaaS models, and large-scale backend systems</li>
-                <li>Large-scale software development practices</li>
-                <li>Integration of AI and analytics in business software</li>
+                <li>Cloud ERP architecture & modular microservice layers</li>
+                <li>Large-scale data pipelines and enterprise SaaS workflows</li>
               </ul>
             </div>
             <div class="visit-stats">
-              <div class="stat-item">
-                <i class="fas fa-cloud"></i>
-                <span>Cloud ERP</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-chart-line"></i>
-                <span>Business Analytics</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-database"></i>
-                <span>Data Management</span>
-              </div>
+              <span class="stat-item"><i class="fas fa-cloud"></i> Cloud ERP</span>
+              <span class="stat-item"><i class="fas fa-database"></i> Big Data</span>
             </div>
           </div>
         </div>
 
+        <!-- IBM Meetup -->
         <div class="visit-card" data-tilt data-aos="fade-up" data-aos-delay="200">
           <div class="visit-image">
-            <img src="images/Industry_Exposure/IBM.jpg" alt="IBM Meetup Visit" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1a243e/8b5cf6?text=Industrial+Visit';">
+            <img src="images/Industry_Exposure/IBM.jpg" alt="IBM Developer Meetup" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/0d1224/6366f1?text=IBM+Meetup';">
           </div>
           <div class="visit-content">
             <div class="visit-header">
-              <h3>IBM Meetup</h3>
-                <span class="visit-type">Agentic AI & Developer Productivity</span>
+              <h3>IBM Developer Meetup</h3>
+              <span class="visit-type">Agentic AI & Developer Tooling</span>
             </div>
-            <div class="company-info">
-              <p class="company-tagline"><i class="fas fa-quote-left"></i> The future is Human + AI + Agents</p>
-              <p class="company-description">Discovered how Agentic AI transforms software engineering. Gained insights into building reliable AI agents, LLM security, and using AI tools to boost developer productivity.</p>
-            </div>
+            <p class="company-description">Explored emerging Agentic AI frameworks, OWASP Top 10 security standards for LLM applications, and automation pipelines that reduce developer boilerplate.</p>
             <div class="visit-learnings">
-              <h4><i class="fas fa-lightbulb"></i> Key Learnings:</h4>
+              <h4>Key Takeaways:</h4>
               <ul>
-                <li>Building reliable and efficient AI agents</li>
-                <li>Security aspects (OWASP Top 10) for LLM Apps</li>
-                <li>Reducing repetitive work using IBM BOB</li>
-                <li>Future of Human + AI collaboration</li>
+                <li>Multi-agent coordination & deterministic fallback design</li>
+                <li>LLM security validation & prompt injection defenses</li>
               </ul>
             </div>
             <div class="visit-stats">
-              <div class="stat-item">
-                <i class="fas fa-brain"></i>
-                <span>Agentic AI</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>LLM Security</span>
-              </div>
-              <div class="stat-item">
-                <i class="fas fa-code"></i>
-                <span>Dev Productivity</span>
-              </div>
+              <span class="stat-item"><i class="fas fa-brain"></i> Agentic AI</span>
+              <span class="stat-item"><i class="fas fa-shield-alt"></i> App Security</span>
             </div>
           </div>
         </div>
       </div>
-      
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2 data-aos="fade-up">Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card featured" data-tilt data-aos="fade-up">
-          <div class="project-header">
-            <i class="fas fa-brain project-icon"></i>
-            <span class="project-badge">🏆 Expo 2nd Prize</span>
-          </div>
-          <h3>Smart Automated Timetable Generator</h3>
-          <p>AI-powered timetable scheduler using Genetic Algorithms to eliminate faculty clashes and optimize room and resource allocation.</p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>Genetic Algorithm</span>
-            <span>Supabase</span>
-          </div>
-          <div class="project-btns">
-            <a href="timetable-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
-            <a href="https://github.com/SuraviR10/Automatic_TimeTable_Generator.git" class="btn btn-small btn-secondary" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="25">
-          <div class="project-header">
-            <i class="fas fa-graduation-cap project-icon"></i>
-            <span class="project-badge">🚧 Ongoing Major Project</span>
-          </div>
-          <h3>AI Powered Lab Programming Assistant</h3>
-          <p>Guided Socratic AI lab assistant that fosters logic building, plain-English error debugging, and Viva exam preparation.</p>
-          <div class="project-tags">
-            <span>AI / Socratic</span>
-            <span>Python</span>
-            <span>Flask</span>
-            <span>EdTech</span>
-          </div>
-          <div class="project-btns">
-            <a href="lab-assistant-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
-            <a href="https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git" class="btn btn-small btn-secondary" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="50">
-          <div class="project-header">
-            <i class="fas fa-tools project-icon"></i>
-            <span class="project-badge">🛠️ VS Code Marketplace</span>
-          </div>
-          <h3>DARTX – Smart Dependency Manager</h3>
-          <p>Intelligent VS Code extension that silently detects environment dependency issues, maps aliases, and resolves packages.</p>
-          <div class="project-tags">
-            <span>TypeScript</span>
-            <span>Node.js</span>
-            <span>VS Code API</span>
-            <span>Published</span>
-          </div>
-          <div class="project-btns">
-            <a href="dependency-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
-            <a href="https://github.com/SuraviR10/Dependency_Manager.git" class="btn btn-small btn-secondary" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-        
-        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="100">
-          <div class="project-header">
-            <i class="fas fa-globe project-icon"></i>
-            <span class="project-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--secondary-light); border-color: rgba(6, 182, 212, 0.3);">🌐 Live Deployed</span>
-          </div>
-          <h3>Stepping Stone Academy Website</h3>
-          <p>Responsive Montessori school website with intuitive navigation, admissions details, and high-performance layout.</p>
-          <div class="project-tags">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>Netlify</span>
-          </div>
-          <div class="project-btns">
-            <a href="stepping-stone-project.html" class="btn btn-small btn-primary"><i class="fas fa-arrow-right"></i> View Details</a>
-            <a href="https://the-stepping-stone-academy-mysore.netlify.app/" class="btn btn-small btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Site</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-tilt data-aos="fade-up" data-aos-delay="200">
-          <div class="project-header">
-            <i class="fas fa-cube project-icon"></i>
-            <span class="project-badge" style="background: rgba(236, 72, 153, 0.15); color: var(--accent); border-color: rgba(236, 72, 153, 0.3);">🌱 3D & AI Hackathon</span>
-          </div>
-          <h3>HerbAura – Virtual Ayurvedic Knowledge Platform</h3>
-          <p>3D Ayurvedic platform with Three.js plant exploration, AI Kashayam maker, interactive memory games, and botanical quizzes.</p>
-          <div class="project-tags">
-            <span>Three.js</span>
-            <span>Python AI</span>
-            <span>JavaScript</span>
-            <span>WebGL</span>
-          </div>
-          <div class="project-btns">
-            <a href="virtual-garden-project.html" class="btn btn-small btn-primary"><i class="fas fa-info-circle"></i> Details & Demo</a>
-            <a href="https://youtu.be/V2mUIwrPJEc" target="_blank" class="btn btn-small btn-secondary" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;"><i class="fab fa-youtube"></i> YouTube Video</a>
-            <a href="https://github.com/SuraviR10/HerbAura-Virtual-Ayurvedic-Garden.git" class="btn btn-small btn-secondary" target="_blank"><i class="fab fa-github"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2 data-aos="fade-up">Technical Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category" data-tilt data-aos="fade-up">
-          <h3>Programming & Web</h3>
-          <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-            <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-            <div class="skill-item"><i class="fas fa-code"></i> C/C++</div>
-            <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
-            <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
-            <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
-            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-          </div>
-        </div>
-        
-        <div class="skill-category" data-tilt data-aos="fade-up" data-aos-delay="100">
-          <h3>Frameworks & Databases</h3>
-          <div class="skills-grid">
-            <div class="skill-item"><i class="fas fa-flask"></i> Flask</div>
-            <div class="skill-item"><i class="fas fa-rocket"></i> FastAPI (learning)</div>
-            <div class="skill-item"><i class="fab fa-python"></i> Django (basics)</div>
-            <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
-            <div class="skill-item"><i class="fas fa-database"></i> PostgreSQL</div>
-          </div>
-        </div>
-        
-        <div class="skill-category" data-tilt data-aos="fade-up" data-aos-delay="200">
-          <h3>Tools & Core Concepts</h3>
-          <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
-            <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
-            <div class="skill-item"><i class="fab fa-docker"></i> Docker (learning)</div>
-            <div class="skill-item"><i class="fas fa-code"></i> VS Code</div>
-            <div class="skill-item"><i class="fas fa-project-diagram"></i> DSA & OOP</div>
-            <div class="skill-item"><i class="fas fa-microchip"></i> OS, DBMS, CN</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
+    <!-- Certifications Section -->
     <section id="certificates">
-      <h2 data-aos="fade-up">Certifications</h2>
+      <h2 data-aos="fade-up">Verified Certifications</h2>
+      <p class="section-subtitle" data-aos="fade-up">Standardized technical certifications and simulation credentials</p>
+      
       <div class="certificates-grid">
+        <!-- NPTEL Java -->
         <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="100">
-          <img src="images/Certificates/Programming_In_Java.jpg" alt="NPTEL Java Programming Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Programming+in+Java';">
+          <img src="images/Certificates/Programming_In_Java.jpg" alt="NPTEL Programming in Java Gold Medal" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/0d1224/6366f1?text=NPTEL+Java';">
           <div class="certificate-info">
-            <h3>Programming with Java</h3>
-            <p>NPTEL - 98% (Top 1%)</p>
-            <a href="images/Certificates/Programming_In_Java.jpg" class="btn btn-small" target="_blank">Open</a>
+            <h3>Programming in Java</h3>
+            <p>NPTEL — 98% Score (Top 1% Nationwide Gold Medal)</p>
+            <a href="images/Certificates/Programming_In_Java.jpg" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Certificate</a>
           </div>
         </div>
         
-        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="200">
-          <img src="images/Certificates/Skyscanner.jpg" alt="Skyscanner Front-End Engineering Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Skyscanner';">
+        <!-- Skyscanner -->
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+          <img src="images/Certificates/Skyscanner.jpg" alt="Skyscanner Front-End Software Engineering" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/0d1224/6366f1?text=Skyscanner';">
           <div class="certificate-info">
             <h3>Front-End Engineering</h3>
-            <p>Skyscanner</p>
-            <a href="images/Certificates/Skyscanner.jpg" class="btn btn-small" target="_blank">Open</a>
+            <p>Skyscanner (Forage Virtual Experience)</p>
+            <a href="images/Certificates/Skyscanner.jpg" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Certificate</a>
           </div>
         </div>
         
-        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="300">
-          <img src="images/Certificates/Prompt_Engineering.jpg" alt="LinkedIn Prompt Engineering Certificate" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=Prompt+Engineering';">
+        <!-- Prompt Engineering -->
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <img src="images/Certificates/Prompt_Engineering.jpg" alt="Prompt Engineering for AI" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/0d1224/6366f1?text=Prompt+Engineering';">
           <div class="certificate-info">
             <h3>Prompt Engineering for AI</h3>
-            <p>LinkedIn</p>
-            <a href="images/Certificates/Prompt_Engineering.jpg" class="btn btn-small" target="_blank">Open</a>
+            <p>LinkedIn Learning</p>
+            <a href="images/Certificates/Prompt_Engineering.jpg" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Certificate</a>
           </div>
         </div>
         
-        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="500">
-          <img src="images/Certificates/AI_for_Everyone.jpg" alt="AI for Everyone" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a243e/8b5cf6?text=AI+for+Everyone';">
+        <!-- AI for Everyone -->
+        <div class="certificate-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+          <img src="images/Certificates/AI_for_Everyone.jpg" alt="AI for Everyone DeepLearning.AI" class="certificate-preview modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/0d1224/6366f1?text=AI+for+Everyone';">
           <div class="certificate-info">
             <h3>AI for Everyone</h3>
-            <p>Coursera</p>
-            <a href="images/Certificates/AI_for_Everyone.jpg" class="btn btn-small" target="_blank">Open</a>
+            <p>DeepLearning.AI / Coursera</p>
+            <a href="images/Certificates/AI_for_Everyone.jpg" class="btn btn-small btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Certificate</a>
           </div>
         </div>
       </div>
@@ -813,35 +889,45 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2 data-aos="fade-up"><i class="fas fa-headset" style="color: var(--secondary-light);"></i> Get In Touch</h2>
-      <p data-aos="fade-up">Let's connect and discuss full-time software engineering roles, internships, or innovative projects!</p>
+      <h2 data-aos="fade-up">Get In Touch</h2>
+      <p class="section-subtitle" data-aos="fade-up">Available for Software Engineering Internships and Entry-Level Developer Roles</p>
       
-      <div class="social-links" data-aos="fade-up">
-        <a href="mailto:suravimys@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%94%20Suravi%20R" title="Send Email to suravimys@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/suravir/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/SuraviR10" target="_blank" title="GitHub Profile"><i class="fab fa-github"></i></a>
-      </div>
-      <div class="contact-card-wrapper" data-aos="fade-up">
-        <div class="contact-card cyber-hud-card" data-tilt>
-          <div class="cyber-badge" style="margin-bottom: 0.8rem;"><i class="fas fa-paper-plane"></i> DIRECT CONTACT</div>
-          <h3>Email Address</h3>
-          <a href="mailto:suravimys@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%94%20Suravi%20R" class="contact-email" style="font-size: 1.2rem; font-weight: 700; color: var(--secondary-light);">suravimys@gmail.com</a>
-          <br>
-          <a href="mailto:suravimys@gmail.com?subject=Portfolio%20Inquiry%20%E2%80%94%20Suravi%20R" class="btn btn-primary btn-cyber-mail" style="margin-top: 1.2rem; display: inline-flex;"><i class="fas fa-envelope-open-text"></i> Open Mail App (suravimys@gmail.com)</a>
+      <div class="contact-section-container">
+        <div class="social-links" data-aos="fade-up">
+          <a href="mailto:suravimys@gmail.com?subject=Software%20Engineering%20Opportunity%20%E2%80%94%20Suravi%20R" title="Send Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/suravir/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/SuraviR10" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i></a>
         </div>
-        <div class="contact-card cyber-hud-card" data-tilt style="margin-top: 20px;">
-          <div class="cyber-badge" style="margin-bottom: 0.8rem;"><i class="fas fa-file-pdf"></i> RESUME</div>
-          <h3>Curriculum Vitae</h3>
-          <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-primary" style="margin-top: 10px; display: inline-flex;"><i class="fas fa-download"></i> Download Resume PDF</a>
+
+        <div class="contact-cards-grid" data-aos="fade-up">
+          <div class="cyber-hud-card" data-tilt>
+            <span class="cyber-badge"><i class="fas fa-paper-plane"></i> DIRECT EMAIL</span>
+            <h3>Email Address</h3>
+            <span class="contact-email-text">suravimys@gmail.com</span>
+            <a href="mailto:suravimys@gmail.com?subject=Software%20Engineering%20Opportunity%20%E2%80%94%20Suravi%20R" class="btn btn-primary">
+              <i class="fas fa-envelope-open-text"></i> Send Email
+            </a>
+          </div>
+
+          <div class="cyber-hud-card" data-tilt>
+            <span class="cyber-badge"><i class="fas fa-file-pdf"></i> VERIFIED RESUME</span>
+            <h3>Curriculum Vitae</h3>
+            <span class="contact-email-text">PDF Format (Updated 2025)</span>
+            <a href="Resume_of_SuraviR.pdf" download="Resume_of_SuraviR.pdf" class="btn btn-primary">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Suravi R. All Rights Reserved.</p>
+    <p>&copy; 2025 Suravi R. All Rights Reserved. Crafted with clean code and modern design.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>

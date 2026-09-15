@@ -3,105 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Automated Timetable Generator — Suravi R</title>
+  <title>MITM-TimeEvolver: Smart Automated Timetable Generator — Suravi R</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="project-detail-body">
 
-  <!-- Floating Navigation Island -->
+  <!-- Navigation Bar -->
   <nav class="project-nav-bar">
     <a href="index.html#projects" class="logo"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: white;">⏰ MITM-Time Evolver</div>
-    <a href="https://github.com/SuraviR10/Automatic_TimeTable_Generator.git" target="_blank" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
+    <div class="nav-title" style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">⏰ MITM-TimeEvolver</div>
+    <a href="https://github.com/SuraviR10/MITM-TimeEvolver.git" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fab fa-github"></i> GitHub Code</a>
   </nav>
 
-  <main class="project-container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 5% 5rem;">
+  <main class="project-container" style="max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem;">
     <!-- Hero Banner -->
     <section class="project-detail-hero">
-      <div class="hero-badge">🏆 Mini Project Expo 2nd Prize Winner</div>
-      <h1 class="name-highlight">Smart Automated Timetable Generator</h1>
-      <p class="project-detail-subtitle">An intelligent academic scheduling engine powered by Genetic Algorithms to eliminate room and faculty clashes while optimizing resource allocation.</p>
+      <div class="availability-badge" style="display: inline-flex; margin-bottom: 1rem;">
+        <span class="status-dot-pulse"></span>
+        <span>Mini Project Expo 2025 — 2nd Prize Winner</span>
+      </div>
+      <h1 class="name-highlight">MITM-TimeEvolver: Smart Automated Timetable Generator</h1>
+      <p class="project-detail-subtitle">
+        An algorithmic academic scheduling platform powered by Genetic Algorithms that models complex constraints (faculty workload caps, lab block allocations, and room availability) to generate clash-free schedules in under 2 minutes.
+      </p>
       
       <div class="tech-stack-row">
-        <span class="tech-pill"><i class="fab fa-python"></i> Python</span>
-        <span class="tech-pill"><i class="fas fa-brain"></i> Genetic Algorithm</span>
-        <span class="tech-pill"><i class="fas fa-flask"></i> Flask</span>
-        <span class="tech-pill"><i class="fas fa-database"></i> Supabase</span>
+        <span class="tech-pill"><i class="fab fa-python"></i> Python Backend</span>
+        <span class="tech-pill"><i class="fas fa-dna"></i> Genetic Algorithm</span>
+        <span class="tech-pill"><i class="fas fa-flask"></i> Flask Framework</span>
+        <span class="tech-pill"><i class="fas fa-bolt"></i> Supabase / SQLite</span>
+        <span class="tech-pill"><i class="fas fa-cogs"></i> Constraint Satisfaction</span>
       </div>
 
       <!-- Quick Impact Stats -->
       <div class="stats-row">
-        <div class="stat" data-tilt>
+        <div class="stat-card-compact">
           <span class="stat-number">95%</span>
-          <span class="stat-label">Time Reduced</span>
+          <span class="stat-label">Scheduling Time Saved</span>
         </div>
-        <div class="stat" data-tilt>
+        <div class="stat-card-compact">
           <span class="stat-number">0%</span>
-          <span class="stat-label">Clash Rate</span>
+          <span class="stat-label">Clash Rate (Verified)</span>
         </div>
-        <div class="stat" data-tilt>
+        <div class="stat-card-compact">
           <span class="stat-number">2nd Prize</span>
-          <span class="stat-label">Expo Recognition</span>
+          <span class="stat-label">Mini Project Expo</span>
         </div>
       </div>
     </section>
 
-    <!-- Structured 3-Card Overview -->
-    <section class="content-section">
-      <h2><i class="fas fa-layer-group"></i> Project Architecture & Briefing</h2>
-      <div class="about-grid" style="margin-top: 2rem;">
-        <div class="about-card" data-tilt>
+    <!-- Structured Technical Overview -->
+    <section class="content-section" style="margin-top: 2rem;">
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-layer-group" style="color: var(--secondary-light);"></i> Engineering Architecture & Solution</h2>
+      <div class="about-grid">
+        <div class="about-card">
           <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
-          <h3>01. Problem & Context</h3>
-          <p>Manual timetable creation at colleges consumes weeks of intense administrative effort. Overlapping room slots, uncoordinated faculty availability, and sub-optimal lab allocations cause frequent conflicts and wasted space.</p>
+          <h3>01. Problem: Manual Scheduling Bottlenecks</h3>
+          <p>Manual academic timetable scheduling requires weeks of coordinator effort. Overlapping instructor slots, uncoordinated department laboratories, and classroom capacity limits result in frequent human errors and room collisions.</p>
         </div>
 
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-cogs"></i></div>
-          <h3>02. Genetic Algorithm Solution</h3>
-          <p>Utilizes biological evolution principles (population initialization, fitness scoring, crossover, and mutation) to iteratively generate optimal schedules while strictly enforcing room capacities and workload limits.</p>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-dna"></i></div>
+          <h3>02. Genetic Algorithm Optimization Engine</h3>
+          <p>Models each timetable as a chromosome with fitness scoring based on hard and soft constraints (hard: zero faculty double-booking, room capacity check; soft: even workload distribution). Employs tournament selection, uniform crossover, and adaptive mutation.</p>
         </div>
 
-        <div class="about-card" data-tilt>
-          <div class="card-icon"><i class="fas fa-trophy"></i></div>
-          <h3>03. Results & Impact</h3>
-          <p>Reduces scheduling time from 3 weeks down to under 2 minutes. Guarantees 100% clash-free schedules across departments and earned 2nd Prize at the Mini Project Expo for real campus value.</p>
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>03. Performance & Real Campus Impact</h3>
+          <p>Generates conflict-free timetables for entire academic departments in under 2 minutes (down from 3 weeks of manual iterations). Won 2nd Prize at the Mini Project Expo 2025 for practical campus utility.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fas fa-desktop"></i></div>
+          <h3>04. Interactive Admin Dashboard</h3>
+          <p>Built with Flask, responsive web tables, and interactive configuration panels for adding faculty members, semester batches, subject allocations, and room matrices with CSV export capabilities.</p>
         </div>
       </div>
     </section>
 
     <!-- Screenshot Gallery -->
     <section class="content-section" style="margin-top: 3.5rem;">
-      <h2><i class="fas fa-images"></i> System Screenshots Gallery</h2>
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.8rem;"><i class="fas fa-images" style="color: var(--secondary-light);"></i> System Screenshots Gallery</h2>
       <div class="detail-gallery">
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/Timetable/1.png" alt="Welcome & Login Dashboard" class="modal-trigger">
-          <p>Welcome & Authentication Panel</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/Timetable/1.png" alt="Welcome & Login Dashboard" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Timetable+Login';">
+          <p>Authentication & Portal Interface</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/Timetable/4.png" alt="Academic Dashboard & Configuration" class="modal-trigger">
-          <p>Academic Dashboard & Constraints</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/Timetable/4.png" alt="Academic Dashboard & Configuration" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Dashboard';">
+          <p>Faculty & Subject Constraint Matrix</p>
         </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/Timetable/7.png" alt="Schedule Configuration & Faculty Mapping" class="modal-trigger">
-          <p>Faculty & Room Availability Matrix</p>
-        </div>
-        <div class="detail-gallery-item modal-trigger" data-tilt>
-          <img src="images/Timetable/9.png" alt="Generated Conflict-Free Timetable" class="modal-trigger">
-          <p>Optimized Generated Timetable</p>
+        <div class="detail-gallery-item modal-trigger">
+          <img src="images/Timetable/9.png" alt="Generated Conflict-Free Timetable" class="modal-trigger" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250/0d1224/6366f1?text=Generated+Timetable';">
+          <p>Optimized Department Timetable Output</p>
         </div>
       </div>
     </section>
 
     <!-- Footer Actions -->
-    <div style="display: flex; gap: 1.2rem; justify-content: center; margin-top: 4rem;">
+    <div style="display: flex; gap: 1.2rem; justify-content: center; margin-top: 4rem; flex-wrap: wrap;">
       <a href="index.html#projects" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-      <a href="https://github.com/SuraviR10/Automatic_TimeTable_Generator.git" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
+      <a href="https://github.com/SuraviR10/MITM-TimeEvolver.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github"></i> View GitHub Repository</a>
+      <a href="index.html#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Suravi</a>
     </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="script-enhanced.js"></script>
+  <footer>
+    <p>&copy; 2025 Suravi R. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
