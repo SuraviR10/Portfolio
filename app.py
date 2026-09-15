@@ -38,19 +38,19 @@ KNOWLEDGE_BASE = {
         "response": "Suravi is a fast learner and a thoughtful problem solver, combining AI, backend engineering, and DevOps skills with creative hobbies. She maintains a professional, confident, and authentic engineer-focused personality, always curious and practical."
     },
     "education": {
-        "keywords": ["education", "school", "college", "university", "degree", "sslc", "puc", "cgpa", "subjects", "academics", "academic", "grade", "grades", "studies"],
+        "keywords": ["education", "school", "college", "university", "degree", "sslc", "puc", "cgpa", "subjects", "academics", "academic", "grade", "grades", "studies", "grad", "graduate"],
         "priority": 3,
-        "response": "I completed SSLC with 93.92%, PUC PCMC with 90.18%, and I am pursuing a Bachelor of Engineering in Information Science & Engineering at Maharaja Institute of Technology Mysore with a strong CGPA of 9.12. Key subjects include Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, Software Engineering, and Java Programming."
+        "response": "I completed SSLC with 93.92%, PUC PCMC with 90.18%, and I am pursuing a Bachelor of Engineering in Information Science & Engineering at Maharaja Institute of Technology Mysore with a strong CGPA of 9.12 (Class of 2027). Key subjects include Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, Software Engineering, and Java Programming."
     },
     "skills": {
-        "keywords": ["skills", "programming", "languages", "technologies", "tools", "know", "tech", "technical", "code", "coding", "expertise", "proficient", "master"],
+        "keywords": ["skills", "programming", "languages", "technologies", "tools", "know", "tech", "technical", "code", "coding", "expertise", "proficient", "master", "django", "flask"],
         "priority": 3,
-        "response": "My technical skills include Java, Python, C, SQL, JavaScript, TypeScript. I'm proficient in backend frameworks like Flask, FastAPI (learning), and Django (basics). I use MySQL, PostgreSQL, Supabase for databases, and tools like Git, GitHub, VS Code, and Docker (learning). I am strong in core CS concepts like DSA, OOP, OS, DBMS, and Computer Networks."
+        "response": "My technical skills include Java, Python, C, C++, SQL, JavaScript, HTML5, and CSS3. I build backend applications using Flask and Django, explore FastAPI, use MySQL, SQLite, and Supabase for data storage, and use Git, GitHub, VS Code Extension API, and GCC/MinGW. I have strong foundations in DSA, OOP, OS, DBMS, and Computer Networks."
     },
     "projects": {
         "keywords": ["projects", "work", "built", "developed", "created", "portfolio", "made", "application", "system", "assistant", "garden", "timetable", "stepping stone", "dartx"],
         "priority": 1,
-        "response": "My portfolio includes several real-world projects: Smart Automated Timetable Generator (AI/optimization), HerbAura – a 3D Virtual Ayurvedic Knowledge Platform (3D/AI), Stepping Stone Academy Website (responsive web), AI Powered Lab Programming Assistant (AI/EdTech), and DARTX - an intelligent VS Code extension for dependency management (developer tools/automation). These projects showcase my focus on AI, intelligent systems, backend engineering, and solving practical problems."
+        "response": "My portfolio includes several real-world projects: Smart Automated Timetable Generator (AI/optimization), HerbAura – a 3D Virtual Ayurvedic Knowledge Platform, Stepping Stone Academy Website (responsive web), SMART LAB (AI-Powered C Programming Lab Assistant), and DARTX - an intelligent VS Code extension for dependency management (developer tools/automation)."
     },
     "timetable_project": {
         "keywords": ["timetable", "time table", "automated timetable", "schedule", "time evolver", "mitm-time", "evolver", "generator"],
@@ -68,19 +68,19 @@ KNOWLEDGE_BASE = {
         "response": "The Stepping Stone Academy Website is a responsive, real-world website built and deployed for a Montessori school, focusing on clean UI, mobile-first design, and clear visual storytelling to enhance parental trust."
     },
     "lab_assistant_project": {
-        "keywords": ["lab assistant", "programming assistant", "lab programming", "ai powered lab", "education assistant", "viva"],
+        "keywords": ["lab assistant", "programming assistant", "lab programming", "ai powered lab", "smart lab", "education assistant", "viva"],
         "priority": 5,
-        "response": "The AI Powered Lab Programming Assistant helps students learn programming concepts, debug code, and prepare for viva questions with guided explanations, focusing on understanding rather than copying."
+        "response": "SMART LAB is an AI-powered C programming laboratory assistant and assessment engine with GCC automated compilation, plain-English error explanations, and automated public/hidden test case evaluation."
     },
-    "dependency_manager": { # Changed key from Dependify to DARTX
+    "dependency_manager": {
         "keywords": ["dependency manager", "vs code extension", "environment provisioning", "smart dependency", "dependency", "dartx"], 
         "priority": 5,
-        "response": "DARTX – Smart Dependency Manager is an intelligent VS Code extension that automatically detects dependency and environment issues in Python and Node.js projects, analyzes root causes, validates packages, and assists developers with secure, one-click dependency resolution, enhancing developer productivity. It is published on the VS Code Marketplace."
+        "response": "DARTX – Smart Dependency Manager is an intelligent VS Code extension that automatically detects dependency issues, maps tricky aliases (e.g. cv2 -> opencv-python), and assists developers with secure, one-click dependency resolution. It is published on the VS Code Marketplace."
     },
     "experience": {
-        "keywords": ["experience", "internship", "intern", "work experience", "job", "future interns", "role", "work"],
+        "keywords": ["experience", "internship", "intern", "work experience", "job", "future interns", "wizzy", "role", "work", "training"],
         "priority": 4,
-        "response": "I worked as a Web Development Intern at Future Interns (Aug – Sep 2024), where I built responsive web interfaces, enhanced JavaScript interactions, optimized cross-browser layouts, and contributed to production-ready web features."
+        "response": "I am undergoing intensive technical training at Wizzy Box in full-stack architecture and backend systems, and previously worked as a Web Development Intern at Future Interns (Aug – Sep 2024) building responsive web interfaces and interactive JavaScript modules."
     },
     "journey": {
         "keywords": ["journey", "growth", "timeline", "story", "path", "progression", "evolution", "started", "began", "semester", "stage"],

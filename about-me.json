@@ -2,7 +2,7 @@
   "basic_info": {
     "name": "Suravi R",
     "role": "Information Science and Engineering Student",
-    "description": "Pre-final year ISE student at Maharaja Institute of Technology Mysore focused on Python backend engineering, constraint optimization algorithms, and building practical developer tools.",
+    "description": "Information Science & Engineering student (2027 Grad) at Maharaja Institute of Technology Mysore focused on Python backend engineering (Flask, Django), constraint optimization algorithms, and building practical developer tools.",
     "location": "Mysore, Karnataka, India"
   },
 
@@ -20,7 +20,7 @@
       "degree": "Bachelor of Engineering",
       "branch": "Information Science and Engineering",
       "college": "Maharaja Institute of Technology Mysore",
-      "duration": "2022 – 2026",
+      "duration": "2023 – 2027",
       "cgpa": "9.12 / 10",
       "key_subjects": [
         "Data Structures & Algorithms",
@@ -40,22 +40,15 @@
     "Python Developer"
   ],
 
-  "career_goals": "To secure software engineering internships and entry-level developer roles where I can contribute to high-performance backend systems, intelligent applications, and scalable software solutions while continuously strengthening my engineering discipline.",
+  "career_goals": "To secure software engineering internships and entry-level developer roles where I can contribute to high-performance backend systems, intelligent applications, and scalable software solutions while continuously strengthening my engineering discipline (Class of 2027).",
 
   "experience": [
-    {
-      "company": "Ethnotech Academy",
-      "role": "Generative AI & Backend Intern",
-      "duration": "Aug 2024 – Present",
-      "description": "Engineered a civic-tech multilingual citizen grievance classification and routing engine for municipal governance.",
-      "tech_stack": ["Python", "Flask", "GenAI Pipelines", "NLP Classification", "Civic Tech"]
-    },
     {
       "company": "Wizzy Box",
       "role": "Selected Trainee / Technical Training",
       "duration": "2024 – Present",
       "description": "Undergoing rigorous technical training in full-stack architecture, backend systems, database modeling, and scalable web engineering.",
-      "tech_stack": ["Full-Stack", "Backend Systems", "Database Modeling", "API Design"]
+      "tech_stack": ["Full-Stack", "Backend Systems", "Database Modeling", "Clean Architecture"]
     },
     {
       "company": "Future Interns",
@@ -67,10 +60,10 @@
   ],
 
   "skills": {
-    "programming_languages": ["Python", "Java", "C", "SQL", "JavaScript", "TypeScript", "HTML5", "CSS3"],
-    "backend_and_web": ["Flask", "FastAPI (exploring)", "REST APIs", "Node.js basics", "Three.js / WebGL"],
-    "databases": ["PostgreSQL", "MySQL", "SQLite", "Supabase"],
-    "tools": ["Git", "GitHub", "VS Code Extension API", "GCC/MinGW", "Postman", "Linux CLI Basics"],
+    "programming_languages": ["Python", "Java", "C", "C++", "SQL", "JavaScript", "HTML5", "CSS3"],
+    "backend_and_web": ["Flask", "Django", "FastAPI (exploring)", "Node.js basics"],
+    "databases": ["MySQL", "SQLite", "Supabase"],
+    "tools": ["Git", "GitHub", "VS Code Extension API", "GCC/MinGW", "Linux CLI Basics"],
     "core": [
       "Data Structures & Algorithms",
       "Object-Oriented Programming (OOP)",
@@ -79,7 +72,6 @@
       "Computer Networks (CN)"
     ],
     "currently_exploring": [
-      "Docker Containerization",
       "Microservices Architecture",
       "LLM Agent Workflows"
     ]
@@ -89,7 +81,7 @@
     {
       "name": "DARTX – Smart Dependency Manager & Scanner",
       "description": "An intelligent VS Code extension that automatically scans codebase imports via AST analysis, detects missing runtime packages, resolves tricky alias mappings (e.g., cv2 -> opencv-python, PIL -> Pillow), and triggers secure 1-click package installs via pip/npm.",
-      "tech_stack": ["TypeScript", "Node.js", "VS Code Extension API", "AST Analysis"],
+      "tech_stack": ["JavaScript", "Node.js", "VS Code Extension API", "AST Analysis"],
       "github": "https://github.com/SuraviR10/Dependency_Manager.git",
       "status": "Published on VS Code Marketplace"
     },
@@ -108,15 +100,9 @@
       "status": "Major Academic System"
     },
     {
-      "name": "Civic-Tech Multilingual Complaint Classifier",
-      "description": "An automated grievance categorization engine that ingests citizen complaints across regional languages, extracts core issues, classifies them into municipal departments, and generates structured routing tickets.",
-      "tech_stack": ["Python", "Flask", "GenAI Pipelines", "NLP Classification"],
-      "status": "In Development (Ethnotech)"
-    },
-    {
       "name": "HerbAura – 3D Virtual Ayurvedic Knowledge Platform",
-      "description": "An interactive 3D WebGL herbal garden built during the VEC Hackathon featuring real-time Three.js plant rendering, an AI herbal formula scoring engine, and gamified botanical quizzes.",
-      "tech_stack": ["Three.js", "WebGL", "Python AI", "JavaScript"],
+      "description": "An interactive 3D botanical platform built during the VEC Hackathon featuring real-time plant rendering, an AI herbal formula scoring engine, and gamified botanical quizzes.",
+      "tech_stack": ["Three.js", "Python AI", "JavaScript"],
       "github": "https://github.com/SuraviR10/HerbAura-Virtual-Ayurvedic-Garden.git",
       "status": "VEC Hackathon Project"
     },

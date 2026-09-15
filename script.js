@@ -53,35 +53,35 @@ const knowledgeBase = {
   about: {
     keywords: ['who', 'about', 'yourself', 'background', 'introduce', 'profile', 'bio', 'who are you'],
     responses: [
-      "👋 <b>Suravi R</b> is an Information Science & Engineering student at <b>Maharaja Institute of Technology Mysore</b> (9.12 CGPA).<br>She specializes in Python backend engineering, optimization algorithms, practical developer tools (like DARTX), and intelligent assessment systems."
+      "👋 <b>Suravi R</b> is an Information Science & Engineering student (Class of 2027) at <b>Maharaja Institute of Technology Mysore</b> (9.12 CGPA).<br>She specializes in Python backend engineering (Flask, Django), optimization algorithms, practical developer tools (like DARTX), and intelligent assessment systems."
     ]
   },
   
   education: {
-    keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'academic', 'grades', 'mit', 'mysore', 'puc', 'sslc', 'ise'],
+    keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'academic', 'grades', 'mit', 'mysore', 'puc', 'sslc', 'ise', 'grad', 'graduate', 'year'],
     responses: [
-      "🎓 <b>Academic Background:</b><br>• <b>B.E. in Information Science & Engineering:</b> MIT Mysore — <b>9.12 CGPA</b> (2022 – 2026)<br>• <b>Pre-University (PUC PCMC):</b> <b>90.18%</b><br>• <b>SSLC:</b> <b>93.92%</b><br>• <b>Key Core Subjects:</b> Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, and Java OOP."
+      "🎓 <b>Academic Background:</b><br>• <b>B.E. in Information Science & Engineering:</b> MIT Mysore — <b>9.12 CGPA</b> (Class of <b>2027</b>)<br>• <b>Pre-University (PUC PCMC):</b> <b>90.18%</b><br>• <b>SSLC:</b> <b>93.92%</b><br>• <b>Key Core Subjects:</b> Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, and Java OOP."
     ]
   },
   
   experience: {
-    keywords: ['experience', 'internship', 'intern', 'work', 'ethnotech', 'wizzy', 'future interns', 'job'],
+    keywords: ['experience', 'internship', 'intern', 'work', 'wizzy', 'future interns', 'job', 'training'],
     responses: [
-      "💼 <b>Experience & Internships:</b><br>• <b>Ethnotech Academy (GenAI & Backend Intern):</b> Built an automated civic complaint classification engine to route citizen grievances (sanitation, roads, electricity, water) across regional languages to municipal departments.<br>• <b>Wizzy Box (Technical Training):</b> Undergoing intensive technical training in full-stack architecture, backend systems, database modeling, and API engineering.<br>• <b>Future Interns (Web Development Intern):</b> Built responsive web layouts, interactive JavaScript modules, and optimized frontend performance."
+      "💼 <b>Experience & Training:</b><br>• <b>Wizzy Box (Technical Training):</b> Undergoing intensive technical training in full-stack architecture, backend systems, database modeling, and scalable web engineering.<br>• <b>Future Interns (Web Development Intern):</b> Built responsive web layouts, interactive JavaScript modules, and optimized frontend performance."
     ]
   },
   
   skills: {
-    keywords: ['skills', 'programming', 'languages', 'tech', 'stack', 'python', 'java', 'sql', 'fastapi', 'flask', 'databases', 'tools', 'technologies'],
+    keywords: ['skills', 'programming', 'languages', 'tech', 'stack', 'python', 'java', 'sql', 'django', 'flask', 'fastapi', 'databases', 'tools', 'technologies'],
     responses: [
-      "💻 <b>Technical Skills & Stack:</b><br>• <b>Languages:</b> Python, Java (NPTEL Gold), C, SQL, JavaScript (ES6+), TypeScript, HTML5, CSS3<br>• <b>Backend & Web:</b> Flask, FastAPI (exploring), REST APIs, Node.js basics, Three.js / WebGL<br>• <b>Databases:</b> PostgreSQL, MySQL, SQLite, Supabase<br>• <b>Core CS:</b> Data Structures & Algorithms, Object-Oriented Design (OOP), DBMS, Operating Systems, Computer Networks<br>• <b>Developer Tools:</b> Git, GitHub, VS Code Extension API, GCC/MinGW, Postman, Linux Basics"
+      "💻 <b>Technical Skills & Stack:</b><br>• <b>Languages:</b> Python, Java (NPTEL Gold), C, C++, SQL, JavaScript (ES6+), HTML5, CSS3<br>• <b>Backend & Web:</b> Flask, Django, FastAPI (exploring), Node.js basics<br>• <b>Databases:</b> MySQL, SQLite, Supabase<br>• <b>Core CS:</b> Data Structures & Algorithms, Object-Oriented Design (OOP), DBMS, Operating Systems, Computer Networks<br>• <b>Developer Tools:</b> Git, GitHub, VS Code Extension API, GCC/MinGW, Linux CLI Basics"
     ]
   },
   
   projects: {
     keywords: ['projects', 'built', 'developed', 'portfolio', 'application', 'showcase', 'apps', 'work'],
     responses: [
-      "🚀 <b>Featured Projects:</b><br>1. 🛠️ <b>DARTX:</b> Published VS Code Extension for AST import scanning, alias mapping, and 1-click dependency resolution.<br>2. ⏰ <b>MITM-TimeEvolver:</b> Academic scheduling platform using Genetic Algorithms to resolve faculty/room constraints (2nd Prize Mini Project Expo).<br>3. 🎓 <b>SMART LAB:</b> C Programming Lab Assistant with GCC automated compilation, public/hidden test case evaluation, and syllabus PDF extraction.<br>4. 🏛️ <b>Civic Complaint Classifier:</b> Multilingual NLP categorization engine for municipal grievance routing.<br>5. 🌿 <b>HerbAura:</b> 3D WebGL Ayurvedic botanical garden with Three.js and AI mixture scoring.<br>6. 🌐 <b>Stepping Stone Academy:</b> Production Montessori web platform deployed on Netlify."
+      "🚀 <b>Featured Projects:</b><br>1. 🛠️ <b>DARTX:</b> Published VS Code Extension for AST import scanning, alias mapping, and 1-click dependency resolution.<br>2. ⏰ <b>MITM-TimeEvolver:</b> Academic scheduling platform using Genetic Algorithms to resolve faculty/room constraints (2nd Prize Mini Project Expo).<br>3. 🎓 <b>SMART LAB:</b> C Programming Lab Assistant with GCC automated compilation, public/hidden test case evaluation, and syllabus PDF extraction.<br>4. 🌿 <b>HerbAura:</b> 3D Ayurvedic botanical garden with Three.js and AI mixture scoring.<br>5. 🌐 <b>Stepping Stone Academy:</b> Production Montessori web platform deployed on Netlify."
     ]
   },
   
@@ -95,14 +95,14 @@ const knowledgeBase = {
   dependencyManager: {
     keywords: ['dependency', 'dartx', 'vs code extension', 'vs code tool', 'package', 'package manager', 'extension'],
     responses: [
-      "🛠️ <b>DARTX – Smart Dependency Manager & Scanner:</b><br>A published VS Code extension that automatically scans codebase imports via AST analysis, detects missing runtime packages, resolves tricky alias mappings (e.g., <code>cv2</code> &rarr; <code>opencv-python</code>, <code>PIL</code> &rarr; <code>Pillow</code>), and triggers secure 1-click package installs via pip/npm.<br>• <b>Stack:</b> TypeScript, Node.js, VS Code API.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>Dependency_Manager Repo</a>"
+      "🛠️ <b>DARTX – Smart Dependency Manager & Scanner:</b><br>A published VS Code extension that automatically scans codebase imports via AST analysis, detects missing runtime packages, resolves tricky alias mappings (e.g., <code>cv2</code> &rarr; <code>opencv-python</code>, <code>PIL</code> &rarr; <code>Pillow</code>), and triggers secure 1-click package installs via pip/npm.<br>• <b>Stack:</b> JavaScript, Node.js, VS Code API.<br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>Dependency_Manager Repo</a>"
     ]
   },
   
   virtualGardenProject: {
     keywords: ['virtual garden', 'herbaura', 'ayurvedic', '3d garden', 'kashayam', 'video', 'demo', 'plants'],
     responses: [
-      "🌿 <b>HerbAura – 3D Virtual Ayurvedic Platform:</b><br>An interactive 3D botanical platform built with Three.js and WebGL. Features real-time 3D plant rendering, an AI herbal formula evaluator (Kashayam maker), and gamified botanical quizzes.<br>• <b>Stack:</b> Three.js, WebGL, Python AI, JavaScript.<br>• 🎥 <b>Video:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>Watch Demo on YouTube</a>"
+      "🌿 <b>HerbAura – 3D Virtual Ayurvedic Platform:</b><br>An interactive 3D botanical platform built during the VEC Hackathon. Features real-time 3D plant rendering, an AI herbal formula evaluator (Kashayam maker), and gamified botanical quizzes.<br>• 🎥 <b>Video:</b> <a href='https://youtu.be/V2mUIwrPJEc' target='_blank' style='color: #fca5a5;'>Watch Demo on YouTube</a>"
     ]
   },
   
@@ -150,7 +150,7 @@ const knowledgeBase = {
 };
 
 const fallbacks = [
-  "💡 I can share details about Suravi's **projects** (DARTX, Timetable Generator, SMART LAB), **skills**, **internships**, or **contact details**. What would you like to know?",
+  "💡 I can share details about Suravi's **projects** (DARTX, Timetable Generator, SMART LAB), **skills** (Python, Java, Django, Flask, SQL), **experience**, or **contact details**. What would you like to know?",
   "🤖 Feel free to ask about Suravi's technical stack, architecture choices, or credentials!"
 ];
 
