@@ -40,7 +40,7 @@ KNOWLEDGE_BASE = {
     "education": {
         "keywords": ["education", "school", "college", "university", "degree", "sslc", "puc", "cgpa", "subjects", "academics", "academic", "grade", "grades", "studies"],
         "priority": 3,
-        "response": "I completed SSLC with 93.92%, PUC PCMC with 90.18%, and I am pursuing a Bachelor of Engineering in Information Science & Engineering at Maharaja Institute of Technology Mysore with a strong CGPA of 9.16. Key subjects include Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, Software Engineering, and Java Programming."
+        "response": "I completed SSLC with 93.92%, PUC PCMC with 90.18%, and I am pursuing a Bachelor of Engineering in Information Science & Engineering at Maharaja Institute of Technology Mysore with a strong CGPA of 9.12. Key subjects include Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, Software Engineering, and Java Programming."
     },
     "skills": {
         "keywords": ["skills", "programming", "languages", "technologies", "tools", "know", "tech", "technical", "code", "coding", "expertise", "proficient", "master"],

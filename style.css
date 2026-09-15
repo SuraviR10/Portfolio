@@ -2630,6 +2630,13 @@ footer::before {
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  /* Ensure hero canvas never intercepts mobile touch drag */
+  #hero-canvas {
+    pointer-events: none !important;
   }
 
   section {

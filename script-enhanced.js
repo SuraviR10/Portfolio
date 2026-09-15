@@ -43,23 +43,35 @@ new Typed('#typing-effect', {
 });
 
 // ==========================================================================
-// LENIS SMOOTH SCROLL
+// LENIS SMOOTH SCROLL (Optimized for Mobile & Desktop)
 // ==========================================================================
+let lenis = null;
 try {
-  const lenis = new Lenis({
-    duration: 1.4,
+  lenis = new Lenis({
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
-    smoothTouch: false,
-    direction: 'vertical'
+    smoothTouch: false, // Allows natural touch scrolling on mobile devices without jank
+    touchMultiplier: 1.5,
+    infinite: false
   });
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-} catch(e) {
-  console.log('Lenis not available, using native scroll');
+
+  // Sync with GSAP ScrollTrigger if loaded
+  if (typeof ScrollTrigger !== 'undefined') {
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+  }
+} catch (e) {
+  console.log('Lenis smooth scroll running in fallback mode:', e.message);
 }
 
 // ==========================================================================
@@ -180,21 +192,21 @@ const knowledgeBase = {
   about: {
     keywords: ['who are you', 'about', 'background', 'introduce', 'yourself', 'what do you do', 'who is suravi'],
     responses: [
-      "🌟 <b>Suravi R</b> is an Information Science & Engineering student at <b>Maharaja Institute of Technology Mysore (MIT Mysore)</b>. She maintains a stellar <b>9.16 CGPA</b> and specializes in AI systems, full-stack web development, and algorithmic optimization.",
-      "🚀 Meet Suravi - a tech innovator passionate about software engineering, AI, and DevOps. With <b>93.92% in SSLC</b>, <b>90.18% in PUC</b>, and a <b>9.16 CGPA</b> in engineering, she combines academic rigor with practical real-world tools!"
+      "🌟 <b>Suravi R</b> is an Information Science & Engineering student at <b>Maharaja Institute of Technology Mysore (MIT Mysore)</b>. She maintains an outstanding <b>9.12 CGPA</b> and specializes in AI systems, full-stack web development, and algorithmic optimization.",
+      "🚀 Meet Suravi - a tech innovator passionate about software engineering, AI, and DevOps. With <b>93.92% in SSLC</b>, <b>90.18% in PUC</b>, and a <b>9.12 CGPA</b> in engineering, she combines academic rigor with practical real-world tools!"
     ]
   },
   education: {
     keywords: ['education', 'study', 'college', 'university', 'degree', 'cgpa', 'marks', 'percentage', 'school', 'academic', 'academics', 'mit', 'mysore'],
     responses: [
-      "📚 <b>Academic Record:</b><br>• <b>B.E. in Information Science:</b> MIT Mysore — <b>9.16 CGPA</b> (Current)<br>• <b>Pre-University (PUC):</b> <b>90.18%</b><br>• <b>SSLC Schooling:</b> <b>93.92%</b>",
-      "🎓 Suravi studies Information Science & Engineering at <b>MIT Mysore</b> with a top-tier <b>9.16 CGPA</b>! She excels in Data Structures, DBMS, OS, Computer Networks, and AI Systems."
+      "📚 <b>Academic Record:</b><br>• <b>B.E. in Information Science:</b> MIT Mysore — <b>9.12 CGPA</b> (Current)<br>• <b>Pre-University (PUC):</b> <b>90.18%</b><br>• <b>SSLC Schooling:</b> <b>93.92%</b>",
+      "🎓 Suravi studies Information Science & Engineering at <b>MIT Mysore</b> with a top-tier <b>9.12 CGPA</b>! She excels in Data Structures, DBMS, OS, Computer Networks, and AI Systems."
     ]
   },
   skills: {
     keywords: ['skills', 'programming', 'languages', 'technologies', 'tools', 'know', 'tech', 'technical', 'code', 'coding', 'stack'],
     responses: [
-      "💪 <b>Technical Stack:</b><br>• <b>Languages:</b> Python, Java, C, C++, JavaScript (ES6+), SQL<br>• <b>Frameworks & Web:</b> Flask, Three.js / WebGL, HTML5, CSS3, Node.js<br>• <b>Databases & Tools:</b> Supabase, MySQL, PostgreSQL, Git, VS Code API, Docker",
+      "💪 <b>Technical Stack:</b><br>• <b>Languages:</b> Python, Java, C, C++, JavaScript (ES6+), SQL, TypeScript<br>• <b>Frameworks & Web:</b> Flask, Three.js / WebGL, HTML5, CSS3, Node.js, FastAPI (learning)<br>• <b>Databases & Tools:</b> Supabase, MySQL, PostgreSQL, Git, GitHub, VS Code API, Docker",
       "🛠️ Suravi combines core CS fundamentals (DSA, OOP, OS, DBMS, Networks) with modern web engineering, 3D graphics (Three.js), and AI systems."
     ]
   },
@@ -212,9 +224,9 @@ const knowledgeBase = {
     ]
   },
   dependencyManager: {
-    keywords: ['dependency', 'dartx', 'vs code extension', 'vs code tool', 'dependify', 'package'],
+    keywords: ['dependency', 'dartx', 'vs code extension', 'vs code tool', 'dependify', 'package', 'dependency manager'],
     responses: [
-      "🛠️ <b>DARTX – Smart Dependency Manager:</b><br>A published VS Code extension built with TypeScript & Node.js. It silently catches terminal error tracebacks, maps import aliases (e.g. `cv2` → `opencv-python`), and resolves package issues in 1 click."
+      "🛠️ <b>DARTX – Smart Dependency Manager:</b><br>A published VS Code extension built with TypeScript & Node.js. It silently catches terminal error tracebacks, maps import aliases (e.g. `cv2` → `opencv-python`), and resolves package issues in 1 click.<br>🔗 <b>GitHub Repo:</b> <a href='https://github.com/SuraviR10/Dependency_Manager.git' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10/Dependency_Manager</a>"
     ]
   },
   virtualGardenProject: {
@@ -226,7 +238,7 @@ const knowledgeBase = {
   labAssistantProject: {
     keywords: ['lab assistant', 'programming assistant', 'socratic', 'viva', 'viva prep', 'edtech'],
     responses: [
-      "🎓 <b>AI Powered Lab Programming Assistant:</b><br>A Socratic AI tutor that guides computer science students through logic building with progressive hints instead of direct answer dumps, translating compiler errors into plain English."
+      "🎓 <b>AI Powered Lab Programming Assistant:</b><br>A Socratic AI tutor that guides computer science students through logic building with progressive hints instead of direct answer dumps, translating compiler errors into plain English.<br>🔗 <b>GitHub Repo:</b> <a href='https://github.com/SuraviR10/Ai-Programming-Lab-Assistant.git' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10/Ai-Programming-Lab-Assistant</a>"
     ]
   },
   steppingStoneProject: {
@@ -238,13 +250,19 @@ const knowledgeBase = {
   achievements: {
     keywords: ['achievements', 'awards', 'prizes', 'accomplishments', 'nptel', 'top 1%', 'gold'],
     responses: [
-      "🥇 <b>Major Achievements:</b><br>• <b>NPTEL Programming in Java:</b> <b>98% Score & Top 1% Elite+Gold</b> nationwide<br>• <b>Mini Project Expo:</b> <b>2nd Prize Winner</b> for Timetable Generator<br>• <b>VEC Hackathon:</b> Recognition for 3D HerbAura platform"
+      "🥇 <b>Major Achievements:</b><br>• <b>NPTEL Programming in Java:</b> <b>98% Score & Top 1% Elite+Gold</b> nationwide<br>• <b>Mini Project Expo:</b> <b>2nd Prize Winner</b> for Timetable Generator<br>• <b>Best Project Award:</b> Waste Segregation System with Voice Assistance<br>• <b>VEC Hackathon:</b> Recognition for 3D HerbAura platform"
+    ]
+  },
+  hiring: {
+    keywords: ['hire', 'why hire', 'recruiter', 'hr', 'candidate', 'fit', 'role', 'interview', 'special', 'stand out', 'strengths'],
+    responses: [
+      "🌟 <b>Why Hire Suravi R?</b><br>1. <b>Proven High Performer:</b> <b>9.12 CGPA</b> in ISE & <b>Top 1% Nationwide (98% Gold Medal)</b> in NPTEL Java.<br>2. <b>Real-World Builder:</b> Published a VS Code Extension (DARTX), built complex Genetic Algorithm schedulers, and deployed production web applications.<br>3. <b>Fast Learner & Team Player:</b> Quick to adapt across AI, Cloud, backend architectures, and modern DevOps tools.<br>4. <b>Available for:</b> SDE / Full-Stack / AI Engineer roles and internships!"
     ]
   },
   certificates: {
-    keywords: ['certificates', 'certifications', 'certified', 'nptel', 'skyscanner', 'linkedin'],
+    keywords: ['certificates', 'certifications', 'certified', 'nptel', 'skyscanner', 'linkedin', 'coursera'],
     responses: [
-      "📜 <b>Certifications:</b><br>• NPTEL Programming in Java (Top 1% Elite+Gold)<br>• Skyscanner Front-End Software Engineering Simulation<br>• LinkedIn Prompt Engineering & AI Foundations"
+      "📜 <b>Certifications:</b><br>• NPTEL Programming in Java (98% - Top 1% Elite+Gold)<br>• Skyscanner Front-End Software Engineering Simulation<br>• LinkedIn Prompt Engineering for AI<br>• Coursera AI for Everyone"
     ]
   },
   hackathons: {
@@ -254,15 +272,15 @@ const knowledgeBase = {
     ]
   },
   industrial: {
-    keywords: ['industrial', 'visit', 'visits', 'fanuc', 'sap', 'factory', 'exposure'],
+    keywords: ['industrial', 'visit', 'visits', 'fanuc', 'sap', 'factory', 'exposure', 'ibm'],
     responses: [
-      "🏭 <b>Industrial Exposure:</b><br>Visited <b>FANUC India</b> (robotics automation) and <b>SAP Labs</b> (enterprise software systems) to study real-world engineering workflows."
+      "🏭 <b>Industrial Exposure:</b><br>Visited <b>FANUC India</b> (robotics automation), <b>SAP Labs</b> (enterprise cloud software), and <b>IBM Meetup</b> (Agentic AI) to study real-world engineering workflows."
     ]
   },
   contact: {
     keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'hire', 'message'],
     responses: [
-      "📬 <b>Get In Touch with Suravi:</b><br>• <b>Email:</b> suravimys@gmail.com<br>• <b>LinkedIn:</b> <a href='https://linkedin.com/in/suravir' target='_blank' style='color: var(--secondary-light);'>linkedin.com/in/suravir</a><br>• <b>GitHub:</b> <a href='https://github.com/TechSphere10' target='_blank' style='color: var(--secondary-light);'>github.com/TechSphere10</a>"
+      "📬 <b>Get In Touch with Suravi:</b><br>• <b>Email:</b> <a href='mailto:suravimys@gmail.com' style='color: var(--secondary-light);'>suravimys@gmail.com</a><br>• <b>LinkedIn:</b> <a href='https://linkedin.com/in/suravir/' target='_blank' style='color: var(--secondary-light);'>linkedin.com/in/suravir</a><br>• <b>GitHub:</b> <a href='https://github.com/SuraviR10' target='_blank' style='color: var(--secondary-light);'>github.com/SuraviR10</a>"
     ]
   },
   resume: {
@@ -274,7 +292,7 @@ const knowledgeBase = {
 };
 
 const innovativeFallbacks = [
-  "🤖 <b>AI Assistant Online:</b> I can answer anything about Suravi's <b>9.16 CGPA</b>, award-winning <b>projects</b>, <b>NPTEL Top 1% ranking</b>, or <b>skills</b>! What would you like to explore?",
+  "🤖 <b>AI Assistant Online:</b> I can answer anything about Suravi's <b>9.12 CGPA</b>, award-winning <b>projects</b>, <b>NPTEL Top 1% ranking</b>, or <b>skills</b>! What would you like to explore?",
   "💡 <b>Ask me anything about Suravi!</b> Learn about her 5 featured projects, 3D HerbAura demo video, hackathon awards, or contact details."
 ];
 
